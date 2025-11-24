@@ -1,0 +1,12 @@
+flowchart-diagram
+
+title presenterai - Conceptual Diagram
+
+User [icon: user]
+Document [icon: file-text]
+Generation [icon: lightbulb, label: "Generation (Outline)"]
+Presentation [icon: monitor, label: "Presentation (Slides)"]
+
+User -> Document : "1:N (creates)"
+Document -> Generation : "1:N (generates)"
+Generation -> Presentation : "1:1 (creates)"

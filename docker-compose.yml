@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  presenterai_db:
+    image: postgres:16.3
+    restart: always
+    shm_size: 128mb
+    container_name: presenterai-db
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5439:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    env_file:
+      - .env
+
+volumes:
+  pgdata:

@@ -1,0 +1,47 @@
+flowchart-diagram
+
+title presenterai - System Architecture
+
+Frontend [color: blue, icon: monitor, direction: right] {
+  "Browser (Next.js App)" [icon: nextdotjs] {
+    "Components (React/shadcn/ui)" [icon: react, label: "React/shadcn"]
+    "Styling (Tailwind CSS)"       [icon: palette, label: "Tailwind"]
+    "Data Fetching (React Query)"  [icon: download-cloud, label: "React Query"]
+    "Requests (Axios)"             [icon: send, label: "Axios"]
+  }
+}
+
+Backend [color: green, icon: server, direction: right] {
+  "Next.js Server" [icon: server] {
+    "API Routes"                  [icon: api, label: "API Routes"]
+    "Authentication (Next-Auth)"  [icon: shield, label: "Next-Auth"]
+    "Validation (Zod)"            [icon: check-check, label: "Zod"]
+    "ORM (Prisma)"                [icon: database, label: "Prisma"]
+  }
+}
+
+"AI Services" [color: orange, icon: cpu, direction: right] {
+  "Generation Layer" [icon: brain-circuit] {
+    "Mastra (Orchestrator)"      [icon: workflow, label: "Mastra"]
+    "Google Generative AI"       [icon: google, label: "Gemini"]
+  }
+}
+
+Database [color: purple, icon: database, direction: right] {
+  "PostgreSQL" [icon: postgres, label: "PostgreSQL (Supabase/Neon)"]
+}
+
+Infrastructure [color: gray, icon: cloud] {
+  "Vercel" [icon: cloud, label: "Deploy/Hosting"]
+}
+
+"Requests (Axios)" -> "API Routes" : "Calls endpoints"
+"API Routes" -> "Authentication (Next-Auth)" : "Verifies session"
+"API Routes" -> "Validation (Zod)" : "Validates schemas"
+"API Routes" -> "ORM (Prisma)" : "Accesses data"
+"ORM (Prisma)" -> "PostgreSQL" : "Executes queries"
+"API Routes" -> "Mastra (Orchestrator)" : "Initiates generation"
+"Mastra (Orchestrator)" -> "Google Generative AI" : "Generates content"
+
+Vercel -> "Next.js Server" : "Hosting"
+Vercel -> "PostgreSQL" : "Connection"

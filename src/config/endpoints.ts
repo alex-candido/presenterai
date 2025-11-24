@@ -1,0 +1,41 @@
+export const API_ENDPOINTS = {
+  AUTH: {
+    LOGIN: `/auth/login/`,
+    LOGOUT: `/auth/logout/`,
+    REGISTER: `/auth/register/`,
+    FORGOT_PASSWORD: `/auth/forgot-password/`,
+    RESET_PASSWORD: `/auth/reset-password/`,
+  },
+  USERS: {
+    LIST: `/users/`,
+    CREATE: `/users/`,
+    DETAIL: (id: number | string) => `/users/${id}/`,
+    UPDATE: (id: number | string) => `/users/${id}/`,
+    PARTIAL_UPDATE: (id: number | string) => `/users/${id}/`,
+    DELETE: (id: number | string) => `/users/${id}/`,
+  },
+  DOCUMENTS: {
+    LIST: `/documents/`,
+    CREATE: `/documents/`,
+    DETAIL: (id: number | string) => `/documents/${id}/`,
+    UPDATE: (id: number | string) => `/documents/${id}/`,
+    PARTIAL_UPDATE: (id: number | string) => `/documents/${id}/`,
+    DELETE: (id: number | string) => `/documents/${id}/`,
+  },
+  GENERATIONS: {
+    LIST: `/generations/`,
+    CREATE: `/generations/`,
+    DETAIL: (id: number | string) => `/generations/${id}/`,
+    UPDATE: (id: number | string) => `/generations/${id}/`,
+    PARTIAL_UPDATE: (id: number | string) => `/generations/${id}/`,
+    DELETE: (id: number | string) => `/generations/${id}/`,
+  },
+  PRESENTATIONS: {
+    LIST: `/presentations/`,
+    CREATE: `/presentations/`,
+    DETAIL: (id: number | string) => `/presentations/${id}/`,
+    UPDATE: (id: number | string) => `/presentations/${id}/`,
+    PARTIAL_UPDATE: (id: number | string) => `/presentations/${id}/`,
+    DELETE: (id: number | string) => `/presentations/${id}/`,
+  },
+};

@@ -1,0 +1,71 @@
+Enum Status {
+  ACTIVE
+  INACTIVE
+}
+
+Enum PresentationStyle {
+  PROFESSIONAL
+  CREATIVE
+  MINIMALIST
+}
+
+Enum UserRole {
+  ADMIN
+  MEMBER
+}
+
+Enum Visibility {
+  PUBLIC
+  PRIVATE
+}
+
+Table User {
+  id               integer      [primary key]
+  uuid             string       [unique]
+  username         string       [unique]
+  email            string       [unique]
+  password_hash    string
+  role             UserRole     [not null, default: "MEMBER"]
+  status           Status       [default: "ACTIVE"]
+  created_at       timestamp
+  updated_at       timestamp
+}
+
+Table Document {
+  id                       integer      [primary key]
+  uuid                     string       [unique]
+  user_id                  integer      [ref: > User.id, not null]
+  title                    string       [not null]
+  visibility               Visibility   [not null, default: "PRIVATE"]
+  latest_generation_id     integer      [ref: > Generation.id, note: "Ponteiro para a última Generation. Pode ser nulo."]
+  latest_presentation_id   integer      [ref: > Presentation.id, note: "Ponteiro para a última Presentation. Pode ser nulo."]
+  status                   Status       [default: "ACTIVE"]
+  created_at               timestamp
+  updated_at               timestamp
+}
+
+Table Generation {
+  id               integer      [primary key]
+  uuid             string       [unique]
+  document_id      integer      [ref: > Document.id, not null]
+  prompt           text         [not null, comment: "The specific user input/prompt for this generation"]
+  outline          json         [not null, comment: "JSON array for the editable outline. Structure: [{title, topics, layout_type, content_depth, keywords}]"]
+  ai_metadata      json         [comment: "Metadata from the AI agent run (e.g., token usage, model version)"]
+  status           Status       [default: "ACTIVE"]
+  created_at       timestamp
+  updated_at       timestamp
+}
+
+Table Presentation {
+  id               integer      [primary key]
+  uuid             string       [unique]
+  generation_id    integer      [ref: > Generation.id, not null]
+  user_id          integer      [ref: > User.id, not null]
+  title            string       [not null]
+  slides           json         [not null, comment: "Array of Excalidraw scene data for each slide"]
+  style            PresentationStyle [comment: "Overall style of the presentation"]
+  language         string       [comment: "e.g., 'pt-BR', 'en-US'"]
+  status           Status       [default: "ACTIVE"]
+  created_at       timestamp
+  updated_at       timestamp
+}

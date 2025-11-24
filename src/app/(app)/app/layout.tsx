@@ -10,7 +10,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       className="flex min-h-screen w-full flex-col bg-muted/40"
     >
       <AppLayoutAside />
-      <div className="layout-container">
+      <div className="layout-wrapper">
         <AppLayoutHeader />
         <LayoutMain>{children}</LayoutMain>
         <AppLayoutFooter />

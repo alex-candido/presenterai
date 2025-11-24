@@ -1,4 +1,3 @@
-// src/components/pages/terms/legal-content.tsx
 import PrivacyPolicy from '@/content/legal/privacy-policy.mdx';
 import TermsOfService from '@/content/legal/terms-of-service.mdx';
 

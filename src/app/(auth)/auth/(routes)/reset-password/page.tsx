@@ -1,11 +1,13 @@
 "use client";
 
-import { ResetPasswordForm } from "@/components/pages/auth/root";
+import { ResetPasswordSection } from "@/components/pages/auth/reset-password";
+import { AuthHero } from "@/components/pages/auth/root/auth-hero";
 
 export default function ResetPasswordPage() {
   return (
     <div className="reset-password-page">
-      <ResetPasswordForm />
+      <AuthHero />
+      <ResetPasswordSection />
     </div>
   );
 }

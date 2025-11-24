@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-import { LayoutAside } from "@/components/layouts/aside";
+import { LayoutAside } from "@/components/layouts";
 
 export function AdminLayoutAside({
   className,

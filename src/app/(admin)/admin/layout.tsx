@@ -14,7 +14,7 @@ export default function AdminLayout({
       className="flex min-h-screen w-full flex-col bg-muted/40"
     >
       <AdminLayoutAside />
-      <div className="layout-container">
+      <div className="layout-wrapper">
         <AdminLayoutHeader />
         <LayoutMain>{children}</LayoutMain>
         <AdminLayoutFooter />

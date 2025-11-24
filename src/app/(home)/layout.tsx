@@ -13,7 +13,7 @@ export default function HomeLayout({
       id="home"
       className="flex min-h-screen w-full flex-col bg-muted/40"
     >
-      <div className="layout-container">
+      <div className="layout-wrapper">
         <HomeLayoutHeader />
         <LayoutMain>{children}</LayoutMain>
         <HomeLayoutFooter />

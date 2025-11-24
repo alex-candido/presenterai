@@ -1,0 +1,24 @@
+"use client";
+
+import { BaseLogo } from "@/components/base";
+import { LayoutContainer, LayoutHeader, LayoutNavStart } from "@/components/layouts";
+import { cn } from "@/lib/utils";
+
+export function AuthLayoutHeader({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLElement>) {
+  return (
+    <header
+      className={cn("auth-layout-header", className)}
+      {...props}
+    >
+      <LayoutHeader>
+        <LayoutContainer>
+          <BaseLogo href="/" />
+          <LayoutNavStart></LayoutNavStart>
+        </LayoutContainer>
+      </LayoutHeader>
+    </header>
+  );
+}

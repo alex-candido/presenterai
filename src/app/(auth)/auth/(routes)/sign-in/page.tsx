@@ -1,11 +1,13 @@
 "use client";
 
-import { SignInForm } from "@/components/pages/auth/root";
+import { AuthHero } from "@/components/pages/auth/root/auth-hero";
+import { SignInSection } from "@/components/pages/auth/sign-in";
 
 export default function SignInPage() {
   return (
     <div className="sign-in-page">
-      <SignInForm />
+      <AuthHero />
+      <SignInSection />
     </div>
   );
 }

@@ -124,7 +124,7 @@ export const APP_ROUTES = {
   },
 
   TERMS: {
-    path: '/terms',
+    DETAIL: (id: string | number) => `/legal/${id}`,
     label: 'Terms & Privacy',
     icon: 'ScrollText',
     authRequired: false,

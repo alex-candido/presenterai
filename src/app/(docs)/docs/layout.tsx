@@ -14,7 +14,7 @@ export default function AuthLayout({
       className="flex min-h-screen w-full flex-col bg-muted/40"
     >
       <DocsLayoutSidebar />
-      <div className="layout-container">
+      <div className="layout-wrapper">
         <DocsLayoutHeader />
         <LayoutMain>{children}</LayoutMain>
       </div>

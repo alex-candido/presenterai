@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-import { LayoutHeader } from "@/components/layouts/header";
+import { LayoutHeader } from "@/components/layouts";
 
 export function AppLayoutFooter({
   className,

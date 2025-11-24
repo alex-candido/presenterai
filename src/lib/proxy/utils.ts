@@ -1,4 +1,4 @@
-import { User, UserRole } from "@prisma/client";
+import { UserRole } from "@prisma/client";
 import { NextRequest, NextResponse } from "next/server";
 
 export interface RouteProtectionRule {
@@ -12,7 +12,7 @@ export interface RouteProtectionRule {
 
 export function handleRouteAuthorization(
   request: NextRequest,
-  session: { user: Partial<User> } | null | undefined,
+  session: { user: any } | null | undefined,
   rule: RouteProtectionRule,
 ): NextResponse | null {
   const { pathname } = request.nextUrl;

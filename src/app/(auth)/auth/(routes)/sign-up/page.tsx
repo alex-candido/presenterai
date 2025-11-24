@@ -1,11 +1,13 @@
 "use client";
 
-import { SignUpForm } from "@/components/pages/auth/root";
+import { AuthHero } from "@/components/pages/auth/root/auth-hero";
+import { SignUpSection } from "@/components/pages/auth/sign-up";
 
 export default function SignUpPage() {
   return (
     <div className="sign-up-page">
-      <SignUpForm />
+      <AuthHero />
+      <SignUpSection/>
     </div>
   );
 }

@@ -23,7 +23,6 @@ export const userFactory = async (
   const defaults: Prisma.UserCreateInput = {
     name: faker.person.fullName(),
     email: faker.internet.email(),
-    passwordHash: faker.internet.password(),
     role: getRandomEnumValue(UserRole),
     status: getRandomEnumValue(Status),
   };

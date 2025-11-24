@@ -23,6 +23,7 @@ export const auth = betterAuth({
     },
   },
   emailAndPassword: {
+    signInOnSignUp: true,
     enabled: true,
     sendResetPassword: async ({ user, url }) => {
       await resend.emails.send({
@@ -35,6 +36,13 @@ export const auth = betterAuth({
           requestTime: new Date().toLocaleString(),
         }),
       });
+    },
+  },
+  user: {
+    additionalFields: {
+      role: {
+        type: "string",
+      },
     },
   },
   database: prismaAdapter(prisma, {

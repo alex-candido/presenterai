@@ -1,10 +1,8 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
-import { adminRouteProxy } from "@/lib/proxy/admin";
-import { authRouteProxy } from "@/lib/proxy/auth";
-import { globalRouteProxy } from "@/lib/proxy/global";
-import { APP_ROUTES } from '@/lib/utils/routes';
+import { adminRouteProxy, authRouteProxy, docsRouteProxy, globalRouteProxy, termsRouteProxy } from "@/lib/proxy";
+import { APP_ROUTES } from './lib/utils/routes';
  
 export async function proxy(request: NextRequest) {
 try {
@@ -21,6 +19,16 @@ try {
     }
 
     response = await authRouteProxy(request);
+    if (response) {
+      return response;
+    }
+
+    response = await docsRouteProxy(request);
+    if (response) {
+      return response;
+    }
+
+    response = await termsRouteProxy(request);
     if (response) {
       return response;
     }

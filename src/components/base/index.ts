@@ -1,4 +1,3 @@
-export * from './container';
-export * from './logo';
-export * from './section';
+export * from './base-hero';
+export * from './base-logo';
 

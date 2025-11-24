@@ -1,4 +1,4 @@
-import { LayoutAside } from "@/components/layouts/aside";
+import { LayoutAside } from "@/components/layouts";
 import { cn } from "@/lib/utils";
 
 export function AppLayoutAside({

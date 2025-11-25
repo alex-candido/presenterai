@@ -18,6 +18,7 @@ CREATE TABLE "users" (
     "id" TEXT NOT NULL,
     "order" SERIAL NOT NULL,
     "name" TEXT,
+    "username" TEXT,
     "email" TEXT NOT NULL,
     "emailVerified" BOOLEAN NOT NULL DEFAULT false,
     "image" TEXT,
@@ -123,7 +124,7 @@ CREATE TABLE "presentations" (
 );
 
 -- CreateTable
-CREATE TABLE "verification" (
+CREATE TABLE "verifications" (
     "id" TEXT NOT NULL,
     "identifier" TEXT NOT NULL,
     "value" TEXT NOT NULL,
@@ -131,8 +132,11 @@ CREATE TABLE "verification" (
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
-    CONSTRAINT "verification_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "verifications_pkey" PRIMARY KEY ("id")
 );
+
+-- CreateIndex
+CREATE UNIQUE INDEX "users_username_key" ON "users"("username");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "users_email_key" ON "users"("email");
@@ -171,7 +175,7 @@ CREATE INDEX "presentations_generationId_idx" ON "presentations"("generationId")
 CREATE INDEX "presentations_userId_idx" ON "presentations"("userId");
 
 -- CreateIndex
-CREATE INDEX "verification_identifier_idx" ON "verification"("identifier");
+CREATE INDEX "verifications_identifier_idx" ON "verifications"("identifier");
 
 -- AddForeignKey
 ALTER TABLE "accounts" ADD CONSTRAINT "accounts_userId_fkey" FOREIGN KEY ("userId") REFERENCES "users"("id") ON DELETE CASCADE ON UPDATE CASCADE;

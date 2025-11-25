@@ -42,6 +42,7 @@ model User {
   id            String   @id @default(uuid())
   order         Int      @default(autoincrement())
   name          String?
+  username      String?  @unique
   email         String   @unique
   emailVerified Boolean  @default(false)
   image         String?
@@ -171,12 +172,12 @@ model Presentation {
 }
 
 model Verification {
-  id         String    @id @default(uuid())
-  identifier String
-  value      String
-  expiresAt  DateTime
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  id                 String    @id @default(uuid())
+  identifier         String
+  verification_value String
+  expiresAt          DateTime
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
 
   @@index([identifier])
   @@map("verifications")

@@ -41,4 +41,14 @@ export const API_MESSAGES = {
     DELETE_ERROR: "Error deleting presentation.",
     NOT_FOUND: "Presentation not found.",
   },
+  AUTH: {
+    SIGN_IN_SUCCESS: "Login successful! Redirecting...",
+    SIGN_IN_FAILED: "Login failed. Please check your credentials.",
+    SIGN_UP_SUCCESS: "Account created successfully! Please check your email to verify.",
+    SIGN_UP_FAILED: "Failed to create account.",
+    SIGN_OUT_SUCCESS: "You have been logged out.",
+    SIGN_OUT_FAILED: "Failed to log out.",
+    VERIFICATION_SUCCESS: "Email verified successfully!",
+    VERIFICATION_FAILED: "Email verification failed.",
+  },
 };

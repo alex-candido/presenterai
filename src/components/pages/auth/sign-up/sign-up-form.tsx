@@ -1,39 +1,30 @@
 "use client";
 
-import { FormFieldAdapter } from "@/components/adapters/form-field-adapter";
-import { Button } from "@/components/ui/button";
+import { AlertCircle, CheckCircle } from "lucide-react";
+import * as React from "react";
+import { useState } from "react";
+
+import {
+  AlertAdapter,
+  ButtonAdapter,
+  FormFieldAdapter,
+} from "@/components/adapters";
 import { Form } from "@/components/ui/form";
 import { useForm } from "@/hooks/use-form";
 import { cn } from "@/lib/utils";
+import { API_MESSAGES } from "@/lib/utils/messages";
 import { SignUpFormValues, signUpSchema } from "@/schemas/auth-schema";
 import { authClient } from "@/server/auth/client";
-import * as React from "react";
+import { AgreeTermsLabel } from "./agree-terms-label";
 
 const mutationFn = async (data: SignUpFormValues) => {
-  // Map form `username` to `name` for the API
-  const { username, ...rest } = data;
-  const { data: resultData, error } = await authClient.signUp.email(
-    {
-      name: username,
-      ...rest,
-      callbackURL: "/",
-    },
-    {
-      onRequest: (ctx) => {
-        //show loading
-      },
-      onSuccess: (ctx) => {
-        //redirect to the dashboard or sign in page
-      },
-      onError: (ctx) => {
-        // display the error message
-        alert(ctx.error.message);
-      },
-    },
-  );
+  const { agreeTerms, ...rest } = data;
+  const { data: resultData, error } = await authClient.signUp.email({
+    ...rest,
+    callbackURL: "/",
+  });
 
   if (error) {
-    // Throw an error to be caught by the useForm hook's onError handler
     throw new Error(error.message);
   }
 
@@ -44,31 +35,62 @@ export function SignUpForm({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
-  const { form, handleSubmit, isSubmitting, apiError } = useForm<
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const { form, handleSubmit, control, isSubmitting, apiError } = useForm<
     SignUpFormValues,
-    any // The success data type from better-auth is unknown, so using 'any'
+    any
   >({
     schema: signUpSchema,
+    defaultValues: {
+      name: "",
+      username: "",
+      email: "",
+      password: "",
+      agreeTerms: false,
+    },
     mutationFn,
-    onSuccess: (data) => {
-      console.log("Success:", data);
-      // Here you would typically redirect the user
+    onSuccess: (_data) => {
+      setIsSuccess(true);
+      form.reset();
+    },
+    onError: (_error) => {
+      setIsSuccess(false);
     },
   });
 
   return (
     <div className={cn("sign-up-form", className)} {...props}>
       <Form {...form}>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          {apiError && (
-            <p className="text-center text-sm font-medium text-destructive">
-              {apiError}
-            </p>
+        <form onSubmit={handleSubmit} className="grid gap-4">
+          {isSuccess && (
+            <AlertAdapter
+              variant="default"
+              title="Success!"
+              description={API_MESSAGES.AUTH.SIGN_UP_SUCCESS}
+              icon={<CheckCircle className="h-4 w-4" />}
+            />
+          )}
+          {apiError && !isSuccess && (
+            <AlertAdapter
+              variant="destructive"
+              title="Registration Failed"
+              description={apiError}
+              icon={<AlertCircle className="h-4 w-4" />}
+            />
           )}
           <FormFieldAdapter
             renderAs="input"
             type="text"
-            control={form.control}
+            control={control}
+            name="name"
+            label="Name"
+            placeholder="e.g., John Doe"
+          />
+          <FormFieldAdapter
+            renderAs="input"
+            type="text"
+            control={control}
             name="username"
             label="Username"
             placeholder="e.g., john_doe"
@@ -76,7 +98,7 @@ export function SignUpForm({
           <FormFieldAdapter
             renderAs="input"
             type="email"
-            control={form.control}
+            control={control}
             name="email"
             label="Email"
             placeholder="e.g., john.doe@example.com"
@@ -84,14 +106,31 @@ export function SignUpForm({
           <FormFieldAdapter
             renderAs="input"
             type="password"
-            control={form.control}
+            control={control}
             name="password"
             label="Password"
             placeholder="********"
           />
-          <Button type="submit" className="w-full" disabled={isSubmitting}>
+          <FormFieldAdapter
+            renderAs="checkbox"
+            control={control}
+            name="agreeTerms"
+            label={
+              <>
+                <AgreeTermsLabel />
+              </>
+            }
+            ui={{
+              formItem: "flex flex-row-reverse justify-end",
+            }}
+          />
+          <ButtonAdapter
+            type="submit"
+            className="w-full"
+            disabled={isSubmitting}
+          >
             {isSubmitting ? "Signing Up..." : "Sign Up"}
-          </Button>
+          </ButtonAdapter>
         </form>
       </Form>
     </div>

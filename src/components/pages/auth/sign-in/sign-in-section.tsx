@@ -10,7 +10,7 @@ export function SignInSection({
     <section className={cn("sign-in-section", className)} {...props}>
       <AuthCard
         title="Sign In"
-        description="Enter your credentials to access your account"
+        description="Enter your email below to login to your account"
         footerLabel="Don't have an account?"
         footerLinkHref="/auth/sign-up"
         footerLinkText="Sign Up"

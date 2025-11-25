@@ -41,4 +41,17 @@ export const auth = betterAuth({
   database: prismaAdapter(prisma, {
     provider: "postgresql",
   }),
+  verification: {
+    fields: {
+      value: "verification_value",
+    },
+  },
+  user: {
+    additionalFields: {
+      username: {
+        type: "string",
+        required: true,
+      },
+    },
+  },
 });

@@ -12,10 +12,25 @@ import * as React from "react";
 const mutationFn = async (data: SignUpFormValues) => {
   // Map form `username` to `name` for the API
   const { username, ...rest } = data;
-  const { data: resultData, error } = await authClient.signUp.email({
-    name: username,
-    ...rest,
-  });
+  const { data: resultData, error } = await authClient.signUp.email(
+    {
+      name: username,
+      ...rest,
+      callbackURL: "/",
+    },
+    {
+      onRequest: (ctx) => {
+        //show loading
+      },
+      onSuccess: (ctx) => {
+        //redirect to the dashboard or sign in page
+      },
+      onError: (ctx) => {
+        // display the error message
+        alert(ctx.error.message);
+      },
+    },
+  );
 
   if (error) {
     // Throw an error to be caught by the useForm hook's onError handler

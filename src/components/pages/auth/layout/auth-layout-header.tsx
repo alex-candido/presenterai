@@ -1,7 +1,7 @@
 "use client";
 
 import { BaseLogo } from "@/components/base";
-import { LayoutContainer, LayoutHeader, LayoutNavStart } from "@/components/layouts";
+import { LayoutContainer, LayoutHeader } from "@/components/layouts";
 import { cn } from "@/lib/utils";
 
 export function AuthLayoutHeader({
@@ -16,7 +16,6 @@ export function AuthLayoutHeader({
       <LayoutHeader>
         <LayoutContainer>
           <BaseLogo href="/" />
-          <LayoutNavStart></LayoutNavStart>
         </LayoutContainer>
       </LayoutHeader>
     </header>

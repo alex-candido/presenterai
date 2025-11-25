@@ -12,7 +12,7 @@ export interface RouteProtectionRule {
 
 export function handleRouteAuthorization(
   request: NextRequest,
-  session: { user: any } | null | undefined,
+  session: { user: Partial<{ role: UserRole }>} | null | undefined,
   rule: RouteProtectionRule,
 ): NextResponse | null {
   const { pathname } = request.nextUrl;

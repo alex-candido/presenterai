@@ -19,7 +19,6 @@ CREATE TABLE "users" (
     "order" SERIAL NOT NULL,
     "name" TEXT,
     "email" TEXT NOT NULL,
-    "passwordHash" TEXT,
     "emailVerified" BOOLEAN NOT NULL DEFAULT false,
     "image" TEXT,
     "role" "UserRole" NOT NULL DEFAULT 'MEMBER',
@@ -34,8 +33,8 @@ CREATE TABLE "users" (
 CREATE TABLE "accounts" (
     "id" TEXT NOT NULL,
     "order" SERIAL NOT NULL,
-    "provider" TEXT NOT NULL,
-    "providerAccountId" TEXT NOT NULL,
+    "provider" TEXT NOT NULL DEFAULT 'credential',
+    "providerAccountId" TEXT,
     "userId" TEXT NOT NULL,
     "accessToken" TEXT,
     "refreshToken" TEXT,
@@ -44,6 +43,10 @@ CREATE TABLE "accounts" (
     "scope" TEXT,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
+    "accountId" TEXT NOT NULL,
+    "providerId" TEXT NOT NULL,
+    "refreshTokenExpiresAt" TIMESTAMP(3),
+    "password" TEXT,
 
     CONSTRAINT "accounts_pkey" PRIMARY KEY ("id")
 );
@@ -58,11 +61,13 @@ CREATE TABLE "verification_tokens" (
 -- CreateTable
 CREATE TABLE "sessions" (
     "id" TEXT NOT NULL,
-    "sessionToken" TEXT NOT NULL,
     "userId" TEXT NOT NULL,
-    "expires" TIMESTAMP(3) NOT NULL,
+    "expiresAt" TIMESTAMP(3) NOT NULL,
+    "token" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
+    "ipAddress" TEXT,
+    "userAgent" TEXT,
 
     CONSTRAINT "sessions_pkey" PRIMARY KEY ("id")
 );
@@ -117,6 +122,18 @@ CREATE TABLE "presentations" (
     CONSTRAINT "presentations_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateTable
+CREATE TABLE "verification" (
+    "id" TEXT NOT NULL,
+    "identifier" TEXT NOT NULL,
+    "value" TEXT NOT NULL,
+    "expiresAt" TIMESTAMP(3) NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "verification_pkey" PRIMARY KEY ("id")
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "users_email_key" ON "users"("email");
 
@@ -133,7 +150,7 @@ CREATE UNIQUE INDEX "verification_tokens_token_key" ON "verification_tokens"("to
 CREATE UNIQUE INDEX "verification_tokens_identifier_token_key" ON "verification_tokens"("identifier", "token");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "sessions_sessionToken_key" ON "sessions"("sessionToken");
+CREATE UNIQUE INDEX "sessions_token_key" ON "sessions"("token");
 
 -- CreateIndex
 CREATE INDEX "sessions_userId_idx" ON "sessions"("userId");
@@ -152,6 +169,9 @@ CREATE INDEX "presentations_generationId_idx" ON "presentations"("generationId")
 
 -- CreateIndex
 CREATE INDEX "presentations_userId_idx" ON "presentations"("userId");
+
+-- CreateIndex
+CREATE INDEX "verification_identifier_idx" ON "verification"("identifier");
 
 -- AddForeignKey
 ALTER TABLE "accounts" ADD CONSTRAINT "accounts_userId_fkey" FOREIGN KEY ("userId") REFERENCES "users"("id") ON DELETE CASCADE ON UPDATE CASCADE;

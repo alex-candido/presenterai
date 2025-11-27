@@ -1,4 +1,4 @@
-import { APP_ROUTES } from "@/lib/utils/routes";
+import { APP_ROUTES } from "@/config/routes";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function termsRouteProxy(request: NextRequest) {

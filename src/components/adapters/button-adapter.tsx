@@ -1,4 +1,5 @@
 import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { type VariantProps } from "class-variance-authority";
 import Link from "next/link";
 import * as React from "react";
@@ -30,7 +31,7 @@ const ButtonAdapter = React.forwardRef<
           asChild
           variant={variant}
           size={size}
-          className={className}
+          className={cn("button-adapter", className)}
            {...props}
         >
           <Link href={to} ref={ref as React.Ref<HTMLAnchorElement>}>
@@ -44,7 +45,7 @@ const ButtonAdapter = React.forwardRef<
       <Button
         variant={variant}
         size={size}
-        className={className}
+        className={cn("button-adapter", className)}
         ref={ref as React.Ref<HTMLButtonElement>}
         {...props}
       >

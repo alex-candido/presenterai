@@ -1,4 +1,4 @@
-import { APP_ROUTES } from "@/lib/utils/routes";
+import { APP_ROUTES } from "@/config/routes";
 import { auth } from "@/server/auth";
 
 import { headers } from "next/headers";

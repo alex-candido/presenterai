@@ -26,13 +26,14 @@ type BaseFieldProps<TFormValues extends FieldValues> = {
   control: Control<TFormValues>;
   name: FieldPath<TFormValues>;
   label: React.ReactNode;
-  description?: string;
+  description?: React.ReactNode;
   className?: string;
   disabled?: boolean;
   isSubmitting?: boolean;
   ui?: {
     formItem?: string;
     formLabel?: string;
+    formDescription?: string;
   };
 };
 
@@ -128,50 +129,68 @@ export function FormFieldAdapter<TFormValues extends FieldValues>(
       control={control}
       name={name}
       render={({ field }) => (
-        <FormItem className={cn(className, ui?.formItem)}>
-          <FormLabel className={cn(ui?.formLabel)}>{label}</FormLabel>
-          {description && <FormDescription>{description}</FormDescription>}
-          <FormControl>
-            {(() => {
-              if (props.renderAs === "textarea") {
-                return (
-                  <TextareaAdapter<TFormValues> field={field} {...props} />
-                );
-              }
-              if (props.renderAs === "select") {
-                return <SelectAdapter<TFormValues> field={field} {...props} />;
-              }
-              if (props.renderAs === "switch") {
-                return <SwitchAdapter<TFormValues> field={field} {...props} />;
-              }
-              if (props.renderAs === "checkbox") {
-                return (
-                  <CheckboxAdapter<TFormValues> field={field} {...props} />
-                );
-              }
-              if (props.renderAs === "radio-group") {
-                return (
-                  <RadioGroupAdapter<TFormValues> field={field} {...props} />
-                );
-              }
-              if (props.renderAs === "datepicker") {
-                return (
-                  <DatePickerAdapter<TFormValues> field={field} {...props} />
-                );
-              }
-              if (props.renderAs === "slider") {
-                return <SliderAdapter<TFormValues> field={field} {...props} />;
-              }
-              if (props.renderAs === "file-input") {
-                return (
-                  <FileInputAdapter<TFormValues> field={field} {...props} />
-                );
-              }
-              // Combobox already handled in a previous step
-              // Default case for `input` or when `renderAs` is undefined
-              return <InputAdapter<TFormValues> field={field} {...props} />;
-            })()}
-          </FormControl>
+        <FormItem>
+          <div className={cn("form-item-layout", className, ui?.formItem)}>
+            {label && (
+              <FormLabel className={cn("form-label mb-2", ui?.formLabel)}>
+                {label}
+              </FormLabel>
+            )}
+            {description && (
+              <FormDescription
+                className={cn("form-description mb-2", ui?.formDescription)}
+              >
+                {description}
+              </FormDescription>
+            )}
+            <FormControl>
+              {(() => {
+                if (props.renderAs === "textarea") {
+                  return (
+                    <TextareaAdapter<TFormValues> field={field} {...props} />
+                  );
+                }
+                if (props.renderAs === "select") {
+                  return (
+                    <SelectAdapter<TFormValues> field={field} {...props} />
+                  );
+                }
+                if (props.renderAs === "switch") {
+                  return (
+                    <SwitchAdapter<TFormValues> field={field} {...props} />
+                  );
+                }
+                if (props.renderAs === "checkbox") {
+                  return (
+                    <CheckboxAdapter<TFormValues> field={field} {...props} />
+                  );
+                }
+                if (props.renderAs === "radio-group") {
+                  return (
+                    <RadioGroupAdapter<TFormValues> field={field} {...props} />
+                  );
+                }
+                if (props.renderAs === "datepicker") {
+                  return (
+                    <DatePickerAdapter<TFormValues> field={field} {...props} />
+                  );
+                }
+                if (props.renderAs === "slider") {
+                  return (
+                    <SliderAdapter<TFormValues> field={field} {...props} />
+                  );
+                }
+                if (props.renderAs === "file-input") {
+                  return (
+                    <FileInputAdapter<TFormValues> field={field} {...props} />
+                  );
+                }
+                // Combobox already handled in a previous step
+                // Default case for `input` or when `renderAs` is undefined
+                return <InputAdapter<TFormValues> field={field} {...props} />;
+              })()}
+            </FormControl>
+          </div>
           <FormMessage />
         </FormItem>
       )}

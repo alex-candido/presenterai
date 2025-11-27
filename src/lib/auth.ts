@@ -1,57 +1,83 @@
 import { PasswordResetEmail, VerificationEmail } from "@/components/emails";
-import { prisma } from "@/config/prisma";
-import { resend } from "@/config/resend";
+import { brevo } from "@/server/brevo";
+import { prisma } from "@/server/prisma";
+import { render } from "@react-email/render";
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
+import { username } from "better-auth/plugins";
 
 export const auth = betterAuth({
+  experimental: { joins: true },
   emailVerification: {
     sendVerificationEmail: async ({ user, url }) => {
-      await resend.emails.send({
-        from: "Support <support@wittgenstein.com>",
-        to: [user.email],
-        subject: "Verify your email address",
-        react: VerificationEmail({ userName: user.name, verificationUrl: url }),
-      });
+      const emailHtml = await render(
+        VerificationEmail({ userName: user.name, verificationUrl: url }),
+      );
+      try {
+        await brevo.sendTransacEmail({
+          sender: { email: "alex.candido.tec@gmail.com", name: "Support" },
+          to: [{ email: user.email }],
+          subject: "Verify your email address",
+          htmlContent: emailHtml,
+        });
+        console.log(`Verification email sent to ${user.email}`);
+      } catch (error) {
+        console.error(
+          `Failed to send verification email to ${user.email}:`,
+          error,
+        );
+      }
     },
     sendOnSignUp: true,
+    autoSignInAfterVerification: true,
   },
   socialProviders: {
-    google: {
-      clientId: process.env.GOOGLE_CLIENT_ID as string,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
-    },
+    // google: {
+    //   clientId: process.env.GOOGLE_CLIENT_ID as string,
+    //   clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+    // },
   },
   emailAndPassword: {
-    signInOnSignUp: true,
+    autoSignIn: false,
     enabled: true,
     sendResetPassword: async ({ user, url }) => {
-      await resend.emails.send({
-        from: "Support <support@wittgenstein.com>",
-        to: [user.email],
-        subject: "Reset your password",
-        react: PasswordResetEmail({
+      const emailHtml = await render(
+        PasswordResetEmail({
           userName: user.name,
           resetUrl: url,
           requestTime: new Date().toLocaleString(),
         }),
-      });
+      );
+      try {
+        await brevo.sendTransacEmail({
+          sender: { email: "alex.candido.tec@gmail.com", name: "Support" },
+          to: [{ email: user.email }],
+          subject: "Reset your password",
+          htmlContent: emailHtml,
+        });
+        console.log(`Password reset email sent to ${user.email}`);
+      } catch (error) {
+        console.error(
+          `Failed to send password reset email to ${user.email}:`,
+          error,
+        );
+      }
     },
   },
-  database: prismaAdapter(prisma, {
-    provider: "postgresql",
-  }),
-  verification: {
-    fields: {
-      value: "verification_value",
-    },
-  },
+  plugins: [username()],
   user: {
     additionalFields: {
       username: {
         type: "string",
         required: true,
       },
+      role: {
+        type: "string",
+        required: false,
+      },
     },
   },
+  database: prismaAdapter(prisma, {
+    provider: "postgresql",
+  }),
 });

@@ -8,7 +8,7 @@ import {
 import { toast } from "sonner";
 
 import { presentationActions } from "@/actions/presentation-actions";
-import { API_MESSAGES } from "@/lib/utils/messages";
+import { API_MESSAGES } from "@/config/messages";
 
 export const PRESENTATION_QUERY_KEYS = {
   all: ["presentations"],
@@ -18,7 +18,7 @@ export const PRESENTATION_QUERY_KEYS = {
   detail: (id: number | string) => [...PRESENTATION_QUERY_KEYS.details(), id],
 };
 
-export function usePresentationsQueryClient() {
+export function usePresentations() {
   const queryClient = useQueryClient();
   const { list, create, get, update, updatePartial, destroy } = presentationActions();
 

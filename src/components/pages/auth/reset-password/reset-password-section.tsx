@@ -6,15 +6,16 @@ export function ResetPasswordSection({
   className,
   ...props
 }: React.HTMLAttributes<HTMLElement>) {
+  const uiContent = {
+    title: "Reset Password",
+    description: "Enter your new password",
+    footerLabel: "Remembered your password?",
+    footerLinkHref: "/auth/sign-in",
+    footerLinkText: "Sign In",
+  };
   return (
     <section className={cn("reset-password-section", className)} {...props}>
-      <AuthCard
-        title="Reset Password"
-        description="Enter your new password"
-        footerLabel="Remembered your password?"
-        footerLinkHref="/auth/sign-in"
-        footerLinkText="Sign In"
-      >
+      <AuthCard uiContent={uiContent}>
         <ResetPasswordForm />
       </AuthCard>
     </section>

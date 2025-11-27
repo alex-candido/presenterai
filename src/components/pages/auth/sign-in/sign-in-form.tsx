@@ -2,27 +2,22 @@
 'use client';
 
 import { AlertCircle, CheckCircle } from 'lucide-react';
-import { useState } from 'react';
-
 import { AlertAdapter, ButtonAdapter, FormFieldAdapter } from '@/components/adapters';
 import { Form } from '@/components/ui/form';
+import { API_MESSAGES } from '@/config/messages';
 import { useForm } from '@/hooks/use-form';
 import { cn } from '@/lib/utils';
-import { API_MESSAGES } from '@/lib/utils/messages';
 import { SignInFormValues, signInSchema } from '@/schemas/auth-schema';
 
 export function SignInForm({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
-  const [isSuccess, setIsSuccess] = useState(false);
-
   const {
     form,
     handleSubmit,
     control,
-    isSubmitting,
-    apiError,
+    formState: { isSubmitting, isSubmitSuccessful, errors },
   } = useForm<SignInFormValues, { message: string }>({
     schema: signInSchema,
     defaultValues: {
@@ -30,7 +25,6 @@ export function SignInForm({
       password: '',
     },
     mutationFn: async (data) => {
-      // Simulate API call
       return new Promise((resolve, reject) => {
         setTimeout(() => {
           if (data.password === 'error') {
@@ -42,11 +36,7 @@ export function SignInForm({
       });
     },
     onSuccess: () => {
-      setIsSuccess(true);
       form.reset();
-    },
-    onError: () => {
-      setIsSuccess(false);
     },
   });
 
@@ -54,7 +44,7 @@ export function SignInForm({
     <div className={cn('sign-in-form', className)} {...props}>
       <Form {...form}>
         <form onSubmit={handleSubmit} className="grid gap-4">
-          {isSuccess && (
+          {isSubmitSuccessful && (
             <AlertAdapter
               variant="default"
               title="Sucesso!"
@@ -62,11 +52,11 @@ export function SignInForm({
               icon={<CheckCircle className="h-4 w-4" />}
             />
           )}
-          {apiError && !isSuccess && (
+          {errors.root?.message && (
             <AlertAdapter
               variant="destructive"
               title="Erro de Autenticação"
-              description={apiError}
+              description={errors.root.message}
               icon={<AlertCircle className="h-4 w-4" />}
             />
           )}
@@ -86,7 +76,7 @@ export function SignInForm({
             label="Senha"
             placeholder="********"
           />
-          <ButtonAdapter type="submit" disabled={isSubmitting} className="cursor-pointer w-full">
+          <ButtonAdapter type="submit" disabled={isSubmitting} className="w-full">
             {isSubmitting ? 'Signing In...' : 'Sign In'}
           </ButtonAdapter>
         </form>

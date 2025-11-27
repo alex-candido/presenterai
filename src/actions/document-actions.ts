@@ -1,7 +1,7 @@
 
 
-import { api } from "@/config/api";
-import { API_ENDPOINTS } from "@/lib/utils/endpoints";
+import { API_ENDPOINTS } from "@/config/endpoints";
+import { api } from "@/lib/api";
 
 export function documentActions() {
   async function list(params?: {

@@ -1,15 +1,17 @@
 import { PasswordResetEmail, VerificationEmail } from "@/components/emails";
-import { brevo } from "@/config/brevo";
-import { prisma } from "@/config/prisma";
+import { brevo } from "@/server/brevo";
+import { prisma } from "@/server/prisma";
 import { render } from "@react-email/render";
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 
 export const auth = betterAuth({
-  // experimental: { joins: true },
+  experimental: { joins: true },
   emailVerification: {
     sendVerificationEmail: async ({ user, url }) => {
-      const emailHtml = await render(VerificationEmail({ userName: user.name, verificationUrl: url }));
+      const emailHtml = await render(
+        VerificationEmail({ userName: user.name, verificationUrl: url }),
+      );
       try {
         await brevo.sendTransacEmail({
           sender: { email: "alex.candido.tec@gmail.com", name: "Support" },
@@ -19,11 +21,14 @@ export const auth = betterAuth({
         });
         console.log(`Verification email sent to ${user.email}`);
       } catch (error) {
-        console.error(`Failed to send verification email to ${user.email}:`, error);
+        console.error(
+          `Failed to send verification email to ${user.email}:`,
+          error,
+        );
       }
     },
     sendOnSignUp: true,
-    autoSignInAfterVerification: true
+    autoSignInAfterVerification: true,
   },
   socialProviders: {
     // google: {
@@ -32,29 +37,38 @@ export const auth = betterAuth({
     // },
   },
   emailAndPassword: {
-    autoSignIn: true,
+    autoSignIn: false,
     enabled: true,
     sendResetPassword: async ({ user, url }) => {
-      const emailHtml = await render(PasswordResetEmail({
+      const emailHtml = await render(
+        PasswordResetEmail({
           userName: user.name,
           resetUrl: url,
           requestTime: new Date().toLocaleString(),
-        }));
+        }),
+      );
       try {
         await brevo.sendTransacEmail({
-          sender: { email: "alex.candido.tec@gmail.com", name: "Support" }, 
+          sender: { email: "alex.candido.tec@gmail.com", name: "Support" },
           to: [{ email: user.email }],
           subject: "Reset your password",
           htmlContent: emailHtml,
         });
         console.log(`Password reset email sent to ${user.email}`);
       } catch (error) {
-        console.error(`Failed to send password reset email to ${user.email}:`, error);
+        console.error(
+          `Failed to send password reset email to ${user.email}:`,
+          error,
+        );
       }
     },
   },
   user: {
     additionalFields: {
+      username: {
+        type: "string",
+        required: true,
+      },
       role: {
         type: "string",
         required: false,

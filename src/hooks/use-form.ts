@@ -1,9 +1,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
 import { FieldValues, UseFormProps, useForm as useReactHookForm } from "react-hook-form";
 import { z } from "zod";
 
-import { API_MESSAGES } from "@/lib/utils/messages";
+import { API_MESSAGES } from "@/config/messages";
 
 interface UseFormHookProps<TFormValues extends FieldValues, TApiResult> {
   schema: z.Schema<TFormValues>;
@@ -27,44 +26,90 @@ export function useForm<TFormValues extends FieldValues, TApiResult>({
   });
 
   const {
-    handleSubmit,
-    register,
+    handleSubmit,register,
     control,
-    formState: { isSubmitting, errors },
+    formState: {
+      errors,
+      disabled,
+      isReady,
+      isDirty,
+      dirtyFields,
+      isSubmitting,
+      touchedFields,
+      isValid,
+      isValidating,
+      validatingFields,
+      submitCount,
+      isSubmitSuccessful,
+      isSubmitted,
+      isLoading,
+    },
+    resetField,
+    reset,
+    watch,
+    setValue,
+    clearErrors,
+    getFieldState,
+    subscribe,
+    trigger,
+    getValues,
+    setFocus,
+    unregister,
     setError: setFormError,
   } = form;
 
-  const [apiError, setApiError] = useState<string | null>(null);
+  const onSubmit = async (data: TFormValues) => {
+    setFormError("root", { type: "manual", message: "" });
 
-const onSubmit = async (data: TFormValues) => {
-  setApiError(null);
-  setFormError("root", { type: "manual", message: "" });
+    try {
+      const result = await mutationFn(data);
+      onSuccess?.(result, data);
+    } catch (err: any) {
+      let message = API_MESSAGES.COMMON.GENERIC_API_ERROR;
 
-  try {
-    const result = await mutationFn(data);
-    onSuccess?.(result, data);
-  } catch (err: any) {
-    let message = API_MESSAGES.COMMON.GENERIC_API_ERROR;
+      if (typeof err?.message === "string") {
+        message = err.message;
+      } else if (typeof err?.message === "object") {
+        message = JSON.stringify(err.message);
+      }
 
-    if (typeof err?.message === "string") {
-      message = err.message;
-    } else if (typeof err?.message === "object") {
-      message = JSON.stringify(err.message);
+      setFormError("root", { type: "manual", message });
+      onError?.(new Error(message), data);
     }
-
-    setFormError("root", { type: "manual", message });
-    setApiError(message);
-    onError?.(new Error(message), data);
-  }
-};
+  };
 
   return {
-    form,
     handleSubmit: handleSubmit(onSubmit),
+    formState: {
+      errors,
+      disabled,
+      isReady,
+      isDirty,
+      dirtyFields,
+      isSubmitting,
+      touchedFields,
+      isValid,
+      isValidating,
+      validatingFields,
+      submitCount,
+      isSubmitSuccessful,
+      isSubmitted,
+      isLoading,
+    },
+    form,
     register,
     control,
-    isSubmitting,
-    errors,
-    apiError,
+    defaultValues,
+    resetField,
+    reset,
+    watch,
+    setValue,
+    clearErrors,
+    getFieldState,
+    subscribe,
+    trigger,
+    getValues,
+    setFocus,
+    unregister,
   };
 }

@@ -8,7 +8,7 @@ import {
 import { toast } from "sonner";
 
 import { userActions } from "@/actions/user-actions";
-import { API_MESSAGES } from "@/lib/utils/messages";
+import { API_MESSAGES } from "@/config/messages";
 
 export const USER_QUERY_KEYS = {
   all: ["users"],
@@ -18,7 +18,7 @@ export const USER_QUERY_KEYS = {
   detail: (id: number | string) => [...USER_QUERY_KEYS.details(), id],
 };
 
-export function useUsersQueryClient() {
+export function useUsers() {
   const queryClient = useQueryClient();
   const { list, create, get, update, updatePartial, destroy } = userActions();
 

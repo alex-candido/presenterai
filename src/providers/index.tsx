@@ -1,5 +1,3 @@
-"use client";
-
 import type { ReactNode } from "react";
 
 import { Toaster } from "@/components/ui/sonner";
@@ -40,6 +38,12 @@ const AppProviders = ({ children }: { children: ReactNode }) => (
     </AppDocumentsProvider>
   </AppProvider>
 );
+
+// const AuthProviders = ({ children }: { children: ReactNode }) => (
+//   <AuthSignUpProvider>
+//     {children}
+//   </AuthSignUpProvider>
+// )
 
 const NextProviders = ({ children }: { children: ReactNode }) => (
   <ReactQueryProvider>

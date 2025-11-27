@@ -8,7 +8,7 @@ import {
 import { toast } from "sonner";
 
 import { generationActions } from "@/actions/generation-actions";
-import { API_MESSAGES } from "@/lib/utils/messages";
+import { API_MESSAGES } from "@/config/messages";
 
 export const GENERATION_QUERY_KEYS = {
   all: ["generations"],
@@ -18,7 +18,7 @@ export const GENERATION_QUERY_KEYS = {
   detail: (id: number | string) => [...GENERATION_QUERY_KEYS.details(), id],
 };
 
-export function useGenerationsQueryClient() {
+export function useGenerations() {
   const queryClient = useQueryClient();
   const { list, create, get, update, updatePartial, destroy } = generationActions();
 

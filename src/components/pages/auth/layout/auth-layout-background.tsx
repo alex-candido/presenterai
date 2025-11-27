@@ -11,7 +11,7 @@ export function AuthLayoutBackground({
       {...props}
     >
       <div className="min-h-[80vh] flex items-center justify-center p-4">
-        <div className="w-full max-w-md">{children}</div>
+        <div className="w-full max-w-sm">{children}</div>
       </div>
     </div>
   );

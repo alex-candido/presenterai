@@ -1,5 +1,5 @@
+import { serverEnv } from '@/config/server-envs';
 import * as SibApiV3Sdk from '@getbrevo/brevo';
-import { serverEnv } from './server-envs';
 
 const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
 

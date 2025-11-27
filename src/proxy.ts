@@ -2,7 +2,7 @@ import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
 import { adminRouteProxy, authRouteProxy, docsRouteProxy, globalRouteProxy, termsRouteProxy } from "@/lib/proxy";
-import { APP_ROUTES } from './lib/utils/routes';
+import { APP_ROUTES } from './config/routes';
  
 export async function proxy(request: NextRequest) {
 try {

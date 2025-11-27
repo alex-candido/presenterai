@@ -1,4 +1,5 @@
 import { UserRole } from "@prisma/client";
+import { Session, User } from "better-auth";
 import { NextRequest, NextResponse } from "next/server";
 
 export interface RouteProtectionRule {
@@ -12,7 +13,7 @@ export interface RouteProtectionRule {
 
 export function handleRouteAuthorization(
   request: NextRequest,
-  session: { user: Partial<{ role: UserRole }>} | null | undefined,
+  session: { user: User & { role: UserRole }, session: Session } | any,
   rule: RouteProtectionRule,
 ): NextResponse | null {
   const { pathname } = request.nextUrl;

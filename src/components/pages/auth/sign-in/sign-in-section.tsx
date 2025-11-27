@@ -1,5 +1,13 @@
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { AuthCard } from "../root/auth-card";
+import Link from "next/link";
 import { SignInForm } from "./sign-in-form";
 
 export function SignInSection({
@@ -8,15 +16,30 @@ export function SignInSection({
 }: React.HTMLAttributes<HTMLElement>) {
   return (
     <section className={cn("sign-in-section", className)} {...props}>
-      <AuthCard
-        title="Sign In"
-        description="Enter your email below to login to your account"
-        footerLabel="Don't have an account?"
-        footerLinkHref="/auth/sign-up"
-        footerLinkText="Sign Up"
-      >
-        <SignInForm />
-      </AuthCard>
+      <Card>
+        <CardHeader className="space-y-1">
+          <CardTitle className="text-2xl font-bold text-center">
+            Sign In
+          </CardTitle>
+          <CardDescription className="text-center">
+            Enter your email below to login to your account
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <SignInForm />
+        </CardContent>
+        <CardFooter className="flex flex-col space-y-4 justify-center">
+          <label className="text-center text-sm">
+            Don&apos;t have an account?
+          </label>
+          <Link
+            href="/auth/sign-up"
+            className="font-medium text-primary hover:underline"
+          >
+            Sign Up
+          </Link>
+        </CardFooter>
+      </Card>
     </section>
   );
 }

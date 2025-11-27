@@ -1,5 +1,5 @@
 import { APP_ROUTES } from "@/config/routes";
-import { handleRouteAuthorization, RouteProtectionRule } from "@/lib/proxy";
+import { handleRouteAuthorization, RouteProtectionRule } from "@/proxys/";
 import { auth } from "@/server/auth";
 import { UserRole } from "@prisma/client";
 import { Session, User } from "better-auth";

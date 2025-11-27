@@ -1,0 +1,80 @@
+Components & Libraries
+
+https://ui.spectrumhq.in/
+https://blocks.serp.co/
+https://ui.shaduxe.com/
+https://www.radix-ui.com/primitives
+https://coss.com/origin
+https://pro.tailark.com/
+https://kokonutui.com/
+https://www.prismui.tech/
+https://www.twblocks.com/
+https://better-auth-ui.com/
+https://ui.indie-starter.dev/
+https://www.farmui.com/
+https://components.work/
+https://ground.bossadizenith.me/
+https://usehooks.com/
+https://www.shadcnui-blocks.com/
+https://bundui.io/
+https://manfromexistence-ui.vercel.app/
+https://www.shapexui.site/
+https://shadcn-pricing-page.vercel.app/
+https://www.shadcnblocks.com/
+https://ui.aceternity.com/
+https://www.kibo-ui.com/
+https://ui.lukacho.com/
+https://www.simple-ai.dev/
+https://animata.design/
+
+Boilerplates & Starters
+
+https://magicui.design/
+https://remix-supabase-demo.makerkit.dev/?atp=serpuiaffiliate
+
+Inspirations & Examples
+
+https://github.com/bytefer/awesome-shadcn-ui
+https://shadcn-vue-admin.netlify.app/
+
+Platforms & Applications
+
+https://motion.dev/
+https://focusbrew.vercel.app/
+https://21st.dev/community/components
+https://github.com/mangosqueezy/mangosqueezy
+
+Themes & Customizations
+
+https://www.tinte.dev/
+https://bg.ibelick.com/
+https://shadcnstudio.com/
+https://shadesigner.com/
+https://tweakcn.com/
+https://ui.jln.dev/
+https://mantinehub.com/
+
+Design Systems & Kits
+
+https://shadcn-admin.netlify.app/
+https://shadcn-chatbot-kit.vercel.app/
+https://mynaui.com/
+https://www.aceternity.com/
+https://shadcnuikit.com/
+
+Animations & Effects
+
+https://lucide-animated.com/
+https://rombo.co/
+
+vue
+
+https://inspira-ui.com/
+https://ui-thing.behonbaker.com/
+
+site
+
+https://www.raycast.com/
+
+
+npx shadcn@latest add https://www.tinte.dev/r/sakura-potico

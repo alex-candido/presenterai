@@ -4,7 +4,7 @@ import { auth } from "@/server/auth";
 import { UserRole } from "@prisma/client";
 import { Session, User } from "better-auth";
 import { headers } from "next/headers";
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 const protectedRoutesConfig: RouteProtectionRule[] = [
   {
@@ -31,6 +31,11 @@ export async function globalRouteProxy(request: NextRequest) {
     session: Session;
   } | null = await auth.api.getSession({ headers: await headers() });
   console.log(session)
+
+  if (session && !session.user.emailVerified && request.nextUrl.pathname.startsWith("/app")) {
+    return NextResponse.redirect(new URL(APP_ROUTES.HOME.path, request.url));
+  }
+
   for (const rule of protectedRoutesConfig) {
     const response = handleRouteAuthorization(request, session, rule);
     if (response) {

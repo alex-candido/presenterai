@@ -5,10 +5,7 @@ import { authClient } from "@/server/auth/client";
 import { SignUpForm } from "./sign-up-form";
 import { SignUpSuccess } from "./sign-up-success";
 
-export function SignUpSection({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLElement>) {
+export function SignUpSection({ className, ...props }: React.HTMLAttributes<HTMLElement>) {
   const {
     form,
     handleSubmit,

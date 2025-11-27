@@ -40,7 +40,10 @@ export function SignUpForm({
           <Form {...form}>
             <form onSubmit={handleSubmit} className="grid gap-4">
               {errors.root?.message && (
-                <AlertAdapter variant="destructive" title="Registration Failed" description={errors.root.message}
+                <AlertAdapter
+                  variant="destructive"
+                  title="Registration Failed"
+                  description={errors.root.message}
                   icon={<AlertCircle className="h-4 w-4" />}
                 />
               )}

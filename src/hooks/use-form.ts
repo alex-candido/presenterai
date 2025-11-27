@@ -26,24 +26,10 @@ export function useForm<TFormValues extends FieldValues, TApiResult>({
   });
 
   const {
-    handleSubmit,register,
+    handleSubmit,
+    register,
     control,
-    formState: {
-      errors,
-      disabled,
-      isReady,
-      isDirty,
-      dirtyFields,
-      isSubmitting,
-      touchedFields,
-      isValid,
-      isValidating,
-      validatingFields,
-      submitCount,
-      isSubmitSuccessful,
-      isSubmitted,
-      isLoading,
-    },
+    formState: { errors, disabled, isReady, isDirty, dirtyFields, isSubmitting, touchedFields, isValid, isValidating, validatingFields, submitCount, isSubmitSuccessful, isSubmitted, isLoading },
     resetField,
     reset,
     watch,

@@ -1,45 +1,44 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { authActions } from "@/actions/auth-actions";
+import { useForm } from "@/hooks/use-form";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
+import { SignInFormValues, signInSchema } from "@/schemas/auth-schema";
+import { useRouter } from "next/navigation";
 import { SignInForm } from "./sign-in-form";
 
-export function SignInSection({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLElement>) {
+export function SignInSection({ className, ...props }: React.HTMLAttributes<HTMLElement>) {
+  const { signIn } = authActions();
+  const router = useRouter();
+
+  const action = async (data: SignInFormValues) => {
+    const { error, data: resultData } = await signIn(data);
+    if (error) throw new Error(error.message);
+    return resultData;
+  };
+
+  const {
+    form,
+    handleSubmit,
+    control,
+    formState: { isSubmitting, errors },
+  } = useForm<SignInFormValues, any>({ schema: signInSchema, defaultValues: {
+      email: "",
+      password: "",
+    },
+    mutationFn: action,
+    onSuccess: () => {
+      router.push("/app");
+    },
+  });
+
   return (
     <section className={cn("sign-in-section", className)} {...props}>
-      <Card>
-        <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold text-center">
-            Sign In
-          </CardTitle>
-          <CardDescription className="text-center">
-            Enter your email below to login to your account
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <SignInForm />
-        </CardContent>
-        <CardFooter className="flex flex-col space-y-4 justify-center">
-          <label className="text-center text-sm">
-            Don&apos;t have an account?
-          </label>
-          <Link
-            href="/auth/sign-up"
-            className="font-medium text-primary hover:underline"
-          >
-            Sign Up
-          </Link>
-        </CardFooter>
-      </Card>
+      <SignInForm
+        form={form}
+        control={control}
+        errors={errors}
+        isSubmitting={isSubmitting}
+        handleSubmit={handleSubmit}
+      />
     </section>
   );
 }

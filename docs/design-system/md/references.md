@@ -26,10 +26,23 @@ https://www.kibo-ui.com/
 https://ui.lukacho.com/
 https://www.simple-ai.dev/
 https://animata.design/
+https://magicui.design/
+https://www.assistant-ui.com/
+https://www.cult-ui.com/
+https://www.eldoraui.site/
+https://pageai.pro/
+https://www.tremor.so/
+https://syntaxui.com/
+https://www.jollyui.dev/
+https://www.edil-ozi.pro/
+https://mynaui.com/
+https://shadcn-admin.netlify.app/
+https://shadcn-chatbot-kit.vercel.app/
+https://www.aceternity.com/
+https://shadcnuikit.com/
 
 Boilerplates & Starters
 
-https://magicui.design/
 https://remix-supabase-demo.makerkit.dev/?atp=serpuiaffiliate
 
 Inspirations & Examples
@@ -50,17 +63,9 @@ https://www.tinte.dev/
 https://bg.ibelick.com/
 https://shadcnstudio.com/
 https://shadesigner.com/
-https://tweakcn.com/
+https://tweakcn.com/ê um passo além de Júnior: Acelere sua carreira e conquiste seu espaço nas maiores empresas do mercado.
 https://ui.jln.dev/
 https://mantinehub.com/
-
-Design Systems & Kits
-
-https://shadcn-admin.netlify.app/
-https://shadcn-chatbot-kit.vercel.app/
-https://mynaui.com/
-https://www.aceternity.com/
-https://shadcnuikit.com/
 
 Animations & Effects
 

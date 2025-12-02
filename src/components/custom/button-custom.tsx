@@ -4,15 +4,15 @@ import { type VariantProps } from "class-variance-authority";
 import Link from "next/link";
 import * as React from "react";
 
-export interface ButtonAdapterProps
+export interface ButtonCustomProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   to?: string;
 }
 
-const ButtonAdapter = React.forwardRef<
+const ButtonCustom = React.forwardRef<
   HTMLButtonElement | HTMLAnchorElement,
-  ButtonAdapterProps
+  ButtonCustomProps
 >(
   (
     {
@@ -55,6 +55,6 @@ const ButtonAdapter = React.forwardRef<
   },
 );
 
-ButtonAdapter.displayName = "ButtonAdapter";
+ButtonCustom.displayName = "ButtonCustom";
 
-export { ButtonAdapter };
+export { ButtonCustom };

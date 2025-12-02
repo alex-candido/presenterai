@@ -1,15 +1,29 @@
 "use client";
 
 import { AlertCircle } from "lucide-react";
+import Link from "next/link";
 import * as React from "react";
+import { Control, FieldErrors, FieldValues, UseFormReturn } from "react-hook-form";
 
-import { AlertAdapter, ButtonAdapter, FormFieldAdapter } from "@/components/adapters";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Form } from "@/components/ui/form";
+import { FormFieldCustom } from "@/components/custom";
+import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
+  Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+  Checkbox,
+  Form,
+  Input
+} from "@/components/ui";
+
 import { cn } from "@/lib/utils";
 import { SignUpFormValues } from "@/schemas/auth-schema";
-import Link from "next/link";
-import { Control, FieldErrors, FieldValues, UseFormReturn } from "react-hook-form";
 import { AgreeTermsLabel } from "./agree-terms-label";
 
 interface SignUpFormProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -40,62 +54,47 @@ export function SignUpForm({
           <Form {...form}>
             <form onSubmit={handleSubmit} className="grid gap-4">
               {errors.root?.message && (
-                <AlertAdapter
-                  variant="destructive"
-                  title="Registration Failed"
-                  description={errors.root.message}
-                  icon={<AlertCircle className="h-4 w-4" />}
-                />
+                <Alert variant="destructive">
+                  <AlertCircle className="h-4 w-4" />
+                  <AlertTitle>Registration Failed</AlertTitle>
+                  <AlertDescription>{errors.root.message}</AlertDescription>
+                </Alert>
               )}
-              <FormFieldAdapter
-                renderAs="input"
-                type="text"
+              <FormFieldCustom
                 control={control}
                 name="name"
                 label="Name"
-                placeholder="e.g., John Doe"
-              />
-              <FormFieldAdapter
-                renderAs="input"
-                type="text"
-                control={control}
-                name="username"
-                label="Username"
-                placeholder="e.g., john_doe"
-              />
-              <FormFieldAdapter
-                renderAs="input"
-                type="email"
+              >
+                <Input type="text" placeholder="e.g., John Doe" />
+              </FormFieldCustom>
+              <FormFieldCustom
                 control={control}
                 name="email"
                 label="Email"
-                placeholder="e.g., john.doe@example.com"
-              />
-              <FormFieldAdapter
-                renderAs="input"
-                type="password"
+              >
+                <Input type="email" placeholder="e.g., john.doe@example.com" />
+              </FormFieldCustom>
+              <FormFieldCustom
                 control={control}
                 name="password"
                 label="Password"
-                placeholder="********"
-              />
-              <FormFieldAdapter
-                renderAs="checkbox"
+              >
+                <Input type="password" placeholder="********" />
+              </FormFieldCustom>
+              <FormFieldCustom
                 control={control}
                 name="agreeTerms"
-                label={
-                  <>
-                    <AgreeTermsLabel />
-                  </>
-                }
+                label={<AgreeTermsLabel />}
                 ui={{
                   formItem: "flex flex-row-reverse items-center",
                   formLabel: "ml-2 !mb-0",
                 }}
-              />
-              <ButtonAdapter type="submit" className="w-full" disabled={isSubmitting}>
+              >
+                <Checkbox />
+              </FormFieldCustom>
+              <Button type="submit" className="w-full" disabled={isSubmitting}>
                 {isSubmitting ? "Signing Up..." : "Sign Up"}
-              </ButtonAdapter>
+              </Button>
             </form>
           </Form>
         </CardContent>

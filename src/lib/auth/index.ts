@@ -1,8 +1,7 @@
-import { sendBrevoPasswordResetEmail, sendBrevoVerificationEmail } from "@/lib/brevo/actions";
 import { prisma } from "@/lib/prisma";
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
-import { username } from "better-auth/plugins";
+import { sendBrevoPasswordResetEmail, sendBrevoVerificationEmail } from "../brevo/actions";
 
 export const auth = betterAuth({
   experimental: { joins: true },
@@ -26,7 +25,6 @@ export const auth = betterAuth({
       await sendBrevoPasswordResetEmail(user, url);
     },
   },
-  plugins: [username()],
   user: {
     additionalFields: {
       username: {

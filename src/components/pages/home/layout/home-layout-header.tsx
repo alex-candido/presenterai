@@ -1,7 +1,7 @@
 "use client";
 
-import { ButtonAdapter } from "@/components/adapters";
 import { BaseLogo } from "@/components/base";
+import { ButtonCustom } from "@/components/custom";
 import { LayoutContainer, LayoutHeader, LayoutNavEnd, LayoutNavStart } from "@/components/layouts";
 import { cn } from "@/lib/utils";
 
@@ -19,12 +19,12 @@ export function HomeLayoutHeader({
           <BaseLogo href="/" />
           <LayoutNavStart></LayoutNavStart>
           <LayoutNavEnd>
-            <ButtonAdapter to="/auth/sign-in">
+            <ButtonCustom to="/auth/sign-in">
               Get Started
-            </ButtonAdapter>
-            <ButtonAdapter variant="outline" to="/auth/sign-up">
+            </ButtonCustom>
+            <ButtonCustom variant="outline" to="/auth/sign-up">
               Sign Up
-            </ButtonAdapter>
+            </ButtonCustom>
           </LayoutNavEnd>
         </LayoutContainer>
       </LayoutHeader>

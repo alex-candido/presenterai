@@ -10,6 +10,7 @@ interface UseFormHookProps<TFormValues extends FieldValues, TApiResult> {
   onSuccess?: (data: TApiResult, formValues: TFormValues) => void;
   onError?: (error: Error, formValues: TFormValues) => void;
   defaultValues?: UseFormProps<TFormValues>["defaultValues"];
+  mode?: UseFormProps<TFormValues>["mode"]; // Adicionado mode
 }
 
 export function useForm<TFormValues extends FieldValues, TApiResult>({
@@ -18,11 +19,12 @@ export function useForm<TFormValues extends FieldValues, TApiResult>({
   onSuccess,
   onError,
   defaultValues,
+  mode = "onChange", // Definido 'onChange' como padrão
 }: UseFormHookProps<TFormValues, TApiResult>) {
   const form = useReactHookForm<TFormValues>({
     resolver: zodResolver(schema as any),
     defaultValues,
-    mode: "onBlur",
+    mode, // Passado para o hook
   });
 
   const {

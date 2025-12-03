@@ -34,6 +34,15 @@ export const APP_ROUTES = {
   },
 
   APP: {
+    path: '/app',
+    authRequired: true,
+    roles: ['ADMIN', 'MEMBER'],
+    requireEmailVerified: true,
+    redirects: {
+      unauthenticated: '/auth/sign-in',
+      unauthorized: '/',
+      emailNotVerified: '/',
+    },
     APP: {
       path: '/app',
       label: 'Dashboard',
@@ -67,6 +76,15 @@ export const APP_ROUTES = {
     },
   },
   ADMIN: {
+    path: '/admin',
+    authRequired: true,
+    roles: ['ADMIN'],
+    requireEmailVerified: true,
+    redirects: {
+      unauthenticated: '/auth/sign-in',
+      unauthorized: '/app',
+      emailNotVerified: '/',
+    },
     DASHBOARD: {
       path: '/admin/dashboard',
       label: 'Dashboard',
@@ -117,16 +135,18 @@ export const APP_ROUTES = {
   },
 
   DOCS: {
-    DETAIL: (id: string | number) => `/docs/${id}`,
+    path: '/docs',
     label: 'Documentation',
     icon: 'Book',
     authRequired: false,
+    DETAIL: (id: string | number) => `/docs/${id}`,
   },
 
   TERMS: {
-    DETAIL: (id: string | number) => `/legal/${id}`,
+    path: '/terms',
     label: 'Terms & Privacy',
     icon: 'ScrollText',
     authRequired: false,
+    DETAIL: (id: string | number) => `/legal/${id}`,
   },
 };

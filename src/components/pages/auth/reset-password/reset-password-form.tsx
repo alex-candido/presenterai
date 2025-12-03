@@ -1,11 +1,10 @@
 "use client";
 
-import { AlertCircle } from "lucide-react";
+import { AlertCircle, Loader2 } from "lucide-react";
 import Link from "next/link";
 import * as React from "react";
 import { Control, FieldErrors, FieldValues, UseFormReturn } from "react-hook-form";
 
-import { FormFieldCustom } from "@/components/custom";
 import {
   Alert,
   AlertDescription,
@@ -18,7 +17,12 @@ import {
   CardHeader,
   CardTitle,
   Form,
-  Input
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  Input,
 } from "@/components/ui";
 import { cn } from "@/lib/utils";
 import { ResetPasswordFormValues } from "@/schemas/auth-schema";
@@ -68,22 +72,45 @@ export function ResetPasswordForm({
                     <AlertDescription>{errors.root.message}</AlertDescription>
                   </Alert>
                 )}
-                <FormFieldCustom
+                <FormField
                   control={control}
                   name="newPassword"
-                  label="New Password"
-                >
-                  <Input type="password" placeholder="********" />
-                </FormFieldCustom>
-                <FormFieldCustom
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>New Password</FormLabel>
+                      <FormControl>
+                        <Input type="password" placeholder="********" {...field} disabled={isSubmitting} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
                   control={control}
                   name="confirmPassword"
-                  label="Confirm New Password"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Confirm New Password</FormLabel>
+                      <FormControl>
+                        <Input type="password" placeholder="********" {...field} disabled={isSubmitting} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <Button
+                  type="submit"
+                  className="w-full"
+                  disabled={!token || isSubmitting || !form.formState.isDirty || !form.formState.isValid}
                 >
-                  <Input type="password" placeholder="********" />
-                </FormFieldCustom>
-                <Button type="submit" className="w-full" disabled={isSubmitting}>
-                  {isSubmitting ? "Resetting..." : "Reset Password"}
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      "Resetting..."
+                    </>
+                  ) : (
+                    "Reset Password"
+                  )}
                 </Button>
               </form>
             </Form>

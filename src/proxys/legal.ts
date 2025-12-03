@@ -1,9 +1,10 @@
 import { APP_ROUTES } from "@/config/routes";
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest } from "next/server";
+import { redirect } from "../lib/utils";
 
 export async function termsRouteProxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  if (pathname === '/legal') {
-    return NextResponse.redirect(new URL(APP_ROUTES.TERMS.DETAIL("terms-of-service"), request.url));
+  if (pathname === APP_ROUTES.TERMS.path) {
+    return redirect(request, APP_ROUTES.TERMS.DETAIL("terms-of-service"))
   }
 }

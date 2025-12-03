@@ -1,13 +1,15 @@
-import { prisma } from "@/lib/prisma";
+import { prisma } from "@/server/prisma";
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
-import { sendBrevoPasswordResetEmail, sendBrevoVerificationEmail } from "../brevo/actions";
+import { brevoTransactions } from "../brevo/transactions";
+
+const { sendPasswordResetEmail, sendVerificationEmail } = brevoTransactions();
 
 export const auth = betterAuth({
   experimental: { joins: true },
   emailVerification: {
     sendVerificationEmail: async ({ user, url }) => {
-      await sendBrevoVerificationEmail(user, url);
+      await sendVerificationEmail(user, url);
     },
     sendOnSignUp: true,
     autoSignInAfterVerification: true,
@@ -22,15 +24,11 @@ export const auth = betterAuth({
     autoSignIn: false,
     enabled: true,
     sendResetPassword: async ({ user, url }) => {
-      await sendBrevoPasswordResetEmail(user, url);
+      await sendPasswordResetEmail(user, url);
     },
   },
   user: {
     additionalFields: {
-      username: {
-        type: "string",
-        required: true,
-      },
       role: {
         type: "string",
         required: false,

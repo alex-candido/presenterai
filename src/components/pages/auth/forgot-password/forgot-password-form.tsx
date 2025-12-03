@@ -1,11 +1,10 @@
 "use client";
 
-import { AlertCircle } from "lucide-react";
+import { AlertCircle, Loader2 } from "lucide-react";
 import Link from "next/link";
 import * as React from "react";
 import { Control, FieldErrors, FieldValues, UseFormReturn } from "react-hook-form";
 
-import { FormFieldCustom } from "@/components/custom";
 import {
   Alert,
   AlertDescription,
@@ -18,7 +17,12 @@ import {
   CardHeader,
   CardTitle,
   Form,
-  Input
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  Input,
 } from "@/components/ui";
 import { cn } from "@/lib/utils";
 import { ForgotPasswordFormValues } from "@/schemas/auth-schema";
@@ -57,15 +61,28 @@ export function ForgotPasswordForm({
                   <AlertDescription>{errors.root.message}</AlertDescription>
                 </Alert>
               )}
-              <FormFieldCustom
+              <FormField
                 control={control}
                 name="email"
-                label="Email"
-              >
-                <Input type="email" placeholder="e.g., john.doe@example.com" />
-              </FormFieldCustom>
-              <Button type="submit" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? "Sending..." : "Send Reset Link"}
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input type="email" placeholder="e.g., john.doe@example.com" {...field} disabled={isSubmitting} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <Button type="submit" className="w-full" disabled={isSubmitting || !form.formState.isDirty || !form.formState.isValid}>
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    "Sending..."
+                  </>
+                ) : (
+                  "Send Reset Link"
+                )}
               </Button>
             </form>
           </Form>

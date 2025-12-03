@@ -1,45 +1,30 @@
-import { APP_ROUTES } from "@/config/routes";
-import { auth } from "@/lib/auth/index";
-import { handleRouteAuthorization, RouteProtectionRule } from "@/proxys/";
-import { UserRole } from "@prisma/client";
-import { Session, User } from "better-auth";
 import { headers } from "next/headers";
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 
-const protectedRoutesConfig: RouteProtectionRule[] = [
-  {
-    path: "/admin",
-    roles: ["ADMIN"],
-    redirects: {
-      unauthenticated: APP_ROUTES.AUTH.SIGN_IN.path,
-      unauthorized: APP_ROUTES.APP.APP.path,
-    },
-  },
-  {
-    path: "/app",
-    roles: ["ADMIN", "MEMBER"],
-    redirects: {
-      unauthenticated: APP_ROUTES.AUTH.SIGN_IN.path,
-      unauthorized: APP_ROUTES.HOME.path,
-    },
-  },
-];
+import { APP_ROUTES } from "@/config/routes";
+import { AuthorizationStatus, globalAuthorization, redirect } from "@/lib/utils/proxy";
+import { auth } from "@/server/auth/index";
 
 export async function globalRouteProxy(request: NextRequest) {
-  const session: {
-    user: User | (User & { role: UserRole });
-    session: Session;
-  } | null = await auth.api.getSession({ headers: await headers() });
-  console.log(session)
+  const session = await auth.api.getSession({ headers: await headers() });
 
-  if (session && !session.user.emailVerified && request.nextUrl.pathname.startsWith("/app")) {
-    return NextResponse.redirect(new URL(APP_ROUTES.HOME.path, request.url));
-  }
+  const protectedRoutes = [APP_ROUTES.ADMIN, APP_ROUTES.APP].filter(
+    (route) => route.authRequired && route.roles && route.redirects,
+  );
 
-  for (const rule of protectedRoutesConfig) {
-    const response = handleRouteAuthorization(request, session, rule);
-    if (response) {
-      return response;
+  for (const rule of protectedRoutes) {
+    const status = globalAuthorization(request.nextUrl.pathname, session, rule);
+
+    if (status === AuthorizationStatus.UNAUTHENTICATED) {
+      return redirect(request, rule.redirects.unauthenticated);
+    }
+
+    if (status === AuthorizationStatus.UNAUTHORIZED) {
+      return redirect(request, rule.redirects.unauthorized);
+    }
+
+    if (status === AuthorizationStatus.EMAIL_NOT_VERIFIED) {
+      return redirect(request, rule.redirects.emailNotVerified);
     }
   }
 }

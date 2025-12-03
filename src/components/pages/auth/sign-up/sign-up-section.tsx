@@ -2,6 +2,7 @@ import { authActions } from "@/actions/auth-actions";
 import { useForm } from "@/hooks/use-form";
 import { cn } from "@/lib/utils";
 import { SignUpFormValues, signUpSchema } from "@/schemas/auth-schema";
+import React from "react";
 import { SignUpForm } from "./sign-up-form";
 import { SignUpSuccess } from "./sign-up-success";
 

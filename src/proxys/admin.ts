@@ -1,9 +1,10 @@
 import { APP_ROUTES } from "@/config/routes";
-import { NextRequest, NextResponse } from "next/server";
+import { redirect } from "@/lib/utils";
+import { NextRequest } from "next/server";
 
 export async function adminRouteProxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  if (pathname === '/admin') {
-    return NextResponse.redirect(new URL(APP_ROUTES.ADMIN.DASHBOARD.path, request.url));
+  if (pathname === APP_ROUTES.ADMIN.path) {
+    return redirect(request, APP_ROUTES.ADMIN.DASHBOARD.path)
   }
 }

@@ -15,15 +15,15 @@ https://www.farmui.com/
 https://components.work/
 https://ground.bossadizenith.me/
 https://usehooks.com/
-https://www.shadcnui-blocks.com/
-https://bundui.io/
+>> https://www.shadcnui-blocks.com/
+>> https://bundui.io/
 https://manfromexistence-ui.vercel.app/
-https://www.shapexui.site/
+>> https://www.shapexui.site/
 https://shadcn-pricing-page.vercel.app/
-https://www.shadcnblocks.com/
+>> https://www.shadcnblocks.com/
 https://ui.aceternity.com/
 https://www.kibo-ui.com/
-https://ui.lukacho.com/
+>> https://ui.lukacho.com/
 https://www.simple-ai.dev/
 https://animata.design/
 https://magicui.design/
@@ -35,11 +35,13 @@ https://www.tremor.so/
 https://syntaxui.com/
 https://www.jollyui.dev/
 https://www.edil-ozi.pro/
-https://mynaui.com/
-https://shadcn-admin.netlify.app/
+>> https://mynaui.com/
 https://shadcn-chatbot-kit.vercel.app/
 https://www.aceternity.com/
 https://shadcnuikit.com/
+https://shadcnstore.com/
+>> https://shadcnstore.com/cheatsheet/
+https://saasbold.com/
 
 Boilerplates & Starters
 
@@ -56,6 +58,7 @@ https://motion.dev/
 https://focusbrew.vercel.app/
 https://21st.dev/community/components
 https://github.com/mangosqueezy/mangosqueezy
+https://shadcn-admin.netlify.app/
 
 Themes & Customizations
 
@@ -63,7 +66,7 @@ https://www.tinte.dev/
 https://bg.ibelick.com/
 https://shadcnstudio.com/
 https://shadesigner.com/
-https://tweakcn.com/ê um passo além de Júnior: Acelere sua carreira e conquiste seu espaço nas maiores empresas do mercado.
+https://tweakcn.com/
 https://ui.jln.dev/
 https://mantinehub.com/
 
@@ -80,6 +83,8 @@ https://ui-thing.behonbaker.com/
 site
 
 https://www.raycast.com/
-
-
-npx shadcn@latest add https://www.tinte.dev/r/sakura-potico
+https://shadboard.vercel.app/en/dashboards/analytics
+https://next-shadcn-admin-dashboard.vercel.app/dashboard/default
+https://shadcn-admin.netlify.app/
+https://shadcn-dashboard.kiranism.dev/dashboard/overview
+https://github.com/silicondeck/shadcn-dashboard-landing-template

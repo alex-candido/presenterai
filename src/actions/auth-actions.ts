@@ -23,11 +23,16 @@ export function authActions() {
 
   async function changePassword(inputData: ChangePasswordInput) {
     const response = await authClient.changePassword(inputData);
-    return response;
+    return response.data;
   }
 
   async function requestPasswordReset(inputData: RequestPasswordResetInput) {
     const response = await authClient.requestPasswordReset(inputData);
+    return response.data;
+  }
+
+  function useSession() {
+    const response = authClient.useSession()
     return response;
   }
 
@@ -37,6 +42,7 @@ export function authActions() {
     signOut, 
     resetPassword, 
     changePassword, 
-    requestPasswordReset
+    requestPasswordReset,
+    useSession
   };
 }

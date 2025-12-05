@@ -1,3 +1,5 @@
+"use client";
+
 import { BaseHero } from "@/components/base";
 import Link from "next/link";
 import { RiNextjsLine } from "react-icons/ri";

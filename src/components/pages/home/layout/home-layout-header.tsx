@@ -2,9 +2,8 @@
 
 import { BaseLogo } from "@/components/base";
 import { LayoutContainer, LayoutHeader, LayoutNavEnd, LayoutNavStart } from "@/components/layouts";
-import { Button } from "@/components/ui";
+import { HomeActionsMenu, HomeMobileMenu, HomeNavMenu } from "@/components/pages/home/root";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 
 export function HomeLayoutHeader({
   className,
@@ -18,18 +17,12 @@ export function HomeLayoutHeader({
       <LayoutHeader>
         <LayoutContainer>
           <BaseLogo href="/" />
-          <LayoutNavStart></LayoutNavStart>
+          <LayoutNavStart>
+            <HomeNavMenu />
+          </LayoutNavStart>
           <LayoutNavEnd>
-            <Button asChild>
-              <Link href="/auth/sign-in">
-              Get Started
-              </Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link href="/auth/sign-up">
-                Sign Up
-              </Link>
-            </Button>
+            <HomeActionsMenu />
+            <HomeMobileMenu />
           </LayoutNavEnd>
         </LayoutContainer>
       </LayoutHeader>

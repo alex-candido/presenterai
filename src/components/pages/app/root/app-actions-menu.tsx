@@ -1,6 +1,6 @@
 "use client";
 
-import { CustomDropdownMenu } from "@/components/custom";
+import { CustomDropdownUserMenu } from "@/components/custom";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useAuthActions } from "@/hooks/use-auth";
 import { cn } from "@/lib/utils";
@@ -22,7 +22,7 @@ export function AppActionsMenu({ className, ...props }: React.HTMLAttributes<HTM
   return (
     <div className={cn("app-actions-menu flex items-center gap-2", className)} {...props}>
       <>
-        <CustomDropdownMenu  />
+        <CustomDropdownUserMenu  />
       </>
     </div>
   );

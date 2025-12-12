@@ -6,7 +6,7 @@ import { useAuthActions } from "@/hooks/use-auth";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
-import { CustomDropdownMenu } from "@/components/custom";
+import { CustomDropdownUserMenu } from "@/components/custom";
 import { LandingCtaMenu } from "./landing-cta-menu";
 
 export function LandingActionsMenu({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
@@ -32,7 +32,7 @@ export function LandingActionsMenu({ className, ...props }: React.HTMLAttributes
           <Button variant="outline" asChild>
             <Link href={isAdmin ? "/admin" : "/app"}>{isAdmin ? "Admin" : "App"}</Link>
           </Button>
-          <CustomDropdownMenu />
+          <CustomDropdownUserMenu />
         </>
       ) : (
         <LandingCtaMenu />

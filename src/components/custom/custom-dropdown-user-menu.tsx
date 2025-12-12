@@ -17,7 +17,7 @@ import { useAuthActions } from "@/hooks/use-auth";
 import { cn } from "@/lib/utils";
 import { Badge } from "../ui";
 
-export function CustomDropdownMenu({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+export function CustomDropdownUserMenu({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   const { signOut, useSession } = useAuthActions();
   const { data } = useSession();
 
@@ -30,7 +30,7 @@ export function CustomDropdownMenu({ className, ...props }: React.HTMLAttributes
     .join("");
 
   return (
-    <div className={cn("custom-user-menu", className)} {...props}>
+    <div className={cn("custom-dropdown-user-menu", className)} {...props}>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button className="relative h-10 w-10 rounded-full" variant="ghost">

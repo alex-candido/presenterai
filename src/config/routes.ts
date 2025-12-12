@@ -36,7 +36,7 @@ export const APP_ROUTES = {
   APP: {
     path: '/app',
     authRequired: true,
-    roles: ['ADMIN', 'MEMBER'],
+    roles: ['MEMBER'],
     requireEmailVerified: true,
     redirects: {
       unauthenticated: '/auth/sign-in',
@@ -48,7 +48,7 @@ export const APP_ROUTES = {
       label: 'Dashboard',
       icon: 'Gauge',
       authRequired: true,
-      roles: ['ADMIN', 'MEMBER'],
+      roles: ['MEMBER'],
     },
     GENERATE: {
       NEW: '/app/generate',
@@ -56,7 +56,7 @@ export const APP_ROUTES = {
       label: 'Generate',
       icon: 'MagicWand',
       authRequired: true,
-      roles: ['ADMIN', 'MEMBER'],
+      roles: ['MEMBER'],
     },
     PRESENTATIONS: {
       LIST: '/app/presentations',
@@ -64,7 +64,7 @@ export const APP_ROUTES = {
       label: 'Presentations',
       icon: 'Presentation',
       authRequired: true,
-      roles: ['ADMIN', 'MEMBER'],
+      roles: ['MEMBER'],
     },
     DOCUMENTS: {
       LIST: '/app/documents',
@@ -72,7 +72,7 @@ export const APP_ROUTES = {
       label: 'My Documents',
       icon: 'FileText',
       authRequired: true,
-      roles: ['ADMIN', 'MEMBER'],
+      roles: ['MEMBER'],
     },
   },
   ADMIN: {

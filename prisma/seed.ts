@@ -1,7 +1,7 @@
 import { PrismaPg } from '@prisma/adapter-pg';
 import { Document, Generation, PrismaClient, User } from '@prisma/client';
-
 import chalk from 'chalk';
+
 import {
   documentFactory,
   generationFactory,

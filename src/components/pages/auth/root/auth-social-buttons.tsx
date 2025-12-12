@@ -14,8 +14,8 @@ export function AuthSocialButtons() {
   return (
     <div className="flex items-center w-full gap-2">
       <Button variant="outline" className="w-full" onClick={onGoogleSignIn}>
-        <FaGoogle className="mr-2 h-4 w-4" />
-        Google
+        <FaGoogle className="h-4 w-4" />
+        Login with Google
       </Button>
     </div>
   );

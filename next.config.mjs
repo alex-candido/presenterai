@@ -10,7 +10,12 @@ const nextConfig = {
     return [
       {
         source: '/',
-        destination: '/landing',
+        destination: '/landing/home',
+        permanent: true,
+      },
+      {
+        source: '/landing',
+        destination: '/landing/home',
         permanent: true,
       },
       {
@@ -31,6 +36,11 @@ const nextConfig = {
       {
         source: '/admin',
         destination: '/admin/dashboard',
+        permanent: true,
+      },
+      {
+        source: '/app',
+        destination: '/app/start',
         permanent: true,
       },
     ];

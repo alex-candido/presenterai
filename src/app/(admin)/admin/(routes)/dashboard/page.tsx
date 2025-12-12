@@ -3,7 +3,7 @@
 import {
   DashboardDocumentsSummarySection,
   DashboardGenerationsSummarySection,
-  DashboardHeader,
+  DashboardHeaderSection,
   DashboardPresentationsSummarySection,
   DashboardRecentActivitySection,
   DashboardStatsSection,
@@ -13,7 +13,7 @@ import {
 export default function DashboardPage() {
   return (
     <div className="admin-dashboard-page">
-      <DashboardHeader />
+      <DashboardHeaderSection />
       <DashboardStatsSection />
       <DashboardRecentActivitySection />
       <DashboardUserSummarySection />

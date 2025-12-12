@@ -1,7 +1,6 @@
-tree src/
-src/
+tree src
+src
 ├── actions
-│   ├── auth-actions.ts
 │   ├── document-actions.ts
 │   ├── generation-actions.ts
 │   ├── presentation-actions.ts
@@ -94,15 +93,16 @@ src/
 │   │           ├── generate
 │   │           │   └── [id]
 │   │           │       └── page.tsx
-│   │           ├── page.tsx
 │   │           ├── presentations
 │   │           │   └── [id]
 │   │           │       └── page.tsx
-│   │           └── settings
-│   │               ├── account
-│   │               │   └── page.tsx
-│   │               └── profile
-│   │                   └── page.tsx
+│   │           ├── settings
+│   │           │   ├── account
+│   │           │   │   └── page.tsx
+│   │           │   └── profile
+│   │           │       └── page.tsx
+│   │           └── start
+│   │               └── page.tsx
 │   ├── (auth)
 │   │   └── auth
 │   │       ├── layout.tsx
@@ -126,11 +126,12 @@ src/
 │   │           │   ├── layout.tsx
 │   │           │   └── [slug]
 │   │           │       └── page.tsx
-│   │           ├── legal
-│   │           │   ├── layout.tsx
-│   │           │   └── [slug]
-│   │           │       └── page.tsx
-│   │           └── page.tsx
+│   │           ├── home
+│   │           │   └── page.tsx
+│   │           └── legal
+│   │               ├── layout.tsx
+│   │               └── [slug]
+│   │                   └── page.tsx
 │   ├── layout.tsx
 │   ├── loading.tsx
 │   ├── robots.ts
@@ -140,7 +141,14 @@ src/
 │   │   ├── base-hero.tsx
 │   │   ├── base-logo.tsx
 │   │   └── index.ts
+│   ├── content
+│   │   ├── docs
+│   │   │   └── getting-started.mdx
+│   │   └── legal
+│   │       ├── privacy-policy.mdx
+│   │       └── terms-of-service.mdx
 │   ├── custom
+│   │   ├── custom-dropdown-menu.tsx
 │   │   └── index.ts
 │   ├── emails
 │   │   ├── index.ts
@@ -193,6 +201,9 @@ src/
 │   │   │   │   ├── presentations-header.tsx
 │   │   │   │   ├── presentations-list-section.tsx
 │   │   │   │   └── presentations-stats-section.tsx
+│   │   │   ├── root
+│   │   │   │   ├── admin-actions-menu.tsx
+│   │   │   │   └── index.ts
 │   │   │   ├── settings
 │   │   │   │   ├── account
 │   │   │   │   │   ├── admin-settings-account-header.tsx
@@ -237,22 +248,25 @@ src/
 │   │   │   │   ├── app-presentations-workspace.tsx
 │   │   │   │   └── index.ts
 │   │   │   ├── root
-│   │   │   │   ├── app-form-controls.tsx
-│   │   │   │   ├── app-form-header.tsx
-│   │   │   │   ├── app-form-input.tsx
-│   │   │   │   ├── app-form-mode.tsx
-│   │   │   │   ├── app-form.tsx
-│   │   │   │   ├── app-header.tsx
-│   │   │   │   ├── app-recents.tsx
-│   │   │   │   ├── app-suggestions.tsx
+│   │   │   │   ├── app-actions-menu.tsx
 │   │   │   │   └── index.ts
-│   │   │   └── settings
-│   │   │       ├── account
-│   │   │       │   ├── app-settings-account-header.tsx
-│   │   │       │   └── index.ts
-│   │   │       └── profile
-│   │   │           ├── app-settings-profile-header.tsx
-│   │   │           └── index.ts
+│   │   │   ├── settings
+│   │   │   │   ├── account
+│   │   │   │   │   ├── app-settings-account-header.tsx
+│   │   │   │   │   └── index.ts
+│   │   │   │   └── profile
+│   │   │   │       ├── app-settings-profile-header.tsx
+│   │   │   │       └── index.ts
+│   │   │   └── start
+│   │   │       ├── app-form-controls.tsx
+│   │   │       ├── app-form-header.tsx
+│   │   │       ├── app-form-input.tsx
+│   │   │       ├── app-form-mode.tsx
+│   │   │       ├── app-form-section.tsx
+│   │   │       ├── app-header-section.tsx
+│   │   │       ├── app-recents-section.tsx
+│   │   │       ├── app-suggestions-section.tsx
+│   │   │       └── index.ts
 │   │   ├── auth
 │   │   │   ├── forgot-password
 │   │   │   │   ├── forgot-password-form.tsx
@@ -297,21 +311,23 @@ src/
 │   │   │   │       ├── index.ts
 │   │   │   │       └── landing-docs-content.tsx
 │   │   │   ├── home
-│   │   │   │   ├── index.ts
-│   │   │   │   ├── landing-home-faq.tsx
-│   │   │   │   ├── landing-home-features.tsx
-│   │   │   │   ├── landing-home-hero.tsx
-│   │   │   │   ├── landing-home-pricing.tsx
-│   │   │   │   └── landing-home-testimonials.tsx
+│   │   │   │   └── root
+│   │   │   │       ├── index.ts
+│   │   │   │       ├── landing-home-faq.tsx
+│   │   │   │       ├── landing-home-features.tsx
+│   │   │   │       ├── landing-home-hero.tsx
+│   │   │   │       ├── landing-home-pricing.tsx
+│   │   │   │       └── landing-home-testimonials.tsx
 │   │   │   ├── layout
+│   │   │   │   ├── index.ts
+│   │   │   │   ├── landing-layout-footer.tsx
+│   │   │   │   └── landing-layout-header.tsx
+│   │   │   ├── root
 │   │   │   │   ├── index.ts
 │   │   │   │   ├── landing-actions-menu.tsx
 │   │   │   │   ├── landing-cta-menu.tsx
-│   │   │   │   ├── landing-layout-footer.tsx
-│   │   │   │   ├── landing-layout-header.tsx
 │   │   │   │   ├── landing-mobile-menu.tsx
-│   │   │   │   ├── landing-nav-menu.tsx
-│   │   │   │   └── landing-user-menu.tsx
+│   │   │   │   └── landing-nav-menu.tsx
 │   │   │   └── terms
 │   │   │       └── root
 │   │   │           ├── index.ts
@@ -377,14 +393,9 @@ src/
 │   ├── messages.ts
 │   ├── routes.ts
 │   └── server-envs.ts
-├── content
-│   ├── docs
-│   │   └── getting-started.mdx
-│   └── legal
-│       ├── privacy-policy.mdx
-│       └── terms-of-service.mdx
 ├── hooks
 │   ├── index.ts
+│   ├── use-auth.ts
 │   ├── use-documents.ts
 │   ├── use-form.ts
 │   ├── use-generation.ts
@@ -420,12 +431,9 @@ src/
 │       ├── react-query-provider.tsx
 │       └── theme-provider.tsx
 ├── proxys
-│   ├── admin.ts
 │   ├── auth.ts
-│   ├── docs.ts
 │   ├── global.ts
-│   ├── index.ts
-│   └── legal.ts
+│   └── index.ts
 ├── proxy.ts
 ├── schemas
 │   ├── auth-schema.ts
@@ -465,4 +473,4 @@ src/
     ├── presentation.d.ts
     └── user.d.ts
 
-143 directories, 322 files
+149 directories, 324 files

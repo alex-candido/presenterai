@@ -1,15 +1,15 @@
 import { cn } from "@/lib/utils";
 
-export function AppRecents({
+export function AppRecentsSection({
   className,
   ...props
 }: React.HTMLAttributes<HTMLElement>) {
   return (
-    <div
-      className={cn("app-recents flex flex-col", className)}
+    <section
+      className={cn("app-recents-section flex flex-col", className)}
       {...props}
     >
       presentationHeader
-    </div>
+    </section>
   );
 }

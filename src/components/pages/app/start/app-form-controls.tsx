@@ -5,11 +5,11 @@ export function AppFormControls({
   ...props
 }: React.HTMLAttributes<HTMLElement>) {
   return (
-    <div
+    <section
       className={cn("app-form-controls flex flex-col", className)}
       {...props}
     >
       PresentationControls
-    </div>
+    </section>
   );
 }

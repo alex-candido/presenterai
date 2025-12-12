@@ -1,0 +1,12 @@
+https://ui.spectrumhq.in/docs/animatedtestimonials
+https://ui.shaduxe.com/docs/blocks/testimonial-two
+https://pro.tailark.com/
+https://kokonutui.com/docs/components/card
+https://www.prismui.tech/docs/sections/pricing
+https://ui.indie-starter.dev/
+https://ground.bossadizenith.me/
+https://www.shadcnui-blocks.com/
+https://shadcn-pricing-page.vercel.app/
+https://ui.aceternity.com/
+https://ui.lukacho.com/
+https://www.edil-ozi.pro/

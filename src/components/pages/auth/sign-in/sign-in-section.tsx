@@ -1,4 +1,4 @@
-import { authActions } from "@/actions/auth-actions";
+import { useAuthActions } from "@/hooks/use-auth";
 import { useForm } from "@/hooks/use-form";
 import { cn } from "@/lib/utils";
 import { SignInFormValues, signInSchema } from "@/schemas/auth-schema";
@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { SignInForm } from "./sign-in-form";
 
 export function SignInSection({ className, ...props }: React.HTMLAttributes<HTMLElement>) {
-  const { signInCredentials } = authActions();
+  const { signInCredentials } = useAuthActions();
   const router = useRouter();
 
   const action = async (data: SignInFormValues) => {

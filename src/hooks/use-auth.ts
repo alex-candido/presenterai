@@ -1,6 +1,9 @@
 import { authClient } from "@/server/auth/client";
+import { useRouter } from "next/navigation";
 
-export function authActions() {
+export function useAuthActions() {
+  const router = useRouter();
+
   async function signUp(inputData: SignUpInput) {
     const response = await authClient.signUp.email(inputData);
     return response;
@@ -19,7 +22,13 @@ export function authActions() {
   }
 
   async function signOut() {
-    const response = await authClient.signOut();
+    const response = authClient.signOut({
+      fetchOptions: {
+        onSuccess: () => {
+          router.push("/");
+        },
+      },
+    });
     return response;
   }
 

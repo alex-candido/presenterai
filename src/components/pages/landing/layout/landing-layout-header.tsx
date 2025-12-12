@@ -3,16 +3,14 @@
 import { BaseLogo } from "@/components/base";
 import { LayoutContainer, LayoutHeader, LayoutNavEnd, LayoutNavStart } from "@/components/layouts";
 import { cn } from "@/lib/utils";
-import { LandingActionsMenu } from "./landing-actions-menu";
-import { LandingMobileMenu } from "./landing-mobile-menu";
-import { LandingNavMenu } from "./landing-nav-menu";
+import { LandingActionsMenu, LandingMobileMenu, LandingNavMenu } from "../root";
 
 export function LandingLayoutHeader({
   className,
   ...props
 }: React.HTMLAttributes<HTMLElement>) {
   return (
-    <header
+    <div
       className={cn("landing-layout-header", className)}
       {...props}
     >
@@ -28,6 +26,6 @@ export function LandingLayoutHeader({
           </LayoutNavEnd>
         </LayoutContainer>
       </LayoutHeader>
-    </header>
+    </div>
   );
 }

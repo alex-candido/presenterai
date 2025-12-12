@@ -7,7 +7,7 @@ export function AdminLayoutFooter({
   ...props
 }: React.HTMLAttributes<HTMLElement>) {
   return (
-    <div className={cn("admin-aside flex flex-col", className)} {...props}>
+    <div className={cn("admin-layout-footer flex flex-col", className)} {...props}>
       <LayoutHeader />
     </div>
   );

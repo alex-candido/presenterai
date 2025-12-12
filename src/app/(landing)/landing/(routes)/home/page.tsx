@@ -6,7 +6,7 @@ import {
   LandingHomeHero,
   LandingHomePricing,
   LandingHomeTestimonials
-} from "@/components/pages/landing/home";
+} from "@/components/pages/landing/home/root";
 
 export default function HomePage() {
   return (

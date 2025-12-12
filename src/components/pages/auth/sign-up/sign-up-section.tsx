@@ -1,4 +1,4 @@
-import { authActions } from "@/actions/auth-actions";
+import { useAuthActions } from "@/hooks/use-auth";
 import { useForm } from "@/hooks/use-form";
 import { cn } from "@/lib/utils";
 import { SignUpFormValues, signUpSchema } from "@/schemas/auth-schema";
@@ -7,7 +7,7 @@ import { SignUpForm } from "./sign-up-form";
 import { SignUpSuccess } from "./sign-up-success";
 
 export function SignUpSection({ className, ...props }: React.HTMLAttributes<HTMLElement>) {
-  const { signUp } = authActions();
+  const { signUp } = useAuthActions();
 
   const action = async (data: SignUpFormValues) => {
     const { agreeTerms, ...rest } = data;

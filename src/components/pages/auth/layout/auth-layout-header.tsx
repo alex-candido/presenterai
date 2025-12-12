@@ -9,7 +9,7 @@ export function AuthLayoutHeader({
   ...props
 }: React.HTMLAttributes<HTMLElement>) {
   return (
-    <header
+    <div
       className={cn("auth-layout-header", className)}
       {...props}
     >
@@ -18,6 +18,6 @@ export function AuthLayoutHeader({
           <BaseLogo href="/" />
         </LayoutContainer>
       </LayoutHeader>
-    </header>
+    </div>
   );
 }

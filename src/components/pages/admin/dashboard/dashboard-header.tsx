@@ -1,15 +1,15 @@
 import { cn } from "@/lib/utils";
 
-export function DashboardHeader({
+export function DashboardHeaderSection({
   className,
   ...props
 }: React.HTMLAttributes<HTMLElement>) {
   return (
-    <header
-      className={cn("admin-dashboard-header", className)}
+    <section
+      className={cn("admin-dashboard-header-section", className)}
       {...props}
     >
       <h1>Dashboard Overview</h1>
-    </header>
+    </section>
   );
 }

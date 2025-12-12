@@ -1,19 +1,16 @@
 "use client";
 
-import { authActions } from "@/actions/auth-actions";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useAuthActions } from "@/hooks/use-auth";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
+import { CustomDropdownMenu } from "@/components/custom";
 import { LandingCtaMenu } from "./landing-cta-menu";
-import { LandingUserMenu } from "./landing-user-menu";
 
-export function LandingActionsMenu({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
-  const { useSession } = authActions()
+export function LandingActionsMenu({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  const { useSession } = useAuthActions();
   const { data, isPending } = useSession();
 
   if (isPending) {
@@ -33,11 +30,9 @@ export function LandingActionsMenu({
       {user ? (
         <>
           <Button variant="outline" asChild>
-            <Link href={isAdmin ? "/admin" : "/app"}>
-              {isAdmin ? "Admin" : "Dashboard"}
-            </Link>
+            <Link href={isAdmin ? "/admin" : "/app"}>{isAdmin ? "Admin" : "App"}</Link>
           </Button>
-          <LandingUserMenu user={user} />
+          <CustomDropdownMenu />
         </>
       ) : (
         <LandingCtaMenu />

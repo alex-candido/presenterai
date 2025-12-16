@@ -1,10 +1,9 @@
 "use client";
 
 import { BaseLogo } from "@/components/base";
-import { CustomSheetMobileMenu } from "@/components/custom";
 import { LayoutContainer, LayoutHeader, LayoutNavEnd, LayoutNavStart } from "@/components/layouts";
 import { cn } from "@/lib/utils";
-import { LandingActionsMenu, LandingNavMenu } from "../root";
+import { LandingActionsMenu, LandingMobileMenu, LandingNavMenu } from "../root";
 
 export function LandingLayoutHeader({
   className,
@@ -23,7 +22,7 @@ export function LandingLayoutHeader({
           </LayoutNavStart>
           <LayoutNavEnd>
             <LandingActionsMenu />
-            <CustomSheetMobileMenu />
+            <LandingMobileMenu />
           </LayoutNavEnd>
         </LayoutContainer>
       </LayoutHeader>

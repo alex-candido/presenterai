@@ -8,10 +8,10 @@ export function LandingCtaMenu({
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div className={cn("landing-cta-menu flex items-center gap-2", className)} {...props}>
-      <Button variant="ghost" asChild>
+      <Button variant="outline" asChild className="cursor-pointer">
         <Link href="/auth/sign-in">Sign In</Link>
       </Button>
-      <Button asChild>
+      <Button asChild className="cursor-pointer">
         <Link href="/auth/sign-up">Get Started</Link>
       </Button>
     </div>

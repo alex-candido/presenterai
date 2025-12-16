@@ -1,7 +1,7 @@
 "use client";
 
 import { LayoutApp, LayoutMain } from "@/components/layouts";
-import { LandingLayoutFooter, LandingLayoutHeader } from "@/components/pages/landing/layout";
+import { LandingLayoutAppEntryBanner, LandingLayoutFooter, LandingLayoutHeader } from "@/components/pages/landing/layout";
 
 export default function HomeLayout({
   children,
@@ -15,6 +15,7 @@ export default function HomeLayout({
     >
       <div className="layout-wrapper">
         <LandingLayoutHeader />
+        <LandingLayoutAppEntryBanner />
         <LayoutMain>{children}</LayoutMain>
         <LandingLayoutFooter />
       </div>

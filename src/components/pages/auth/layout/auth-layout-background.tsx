@@ -10,7 +10,7 @@ export function AuthLayoutBackground({
       className={cn("auth-layout-background", className)}
       {...props}
     >
-      <div className="min-h-[80vh] flex items-center justify-center p-4">
+      <div className="min-h-[90vh] flex items-center justify-center p-4">
         <div className="w-full max-w-sm">{children}</div>
       </div>
     </div>

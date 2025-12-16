@@ -17,7 +17,7 @@ import { useAuthActions } from "@/hooks/use-auth";
 import { cn } from "@/lib/utils";
 import { Badge } from "../ui";
 
-export function CustomDropdownUserMenu({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+export function BaseDropdownUserMenu({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   const { signOut, useSession } = useAuthActions();
   const { data } = useSession();
 
@@ -30,12 +30,12 @@ export function CustomDropdownUserMenu({ className, ...props }: React.HTMLAttrib
     .join("");
 
   return (
-    <div className={cn("custom-dropdown-user-menu", className)} {...props}>
+    <div className={cn("base-dropdown-user-menu", className)} {...props}>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button className="relative h-10 w-10 rounded-full" variant="ghost">
             <Avatar>
-              {user?.image && <AvatarImage src={user.image} alt={user.name ?? ""} />}
+              {user && <AvatarImage src={user.image} alt={user.name ?? ""} />}
               <AvatarFallback>{initials}</AvatarFallback>
             </Avatar>
             <span className="absolute right-0 bottom-0 h-3 w-3 rounded-full bg-green-500 ring-2 ring-background" />
@@ -59,19 +59,19 @@ export function CustomDropdownUserMenu({ className, ...props }: React.HTMLAttrib
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuItem asChild>
-            <Link href={`/${basePath}/settings/profile`}>
+            <Link href={`/${basePath}/settings/profile`} className="cursor-pointer">
               <User className="mr-1 h-4 w-4" />
               <span>Profile</span>
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link href={`/${basePath}/settings/account`}>
+            <Link href={`/${basePath}/settings/account`} className="cursor-pointer">
               <Settings className="mr-1 h-4 w-4" />
               <span>Account Settings</span>
             </Link>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem onSelect={() => signOut()}>
+          <DropdownMenuItem onSelect={() => signOut()} className="cursor-pointer">
             <LogOut className="mr-2 h-4 w-4" />
             <span>Log out</span>
           </DropdownMenuItem>

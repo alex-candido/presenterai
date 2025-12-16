@@ -5,9 +5,9 @@ export const UserRoleEnum = z.enum(['0', '1']).transform(val => parseInt(val, 10
 
 export const userSchema = z.object({
   id: z.number(),
-  uuid: z.string().uuid(),
+  uuid: z.uuid(),
   username: z.string(),
-  email: z.string().email(),
+  email: z.email(),
   password_hash: z.string(),
   role: UserRoleEnum,
   status: UserStatusEnum,

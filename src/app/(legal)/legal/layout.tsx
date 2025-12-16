@@ -9,7 +9,7 @@ export default function TermsLayout({
 }) {
   return (
     <LayoutApp
-      id="landing-terms"
+      id="terms"
       className="flex min-h-screen w-full flex-col bg-muted/40"
     >
       <LayoutMain>{children}</LayoutMain>

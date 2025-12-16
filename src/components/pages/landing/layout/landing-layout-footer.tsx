@@ -9,7 +9,7 @@ export function LandingLayoutFooter({
       className={cn("landing-layout-footer", className)}
       {...props}
     >
-      {/* Landing Page Footer */}
+      <p>landing-layout-footer</p>
     </footer>
   );
 }

@@ -26,7 +26,7 @@ Components & Libraries
 >> https://ui.lukacho.com/
 - https://www.simple-ai.dev/
 - https://animata.design/
-- https://magicui.design/
+>> https://magicui.design/
 - https://www.assistant-ui.com/
 - https://www.cult-ui.com/
 - https://www.eldoraui.site/

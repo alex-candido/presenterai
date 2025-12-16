@@ -1,15 +1,12 @@
+import { LayoutSection } from "@/components/layouts/layout-section";
 import { cn } from "@/lib/utils";
 
-export function LandingHomeHero({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLElement>) {
+export function LandingHomeHero({ className, ...props }: React.HTMLAttributes<HTMLElement>) {
   return (
-    <section
-      className={cn("landing-home-hero", className)}
-      {...props}
-    >
-      {/* Main value proposition and call-to-action */}
-    </section>
+    <LayoutSection>
+      <div className={cn("landing-home-hero", className)} {...props}>
+        <p>landing-home-hero</p>
+      </div>
+    </LayoutSection>
   );
 }

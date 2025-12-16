@@ -1,7 +1,7 @@
 "use client";
 
 import { LayoutApp, LayoutMain } from "@/components/layouts";
-import { LandingDocsLayoutHeader, LandingDocsLayoutSidebar } from "@/components/pages/landing/docs/layout";
+import { LandingDocsLayoutHeader, LandingDocsLayoutSidebar } from "@/components/pages/docs/layout";
 
 export default function AuthLayout({
   children,
@@ -10,7 +10,7 @@ export default function AuthLayout({
 }) {
   return (
     <LayoutApp
-      id="landing-docs"
+      id="docs"
       className="flex min-h-screen w-full flex-col bg-muted/40"
     >
       <LandingDocsLayoutSidebar />

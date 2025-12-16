@@ -4,7 +4,7 @@ type DocContentProps = {
   slug: string;
 };
 
-export function LandingDocsContent({ slug }: DocContentProps) {
+export function DocsContent({ slug }: DocContentProps) {
   switch (slug) {
     case 'getting-started':
       return <GettingStarted />;

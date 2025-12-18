@@ -36,7 +36,7 @@ export const documentFactory = async (
   },
 ) => {
   const defaults: Omit<Prisma.DocumentCreateInput, "user"> = {
-    title: faker.lorem.words({ min: 3, max: 8 }),
+    name: faker.lorem.words({ min: 3, max: 8 }),
     visibility: getRandomEnumValue(Visibility),
     status: getRandomEnumValue(Status),
   };
@@ -79,4 +79,21 @@ export const presentationFactory = async (
       status: getRandomEnumValue(Status),
     };
   return prisma.presentation.create({ data: { ...defaults, ...data } });
+};
+
+export const accountFactory = async (
+  prisma: PrismaClient,
+  data: Partial<Prisma.AccountCreateInput> & {
+    user: { connect: { id: string } };
+  },
+) => {
+  const defaults: Omit<Prisma.AccountCreateInput, "user"> = {
+    provider: "credential",
+    // For credential provider, providerAccountId and accountId are often the userId
+    providerAccountId: data.user.connect.id,
+    accountId: data.user.connect.id,
+    providerId: "credential",
+    password: "12345678", // Using a plain text password for dev seeding
+  };
+  return prisma.account.create({ data: { ...defaults, ...data } });
 };

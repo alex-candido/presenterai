@@ -42,6 +42,8 @@ Components & Libraries
 - https://shadcnstore.com/
 >> https://shadcnstore.com/cheatsheet/
 https://saasbold.com/
+https://tailark.com/
+https://sv-blocks.vercel.app/
 
 Boilerplates & Starters
 

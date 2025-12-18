@@ -1,5 +1,5 @@
-tree src
-src
+tree src/
+src/
 ├── actions
 │   ├── document-actions.ts
 │   ├── generation-actions.ts
@@ -18,7 +18,6 @@ src
 │   │           │   │   │   └── page.tsx
 │   │           │   │   └── page.tsx
 │   │           │   ├── new
-│   │           │   │   └── page.tsx
 │   │           │   └── page.tsx
 │   │           ├── generations
 │   │           │   ├── [id]
@@ -26,7 +25,6 @@ src
 │   │           │   │   │   └── page.tsx
 │   │           │   │   └── page.tsx
 │   │           │   ├── new
-│   │           │   │   └── page.tsx
 │   │           │   └── page.tsx
 │   │           ├── presentations
 │   │           │   ├── [id]
@@ -115,6 +113,11 @@ src
 │   │           │   └── page.tsx
 │   │           └── sign-up
 │   │               └── page.tsx
+│   ├── (docs)
+│   │   └── docs
+│   │       ├── layout.tsx
+│   │       └── [slug]
+│   │           └── page.tsx
 │   ├── favicon.ico
 │   ├── global-error.tsx
 │   ├── global-not-found.tsx
@@ -122,22 +125,20 @@ src
 │   │   └── landing
 │   │       ├── layout.tsx
 │   │       └── (routes)
-│   │           ├── docs
-│   │           │   ├── layout.tsx
-│   │           │   └── [slug]
-│   │           │       └── page.tsx
-│   │           ├── home
-│   │           │   └── page.tsx
-│   │           └── legal
-│   │               ├── layout.tsx
-│   │               └── [slug]
-│   │                   └── page.tsx
+│   │           └── home
+│   │               └── page.tsx
 │   ├── layout.tsx
+│   ├── (legal)
+│   │   └── legal
+│   │       ├── layout.tsx
+│   │       └── [slug]
+│   │           └── page.tsx
 │   ├── loading.tsx
 │   ├── robots.ts
 │   └── sitemap.ts
 ├── components
 │   ├── base
+│   │   ├── base-dropdown-user-menu.tsx
 │   │   ├── base-hero.tsx
 │   │   ├── base-logo.tsx
 │   │   └── index.ts
@@ -148,7 +149,6 @@ src
 │   │       ├── privacy-policy.mdx
 │   │       └── terms-of-service.mdx
 │   ├── custom
-│   │   ├── custom-dropdown-menu.tsx
 │   │   └── index.ts
 │   ├── emails
 │   │   ├── index.ts
@@ -158,12 +158,15 @@ src
 │   │   ├── index.ts
 │   │   ├── layout-app.tsx
 │   │   ├── layout-aside.tsx
+│   │   ├── layout-bottom-banner.tsx
 │   │   ├── layout-container.tsx
 │   │   ├── layout-footer.tsx
 │   │   ├── layout-header.tsx
 │   │   ├── layout-main.tsx
 │   │   ├── layout-nav-end.tsx
-│   │   └── layout-nav-start.tsx
+│   │   ├── layout-nav-start.tsx
+│   │   ├── layout-section.tsx
+│   │   └── layout-top-banner.tsx
 │   ├── pages
 │   │   ├── admin
 │   │   │   ├── dashboard
@@ -297,48 +300,48 @@ src
 │   │   │       ├── sign-up-form.tsx
 │   │   │       ├── sign-up-section.tsx
 │   │   │       └── sign-up-success.tsx
+│   │   ├── docs
+│   │   │   ├── layout
+│   │   │   │   ├── docs-layout-header.tsx
+│   │   │   │   ├── docs-layout-sidebar.tsx
+│   │   │   │   └── index.ts
+│   │   │   └── root
+│   │   │       ├── docs-content.tsx
+│   │   │       └── index.ts
 │   │   ├── error
 │   │   │   └── root
 │   │   │       ├── index.ts
 │   │   │       └── status-page.tsx
 │   │   ├── landing
-│   │   │   ├── docs
-│   │   │   │   ├── layout
-│   │   │   │   │   ├── index.ts
-│   │   │   │   │   ├── landing-docs-layout-header.tsx
-│   │   │   │   │   └── landing-docs-layout-sidebar.tsx
-│   │   │   │   └── root
-│   │   │   │       ├── index.ts
-│   │   │   │       └── landing-docs-content.tsx
 │   │   │   ├── home
-│   │   │   │   └── root
-│   │   │   │       ├── index.ts
-│   │   │   │       ├── landing-home-faq.tsx
-│   │   │   │       ├── landing-home-features.tsx
-│   │   │   │       ├── landing-home-hero.tsx
-│   │   │   │       ├── landing-home-pricing.tsx
-│   │   │   │       └── landing-home-testimonials.tsx
+│   │   │   │   ├── index.ts
+│   │   │   │   ├── landing-home-faq.tsx
+│   │   │   │   ├── landing-home-features.tsx
+│   │   │   │   ├── landing-home-hero.tsx
+│   │   │   │   ├── landing-home-pricing.tsx
+│   │   │   │   └── landing-home-testimonials.tsx
 │   │   │   ├── layout
 │   │   │   │   ├── index.ts
+│   │   │   │   ├── landing-layout-app-entry-banner.tsx
 │   │   │   │   ├── landing-layout-footer.tsx
 │   │   │   │   └── landing-layout-header.tsx
-│   │   │   ├── root
-│   │   │   │   ├── index.ts
-│   │   │   │   ├── landing-actions-menu.tsx
-│   │   │   │   ├── landing-cta-menu.tsx
-│   │   │   │   ├── landing-mobile-menu.tsx
-│   │   │   │   └── landing-nav-menu.tsx
-│   │   │   └── terms
-│   │   │       └── root
-│   │   │           ├── index.ts
-│   │   │           ├── landing-terms-content.tsx
-│   │   │           └── landing-terms-header.tsx
+│   │   │   └── root
+│   │   │       ├── index.ts
+│   │   │       ├── landing-actions-menu.tsx
+│   │   │       ├── landing-cta-menu.tsx
+│   │   │       ├── landing-mobile-menu.tsx
+│   │   │       └── landing-nav-menu.tsx
 │   │   ├── loading
 │   │   │   └── root
 │   │   │       └── index.ts
-│   │   └── not-found
+│   │   ├── not-found
+│   │   │   └── root
+│   │   │       └── index.ts
+│   │   └── terms
 │   │       └── root
-│   │           └── index.ts
+│   │           ├── index.ts
+│   │           ├── terms-content.tsx
+│   │           └── terms-header.tsx
 │   └── ui
 │       ├── accordion.tsx
 │       ├── alert-dialog.tsx
@@ -441,6 +444,7 @@ src
 │   ├── generation-schema.ts
 │   ├── index.ts
 │   ├── presentation-schema.ts
+│   ├── start-schema.ts
 │   └── user-schema.ts
 ├── server
 │   ├── auth
@@ -473,4 +477,4 @@ src
     ├── presentation.d.ts
     └── user.d.ts
 
-149 directories, 324 files
+150 directories, 327 files

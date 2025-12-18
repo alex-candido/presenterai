@@ -1,5 +1,5 @@
 type DocumentInput = {
-  title: string;
+  name: string;
   visibility: Visibility;
   status: Status;
 };

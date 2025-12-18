@@ -3,6 +3,7 @@ import { Document, Generation, PrismaClient, User } from '@prisma/client';
 import chalk from 'chalk';
 
 import {
+  accountFactory,
   documentFactory,
   generationFactory,
   presentationFactory,
@@ -11,11 +12,11 @@ import {
 
 const adapter = new PrismaPg({
   connectionString: process.env.DATABASE_URL!,
-})
+});
 
 export const prisma = new PrismaClient({
   adapter,
-})
+});
 
 async function main(quantity: number = 10) {
   console.log(chalk.bold.yellow('🚀 Starting database seeding...'));
@@ -25,6 +26,7 @@ async function main(quantity: number = 10) {
   await prisma.presentation.deleteMany();
   await prisma.generation.deleteMany();
   await prisma.document.deleteMany();
+  await prisma.account.deleteMany();
   await prisma.user.deleteMany();
 
   console.log(chalk.magenta('✨ Database cleaned.'));
@@ -34,6 +36,10 @@ async function main(quantity: number = 10) {
     const users: User[] = [];
     for (let i = 0; i < quantity; i++) {
       const user = await userFactory(prisma);
+      // Create a corresponding account for the user
+      await accountFactory(prisma, {
+        user: { connect: { id: user.id } },
+      });
       users.push(user);
     }
     console.log(chalk.green('🌱 Users seeded successfully!'));
@@ -58,13 +64,22 @@ async function main(quantity: number = 10) {
   const documents = await seedDocuments(users);
 
   async function seedGenerations(documents: Document[]): Promise<Generation[]> {
-    console.log(chalk.cyan(`🌱 Seeding generations for ${documents.length} documents...`));
+    console.log(
+      chalk.cyan(`🌱 Seeding generations for ${documents.length} documents...`),
+    );
     const generations: Generation[] = [];
     for (const document of documents) {
       const generation = await generationFactory(prisma, {
         document: { connect: { id: document.id } },
         user: { connect: { id: document.userId } },
       });
+
+      // FIX: Update latestGenerationId on the document
+      await prisma.document.update({
+        where: { id: document.id },
+        data: { latestGenerationId: generation.id },
+      });
+
       generations.push(generation);
     }
     console.log(chalk.green('🌱 Generations seeded successfully!'));
@@ -74,15 +89,21 @@ async function main(quantity: number = 10) {
   const generations = await seedGenerations(documents);
 
   async function seedPresentations(generations: Generation[]) {
-    console.log(chalk.cyan(`🌱 Seeding presentations for ${generations.length} generations...`));
+    console.log(
+      chalk.cyan(`🌱 Seeding presentations for ${generations.length} generations...`),
+    );
     for (const generation of generations) {
-      const document = await prisma.document.findUnique({ where: { id: generation.documentId }, include: { user: true } });
-      if (document) {
-        await presentationFactory(prisma, {
-          generation: { connect: { id: generation.id } },
-          user: { connect: { id: document.user.id } },
-        });
-      }
+      // FIX: No need to query for the document again, userId is on generation
+      const presentation = await presentationFactory(prisma, {
+        generation: { connect: { id: generation.id } },
+        user: { connect: { id: generation.userId } },
+      });
+
+      // FIX: Update latestPresentationId on the document
+      await prisma.document.update({
+        where: { id: generation.documentId },
+        data: { latestPresentationId: presentation.id },
+      });
     }
     console.log(chalk.green('🌱 Presentations seeded successfully!'));
   }

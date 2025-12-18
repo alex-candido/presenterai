@@ -1,20 +1,16 @@
 import { cn } from "@/lib/utils";
-
-import { AppFormControls, AppFormHeader, AppFormInput, AppFormMode } from "@/components/pages/app/start";
+import { AppForm } from "./app-form";
 
 export function AppFormSection({
   className,
   ...props
 }: React.HTMLAttributes<HTMLElement>) {
   return (
-    <section
+    <div
       className={cn("app-form-section flex flex-col", className)}
       {...props}
     >
-      <AppFormHeader />
-      <AppFormMode />
-      <AppFormInput />
-      <AppFormControls />
-    </section>
+      <AppForm />
+    </div>
   );
 }

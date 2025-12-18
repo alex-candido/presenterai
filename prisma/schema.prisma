@@ -42,7 +42,6 @@ model User {
   id            String   @id @default(uuid())
   order         Int      @default(autoincrement())
   name          String?
-  username      String?  @unique
   email         String   @unique
   emailVerified Boolean  @default(false)
   image         String?
@@ -109,11 +108,24 @@ model Session {
   @@map("sessions")
 }
 
+model Verification {
+  id         String   @id @default(uuid())
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([identifier])
+  @@map("verifications")
+}
+
+
 model Document {
   id                   String     @id @default(uuid())
   order                Int        @default(autoincrement())
   userId               String
-  title                String
+  name                 String
   visibility           Visibility @default(PRIVATE)
   latestGenerationId   String?
   latestPresentationId String?
@@ -169,16 +181,4 @@ model Presentation {
   @@index([generationId])
   @@index([userId])
   @@map("presentations")
-}
-
-model Verification {
-  id         String   @id @default(uuid())
-  identifier String
-  value      String
-  expiresAt  DateTime
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
-
-  @@index([identifier])
-  @@map("verifications")
 }

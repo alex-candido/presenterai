@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 import { BaseDropdownUserMenu } from "@/components/base";
+import React from "react";
 import { LandingCtaMenu } from "./landing-cta-menu";
 
 export function LandingActionsMenu({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {

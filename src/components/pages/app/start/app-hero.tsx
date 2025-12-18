@@ -1,15 +1,15 @@
 import { cn } from "@/lib/utils";
 
-export function AppFormMode({
+export function AppHero({
   className,
   ...props
 }: React.HTMLAttributes<HTMLElement>) {
   return (
     <div
-      className={cn("app-form-mode flex flex-col", className)}
+      className={cn("app-hero flex flex-col", className)}
       {...props}
     >
-      PresentationMode
+      presentationHeader
     </div>
   );
 }

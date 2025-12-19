@@ -2,6 +2,7 @@
 
 import { API_ENDPOINTS } from "@/config/endpoints";
 import { api } from "@/lib/api";
+import { StartSchema } from "@/schemas/start-schema";
 
 export function documentActions() {
   async function list(params?: {
@@ -16,9 +17,9 @@ export function documentActions() {
   }
 
   async function create(
-    data: DocumentInput,
-  ): Promise<IDocument> {
-    const response = await api.post<IDocument>(API_ENDPOINTS.DOCUMENTS.CREATE, data);
+    data: StartSchema,
+  ): Promise<StartSchema> {
+    const response = await api.post<StartSchema>('/api/v1/documents', data);
     return response.data;
   }
 

@@ -1,0 +1,14 @@
+@hostname = http://localhost:3000
+
+### Create a new document and initial generation
+POST {{hostname}}/api/v1/documents
+Content-Type: application/json
+
+{
+  "prompt": "A presentation about the benefits of using a well-structured API.",
+  "scope": "MULTI_PAGE",
+  "slideCount": [5],
+  "language": "en-US",
+  "ratio": "16:9",
+  "keywords": ["api", "development", "documentation"]
+}

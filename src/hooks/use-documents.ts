@@ -9,6 +9,7 @@ import { toast } from "sonner";
 
 import { documentActions } from "@/actions/document-actions";
 import { API_MESSAGES } from "@/config/messages";
+import { StartSchema } from "@/schemas";
 
 export const DOCUMENT_QUERY_KEYS = {
   all: ["documents"],
@@ -50,7 +51,7 @@ export function useDocuments() {
   }
 
   function createDocument() {
-    return useMutation<IDocument, Error, DocumentInput>({
+    return useMutation<StartSchema, Error, StartSchema>({
       mutationFn: create,
       onSuccess: () => {
         queryClient.invalidateQueries({ queryKey: DOCUMENT_QUERY_KEYS.lists() });

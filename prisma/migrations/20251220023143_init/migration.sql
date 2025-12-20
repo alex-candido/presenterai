@@ -1,17 +1,38 @@
 -- CreateEnum
-CREATE TYPE "Status" AS ENUM ('ACTIVE', 'INACTIVE');
+CREATE TYPE "StatusType" AS ENUM ('ACTIVE', 'INACTIVE');
 
 -- CreateEnum
-CREATE TYPE "PresentationStyle" AS ENUM ('PROFESSIONAL', 'CREATIVE', 'MINIMALIST');
+CREATE TYPE "RoleType" AS ENUM ('ADMIN', 'MEMBER');
 
 -- CreateEnum
-CREATE TYPE "GenerationScope" AS ENUM ('MULTI_PAGE', 'SINGLE_PAGE');
+CREATE TYPE "VisibilityType" AS ENUM ('PUBLIC', 'PRIVATE');
 
 -- CreateEnum
-CREATE TYPE "UserRole" AS ENUM ('ADMIN', 'MEMBER');
+CREATE TYPE "ScopeType" AS ENUM ('MULTI_PAGE', 'SINGLE_PAGE');
 
 -- CreateEnum
-CREATE TYPE "Visibility" AS ENUM ('PUBLIC', 'PRIVATE');
+CREATE TYPE "LanguageType" AS ENUM ('EN', 'ES', 'FR', 'DE', 'IT', 'PT', 'RU', 'ZH', 'JA', 'KO');
+
+-- CreateEnum
+CREATE TYPE "AspectRatio" AS ENUM ('RATIO_16_9', 'RATIO_4_3', 'RATIO_9_16', 'RATIO_1_1');
+
+-- CreateEnum
+CREATE TYPE "ToneType" AS ENUM ('FORMAL', 'INFORMAL', 'FRIENDLY', 'PROFESSIONAL', 'HUMOROUS');
+
+-- CreateEnum
+CREATE TYPE "AmountType" AS ENUM ('MINIMAL', 'CONCISE', 'DETAILED', 'EXTENSIVE');
+
+-- CreateEnum
+CREATE TYPE "AudienceType" AS ENUM ('AUTO', 'GENERAL', 'STUDENTS', 'PROFESSIONALS', 'ENTREPRENEURS', 'MARKETERS', 'DEVELOPERS', 'DESIGNERS', 'EDUCATORS', 'HEALTHCARE_PROVIDERS', 'FINANCIAL_ADVISORS');
+
+-- CreateEnum
+CREATE TYPE "ScenarioType" AS ENUM ('AUTO', 'GENERAL', 'BUSINESS_PITCH', 'EDUCATIONAL_LECTURE', 'PRODUCT_DEMO', 'TRAINING_SESSION', 'MARKETING_CAMPAIGN', 'TECHNICAL_PRESENTATION', 'SALES_PITCH', 'CONFERENCE_TALK', 'WORKSHOP', 'WEBINAR');
+
+-- CreateEnum
+CREATE TYPE "ThemeType" AS ENUM ('LIGHT', 'DARK', 'CORPORATE', 'CREATIVE', 'MINIMALIST', 'MODERN', 'CLASSIC');
+
+-- CreateEnum
+CREATE TYPE "SourceType" AS ENUM ('GENERATED', 'EDITED', 'CREATED');
 
 -- CreateTable
 CREATE TABLE "users" (
@@ -21,8 +42,8 @@ CREATE TABLE "users" (
     "email" TEXT NOT NULL,
     "emailVerified" BOOLEAN NOT NULL DEFAULT false,
     "image" TEXT,
-    "role" "UserRole" NOT NULL DEFAULT 'MEMBER',
-    "status" "Status" NOT NULL DEFAULT 'ACTIVE',
+    "role" "RoleType" NOT NULL DEFAULT 'MEMBER',
+    "status" "StatusType" NOT NULL DEFAULT 'ACTIVE',
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
@@ -90,10 +111,8 @@ CREATE TABLE "documents" (
     "order" SERIAL NOT NULL,
     "userId" TEXT NOT NULL,
     "name" TEXT NOT NULL,
-    "visibility" "Visibility" NOT NULL DEFAULT 'PRIVATE',
-    "latestGenerationId" TEXT,
-    "latestPresentationId" TEXT,
-    "status" "Status" NOT NULL DEFAULT 'ACTIVE',
+    "visibility" "VisibilityType" NOT NULL DEFAULT 'PRIVATE',
+    "status" "StatusType" NOT NULL DEFAULT 'ACTIVE',
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
@@ -106,11 +125,21 @@ CREATE TABLE "generations" (
     "order" SERIAL NOT NULL,
     "documentId" TEXT NOT NULL,
     "userId" TEXT NOT NULL,
-    "scope" "GenerationScope" NOT NULL DEFAULT 'MULTI_PAGE',
+    "source" "SourceType" NOT NULL DEFAULT 'GENERATED',
+    "scope" "ScopeType" NOT NULL DEFAULT 'MULTI_PAGE',
+    "tone" "ToneType" NOT NULL DEFAULT 'PROFESSIONAL',
+    "amount" "AmountType" NOT NULL DEFAULT 'CONCISE',
+    "audience" "AudienceType" NOT NULL DEFAULT 'AUTO',
+    "scenario" "ScenarioType" NOT NULL DEFAULT 'AUTO',
+    "theme" "ThemeType" NOT NULL DEFAULT 'LIGHT',
+    "language" "LanguageType" NOT NULL DEFAULT 'EN',
+    "quantity" INTEGER NOT NULL DEFAULT 1,
+    "aspectRatio" TEXT NOT NULL DEFAULT '16_9',
+    "keywords" TEXT[] DEFAULT ARRAY[]::TEXT[],
     "prompt" TEXT NOT NULL,
-    "outline" JSONB NOT NULL,
+    "outlines" JSONB NOT NULL,
     "aiMetadata" JSONB,
-    "status" "Status" NOT NULL DEFAULT 'ACTIVE',
+    "status" "StatusType" NOT NULL DEFAULT 'ACTIVE',
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
@@ -123,11 +152,11 @@ CREATE TABLE "presentations" (
     "order" SERIAL NOT NULL,
     "generationId" TEXT NOT NULL,
     "userId" TEXT NOT NULL,
-    "title" TEXT NOT NULL,
-    "content" JSONB NOT NULL,
-    "style" "PresentationStyle",
-    "language" TEXT,
-    "status" "Status" NOT NULL DEFAULT 'ACTIVE',
+    "source" "SourceType" NOT NULL DEFAULT 'GENERATED',
+    "slug" TEXT NOT NULL,
+    "slides" JSONB NOT NULL,
+    "aiMetadata" JSONB,
+    "status" "StatusType" NOT NULL DEFAULT 'ACTIVE',
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 

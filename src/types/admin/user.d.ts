@@ -1,11 +1,3 @@
-type UserInput = {
-  name: string;
-  email: string;
-  passwordHash: string;
-  role: UserRole;
-  status: Status;
-};
-
 type UserListParams = {
   page?: number;
   pageSize?: number;

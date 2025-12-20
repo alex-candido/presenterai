@@ -7,7 +7,7 @@ import {
 } from "@tanstack/react-query";
 import { toast } from "sonner";
 
-import { documentActions } from "@/actions/document-actions";
+import { documentActions } from "@/actions/admin/document-actions";
 import { API_MESSAGES } from "@/config/messages";
 import { StartSchema } from "@/schemas";
 

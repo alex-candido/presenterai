@@ -1,7 +1,7 @@
-@hostname = http://localhost:3000
+@hostname = http://localhost:3000/api/v1
 
 ### Create a new document and initial generation
-POST {{hostname}}/api/v1/documents
+POST {{hostname}}/documents
 Content-Type: application/json
 
 {

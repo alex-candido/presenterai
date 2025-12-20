@@ -1,9 +1,3 @@
-type DocumentInput = {
-  name: string;
-  visibility: Visibility;
-  status: Status;
-};
-
 type DocumentListParams = {
   page?: number;
   pageSize?: number;

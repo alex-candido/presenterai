@@ -1,11 +1,3 @@
-type PresentationInput = {
-  title: string;
-  content: JsonValue;
-  style: PresentationStyle;
-  language: string;
-  status: Status;
-};
-
 type PresentationListParams = {
   page?: number;
   pageSize?: number;

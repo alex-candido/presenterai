@@ -1,11 +1,3 @@
-type GenerationInput = {
-  scope: GenerationScope;
-  prompt: string;
-  outline: JsonValue;
-  aiMetadata: JsonValue;
-  status: Status;
-};
-
 type GenerationListParams = {
   page?: number;
   pageSize?: number;
@@ -22,4 +14,4 @@ type GenerationListResponse = {
   next: string | null;
   prev: string | null;
   results: IGeneration[];
-};
+};a

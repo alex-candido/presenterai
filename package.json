@@ -16,6 +16,7 @@
     "db:studio": "prisma studio"
   },
   "dependencies": {
+    "@excalidraw/excalidraw": "^0.18.0",
     "@faker-js/faker": "^10.1.0",
     "@getbrevo/brevo": "^3.0.1",
     "@hookform/resolvers": "^5.2.2",

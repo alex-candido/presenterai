@@ -1,8 +1,7 @@
-import { serverEnv } from "@/config/server-envs";
 import axios, { AxiosInstance } from 'axios';
 
 export const api: AxiosInstance = axios.create({
-  baseURL: serverEnv.NEXT_BASE_URL_API,
+  baseURL: "http://localhost:3000/api/v1",
   headers: {
     'Content-Type': 'application/json',
   },

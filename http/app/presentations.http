@@ -1,0 +1,92 @@
+@baseUrl = http://localhost:3000/api/v1
+@contentType = application/json
+
+# =================================================================
+# Presentations API - User Flow
+# =================================================================
+# This file follows the user journey after a generation's outline is finalized.
+
+# -----------------------------------------------------------------
+# Pre-requisite: A finalized Generation ID.
+# You must first run the requests in 'generations.http' to get a {{generationId}}.
+# -----------------------------------------------------------------
+@generationId = your-generation-id-here
+
+
+# -----------------------------------------------------------------
+# Step 3: User clicks "Create Presentation" from /app/generate/{{generationId}}.
+# This creates the final visual presentation based on the generation's outline.
+# -----------------------------------------------------------------
+# @name createPresentation
+POST {{baseUrl}}/app/presentations
+Content-Type: {{contentType}}
+
+{
+  "generationId": "{{generationId}}"
+}
+
+###
+# Variable for the newly created presentation ID
+@presentationId = {{createPresentation.response.body.$.id}}
+
+
+# -----------------------------------------------------------------
+# Step 4: User is on /app/presentation/{{presentationId}} and makes manual edits.
+# This PATCH request saves the updated Excalidraw scene (the 'slides' content).
+# -----------------------------------------------------------------
+PATCH {{baseUrl}}/app/presentations/{{presentationId}}
+Content-Type: {{contentType}}
+
+{
+  "slides": [
+    {
+      "id": "slide-uuid-1-updated",
+      "order": "1",
+      "outline": {
+        "id": "c7a8b9d0-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
+        "order": "1",
+        "title": "The Rise of Remote Work: A New Era",
+        "subtitle": "Introduction",
+        "description": "Overview of the shift to remote work and its growing importance.",
+        "representation": "TITLE_AND_BODY",
+        "concepts": ["paradigm shift", "flexibility", "modern workplace"]
+      },
+      "scene": {
+        "type": "excalidraw",
+        "version": 2,
+        "source": "presenterai",
+        "elements": [
+          {
+            "id": "element-1",
+            "type": "text",
+            "x": 100,
+            "y": 100,
+            "width": 800,
+            "height": 50,
+            "text": "The Rise of Remote Work: A Modern Revolution"
+          },
+          {
+            "id": "element-2",
+            "type": "rectangle",
+            "x": 100,
+            "y": 200,
+            "width": 800,
+            "height": 200,
+            "backgroundColor": "#f0f0f0"
+          }
+        ],
+        "appState": {
+          "viewBackgroundColor": "#FFFFFF"
+        }
+      }
+    }
+  ]
+}
+
+
+# -----------------------------------------------------------------
+# Other Endpoints
+# -----------------------------------------------------------------
+
+### Get presentation details
+GET {{baseUrl}}/app/presentations/{{presentationId}}

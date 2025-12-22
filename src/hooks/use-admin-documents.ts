@@ -9,7 +9,6 @@ import { toast } from "sonner";
 
 import { documentActions } from "@/actions/admin/document-actions";
 import { API_MESSAGES } from "@/config/messages";
-import { StartSchema } from "@/schemas";
 
 export const DOCUMENT_QUERY_KEYS = {
   all: ["documents"],
@@ -19,7 +18,7 @@ export const DOCUMENT_QUERY_KEYS = {
   detail: (id: number | string) => [...DOCUMENT_QUERY_KEYS.details(), id],
 };
 
-export function useDocuments() {
+export function useAdminDocuments() {
   const queryClient = useQueryClient();
   const { list, create, get, update, updatePartial, destroy } = documentActions();
 

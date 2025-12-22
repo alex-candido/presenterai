@@ -9,7 +9,7 @@ export function AppGenerateOutlinePanel({
       className={cn("app-generate-outline-panel", className)}
       {...props}
     >
-      {/* Main outline editing UI will go here, switching between MULTI_PAGE and SINGLE_PAGE */}
+      pp-generate-outline-panel
     </main>
   );
 }

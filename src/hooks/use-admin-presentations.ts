@@ -18,7 +18,7 @@ export const PRESENTATION_QUERY_KEYS = {
   detail: (id: number | string) => [...PRESENTATION_QUERY_KEYS.details(), id],
 };
 
-export function usePresentations() {
+export function useAdminPresentations() {
   const queryClient = useQueryClient();
   const { list, create, get, update, updatePartial, destroy } = presentationActions();
 

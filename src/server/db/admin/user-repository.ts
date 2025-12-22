@@ -1,7 +1,7 @@
 import { prisma } from '@/server/prisma';
 import { Prisma } from '@prisma/client';
 
-export function userRepository() {
+export function AdminUserRepository() {
   async function list(params?: {
     where?: Prisma.UserWhereInput;
     orderBy?: Prisma.UserOrderByWithRelationInput;

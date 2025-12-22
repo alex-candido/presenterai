@@ -1,7 +1,7 @@
 import { API_ENDPOINTS } from "@/config/endpoints";
 import { api } from "@/lib/api";
 
-export function presentationActions() {
+export function adminPresentationActions() {
   async function list(params?: {
     page?: number;
     page_size?: number;

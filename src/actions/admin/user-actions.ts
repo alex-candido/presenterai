@@ -1,7 +1,7 @@
 import { API_ENDPOINTS } from "@/config/endpoints";
 import { api } from "@/lib/api";
 
-export function userActions() {
+export function adminUserActions() {
   async function list(params?: {
     page?: number;
     page_size?: number;

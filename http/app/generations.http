@@ -1,0 +1,90 @@
+@baseUrl = http://localhost:3000/api/v1
+@contentType = application/json
+
+# Generations API - User Flow
+# This file follows the user journey for creating a presentation.
+
+# Step 1: User starts on /app and submits a prompt.
+# This creates a new generation and redirects to /app/generate/[id].
+# @name createGeneration
+POST {{baseUrl}}/app/generations
+Content-Type: {{contentType}}
+
+{
+  "prompt": "Create a 5-slide presentation about the benefits of remote work for small businesses.",
+  "scope": "MULTI_PAGE",
+  "language": "EN",
+  "quantity": 5
+}
+
+###
+# Variable for the newly created generation ID
+@generationId = {{createGeneration.response.body.$.id}}
+
+
+# Step 2: User is on /app/generate/{{generationId}} and edits the outline.
+# They change titles, reorder slides, and set specific layouts.
+# This PATCH request saves the updated outline and settings.
+PATCH {{baseUrl}}/app/generations/{{generationId}}
+Content-Type: {{contentType}}
+
+{
+  "tone": "PROFESSIONAL",
+  "audience": "STUDENTS",
+  "theme": "DARK",
+  "aspectRatio": "RATIO_16_9",
+  "keywords": ["remote work", "productivity", "future"],
+  "outlines": [
+    {
+      "id": "c7a8b9d0-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
+      "order": "1",
+      "title": "The Rise of Remote Work: A New Era",
+      "subtitle": "Introduction",
+      "description": "Overview of the shift to remote work and its growing importance.",
+      "representation": "TITLE_AND_BODY",
+      "concepts": ["paradigm shift", "flexibility", "modern workplace"]
+    },
+    {
+      "id": "d8b9c0a1-2f3e-4b5c-6d7e-8f9a0b1c2d3e",
+      "order": "2",
+      "title": "Key Benefit: Increased Productivity",
+      "subtitle": "Data & Evidence",
+      "description": "Comparing productivity metrics between in-office and remote employees.",
+      "representation": "COMPARISON",
+      "concepts": ["focus time", "autonomy", "performance metrics"]
+    },
+    {
+      "id": "e9c0d1b2-3e4f-5b6c-7d8e-9f0a1b2c3d4f",
+      "order": "3",
+      "title": "Key Benefit: Cost Savings for Businesses",
+      "subtitle": "Financial Advantages",
+      "description": "Analysis of reduced overhead costs like rent, utilities, and office supplies.",
+      "representation": "NUMBERED_LIST",
+      "concepts": ["overhead reduction", "real estate", "operational efficiency"]
+    },
+    {
+      "id": "f0d1e2c3-4f5a-6b7c-8d9e-0a1b2c3d4e5g",
+      "order": "4",
+      "title": "Challenges and How to Overcome Them",
+      "subtitle": "Potential Pitfalls",
+      "description": "Addressing common challenges such as communication gaps and team culture.",
+      "representation": "PROS_AND_CONS",
+      "concepts": ["communication tools", "virtual team building", "isolation"]
+    },
+    {
+      "id": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "order": "5",
+      "title": "Conclusion: The Future is Hybrid",
+      "subtitle": "Summary & Next Steps",
+      "description": "Concluding thoughts on why a hybrid model is the most sustainable future.",
+      "representation": "QUOTE",
+      "concepts": ["hybrid model", "sustainability", "work-life balance"]
+    }
+  ]
+}
+
+
+# Other Endpoints (Less common in the primary user flow)
+
+### Get generation details
+GET {{baseUrl}}/app/generations/{{generationId}}

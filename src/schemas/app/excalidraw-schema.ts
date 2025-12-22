@@ -173,6 +173,5 @@ export const excalidrawSceneSchema = z.object({
   files: filesSchema.optional(),
 });
 
-// Inferred types
 export type ExcalidrawElement = z.infer<typeof excalidrawElementSchema>;
 export type ExcalidrawScene = z.infer<typeof excalidrawSceneSchema>;

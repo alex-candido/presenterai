@@ -1,7 +1,7 @@
 import { prisma } from '@/server/prisma';
 import { Prisma } from '@prisma/client';
 
-export function generationRepository() {
+export function AdminGenerationRepository() {
   async function list(params?: {
     where?: Prisma.GenerationWhereInput;
     orderBy?: Prisma.GenerationOrderByWithRelationInput;

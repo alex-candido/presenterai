@@ -18,7 +18,7 @@ export const GENERATION_QUERY_KEYS = {
   detail: (id: number | string) => [...GENERATION_QUERY_KEYS.details(), id],
 };
 
-export function useGenerations() {
+export function useAdminGenerations() {
   const queryClient = useQueryClient();
   const { list, create, get, update, updatePartial, destroy } = generationActions();
 

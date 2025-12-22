@@ -3,7 +3,7 @@ import {
   AppHero,
   AppRecentsSection,
   AppSuggestionsSection
-} from "@/components/pages/app/start";
+} from "@/components/pages/app/root";
 
 export default function AppPage() {
   return (

@@ -1,4 +1,4 @@
-import { UserRole } from "@prisma/client";
+import { RoleType } from "@prisma/client";
 import { Session, User } from "better-auth";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -27,7 +27,7 @@ export function redirect(request: NextRequest, path: string): NextResponse {
 
 export function globalAuthorization(
   pathname: string,
-  session: { user: User & { role: UserRole; emailVerified?: boolean }; session: Session } | any,
+  session: { user: User & { role: RoleType; emailVerified?: boolean }; session: Session } | any,
   rule: RouteProtectionRule,
 ): AuthorizationStatus {
   if (!pathname.startsWith(rule.path)) {

@@ -18,7 +18,7 @@ export const USER_QUERY_KEYS = {
   detail: (id: number | string) => [...USER_QUERY_KEYS.details(), id],
 };
 
-export function useUsers() {
+export function useAdminUsers() {
   const queryClient = useQueryClient();
   const { list, create, get, update, updatePartial, destroy } = userActions();
 

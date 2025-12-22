@@ -9,7 +9,7 @@ export function AppGenerateHeader({
       className={cn("app-generate-header", className)}
       {...props}
     >
-      {/* Page Title, Save Button, Create Visual Button */}
+      app-generate-header
     </header>
   );
 }

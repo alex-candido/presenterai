@@ -1,7 +1,7 @@
 import { prisma } from '@/server/prisma';
 import { Prisma } from '@prisma/client';
 
-export function presentationRepository() {
+export function AdminPresentationRepository() {
   async function list(params?: {
     where?: Prisma.PresentationWhereInput;
     orderBy?: Prisma.PresentationOrderByWithRelationInput;

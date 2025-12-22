@@ -1,5 +1,5 @@
-tree src/
-src/
+tree src
+src
 ├── actions
 │   ├── admin
 │   │   ├── document-actions.ts
@@ -409,6 +409,11 @@ src/
 │   ├── messages.ts
 │   ├── routes.ts
 │   └── server-envs.ts
+├── data
+│   └── excalidraw
+│       ├── slide-example-01.json
+│       ├── slide-example-02.json
+│       └── slide-example-03.json
 ├── hooks
 │   ├── index.ts
 │   ├── use-auth.ts
@@ -453,13 +458,17 @@ src/
 │   ├── global.ts
 │   └── index.ts
 ├── schemas
-│   ├── auth-schema.ts
-│   ├── document-schema.ts
-│   ├── generation-schema.ts
-│   ├── index.ts
-│   ├── presentation-schema.ts
-│   ├── start-schema.ts
-│   └── user-schema.ts
+│   ├── admin
+│   │   ├── auth-schema.ts
+│   │   ├── document-schema.ts
+│   │   ├── generation-schema.ts
+│   │   ├── presentation-schema.ts
+│   │   └── user-schema.ts
+│   └── app
+│       ├── ai-schema.ts
+│       ├── excalidraw-schema.ts
+│       ├── generation-schema.ts
+│       └── presentation-schema.ts
 ├── server
 │   ├── auth
 │   │   ├── client.ts
@@ -481,6 +490,11 @@ src/
 │   │   ├── prompts.ts
 │   │   ├── tools.ts
 │   │   └── workflows.ts
+│   ├── mock
+│   │   ├── ai.ts
+│   │   ├── excalidraw.ts
+│   │   ├── generation.ts
+│   │   └── presentation.ts
 │   ├── prisma
 │   │   └── index.ts
 │   └── resend
@@ -489,11 +503,16 @@ src/
 │   └── globals.css
 └── types
     ├── admin
+    │   ├── dashboard.d.ts
     │   ├── document.d.ts
     │   ├── generation.d.ts
     │   ├── presentation.d.ts
     │   └── user.d.ts
     ├── app
+    │   ├── ai.d.ts
+    │   ├── excalidraw.d.ts
+    │   ├── generation.d.ts
+    │   └── presentation.d.ts
     └── auth.d.ts
 
-163 directories, 333 files
+168 directories, 347 files

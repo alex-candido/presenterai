@@ -4,7 +4,7 @@ import { API_ENDPOINTS } from "@/config/endpoints";
 import { api } from "@/lib/api";
 import { StartSchema } from "@/schemas/start-schema";
 
-export function documentActions() {
+export function adminDocumentActions() {
   async function list(params?: {
     page?: number;
     page_size?: number;

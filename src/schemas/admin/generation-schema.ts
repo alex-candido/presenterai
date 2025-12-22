@@ -11,18 +11,18 @@ import {
 import { z } from 'zod';
 
 export const adminGenerationInputSchema = z.object({
-  scope: z.nativeEnum(ScopeType),
-  tone: z.nativeEnum(ToneType),
-  amount: z.nativeEnum(AmountType),
-  audience: z.nativeEnum(AudienceType),
-  scenario: z.nativeEnum(ScenarioType),
-  theme: z.nativeEnum(ThemeType),
-  language: z.nativeEnum(LanguageType),
+  scope: z.enum(ScopeType),
+  tone: z.enum(ToneType),
+  amount: z.enum(AmountType),
+  audience: z.enum(AudienceType),
+  scenario: z.enum(ScenarioType),
+  theme: z.enum(ThemeType),
+  language: z.enum(LanguageType),
   quantity: z.number().int().positive('Quantity must be a positive integer'),
   aspectRatio: z.string().min(1, 'Aspect ratio is required'),
   keywords: z.array(z.string()).optional(),
   prompt: z.string().min(1, 'Prompt is required'),
-  status: z.nativeEnum(StatusType),
+  status: z.enum(StatusType),
 });
 
 export type AdminGenerationInput = z.infer<typeof adminGenerationInputSchema>;

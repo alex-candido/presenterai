@@ -9,7 +9,7 @@ export function AppGenerateSettingsPanel({
       className={cn("app-generate-settings-panel", className)}
       {...props}
     >
-      {/* Sidebar with global settings for the generation */}
+      app-generate-settings-panel
     </aside>
   );
 }

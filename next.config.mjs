@@ -37,12 +37,7 @@ const nextConfig = {
         source: '/admin',
         destination: '/admin/dashboard',
         permanent: true,
-      },
-      {
-        source: '/app',
-        destination: '/app/start',
-        permanent: true,
-      },
+      }
     ];
   },
 };

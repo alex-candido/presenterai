@@ -1,7 +1,7 @@
 import { prisma } from '@/server/prisma';
 import { Prisma } from '@prisma/client';
 
-export function documentRepository() {
+export function AdminDocumentRepository() {
   async function list(params?: {
     where?: Prisma.DocumentWhereInput;
     orderBy?: Prisma.DocumentOrderByWithRelationInput;

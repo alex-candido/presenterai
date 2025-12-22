@@ -4,7 +4,7 @@ import { slidesSchema } from '../app/presentation-schema';
 
 export const adminPresentationInputSchema = z.object({
   slides: slidesSchema.optional(),
-  status: z.nativeEnum(StatusType),
+  status: z.enum(StatusType),
 });
 
 export type AdminPresentationInput = z.infer<typeof adminPresentationInputSchema>;

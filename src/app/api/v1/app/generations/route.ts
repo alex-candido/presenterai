@@ -4,13 +4,10 @@ import { NextResponse } from "next/server";
 import { appCreateGenerationSchema } from "@/schemas/app/generation-schema";
 import { auth } from "@/server/auth";
 import { appGenerationRepository } from "@/server/db/app/generation-repository";
-import { aiMock } from "@/server/mock/app/ai-mock";
-import { generationMock } from "@/server/mock/app/generation-mock";
+import { generateInitialOutlineWorkflow } from "@/server/mastra/workflows";
 
 export async function POST(request: Request) {
   try {
-    const { generateOutline } = generationMock();
-    const { generateAiMetadata } = aiMock();
     const { createWithDocument } = appGenerationRepository();
 
     const session = await auth.api.getSession({ headers: await headers() });
@@ -27,13 +24,15 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Invalid fields" }, { status: 400 });
     }
 
+    if (validatedFields.data.userId !== user.id) {
+      return NextResponse.json({ error: "User ID mismatch" }, { status: 403 });
+    }
+
     const { prompt, ...rest } = validatedFields.data;
 
-    const initialOutlines = generateOutline(prompt);
-    const aiMetadata = generateAiMetadata({
-      documentId: "",
-      outlineSlidesCount: initialOutlines.length,
-    });
+    // Call the real AI workflow
+    const { outlines: initialOutlines, aiMetadata } =
+      await generateInitialOutlineWorkflow(prompt);
 
     const generation = await createWithDocument(user.id, {
       prompt,
@@ -43,8 +42,10 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json(generation, { status: 201 });
-  } catch (error) {
+  } catch (error: any) {
     console.error("[GENERATION_POST]", error);
-    return new NextResponse("Internal error", { status: 500 });
+    // Return a more specific error message if available
+    const errorMessage = error.message || "Internal error";
+    return new NextResponse(errorMessage, { status: 500 });
   }
 }

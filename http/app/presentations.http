@@ -1,22 +1,10 @@
 @baseUrl = http://localhost:3000/api/v1
 @contentType = application/json
 
-# =================================================================
-# Presentations API - User Flow
-# =================================================================
-# This file follows the user journey after a generation's outline is finalized.
-
-# -----------------------------------------------------------------
-# Pre-requisite: A finalized Generation ID.
-# You must first run the requests in 'generations.http' to get a {{generationId}}.
-# -----------------------------------------------------------------
 @generationId = your-generation-id-here
 
 
-# -----------------------------------------------------------------
 # Step 3: User clicks "Create Presentation" from /app/generate/{{generationId}}.
-# This creates the final visual presentation based on the generation's outline.
-# -----------------------------------------------------------------
 # @name createPresentation
 POST {{baseUrl}}/app/presentations
 Content-Type: {{contentType}}
@@ -30,10 +18,7 @@ Content-Type: {{contentType}}
 @presentationId = {{createPresentation.response.body.$.id}}
 
 
-# -----------------------------------------------------------------
 # Step 4: User is on /app/presentation/{{presentationId}} and makes manual edits.
-# This PATCH request saves the updated Excalidraw scene (the 'slides' content).
-# -----------------------------------------------------------------
 PATCH {{baseUrl}}/app/presentations/{{presentationId}}
 Content-Type: {{contentType}}
 
@@ -83,10 +68,6 @@ Content-Type: {{contentType}}
   ]
 }
 
-
-# -----------------------------------------------------------------
-# Other Endpoints
-# -----------------------------------------------------------------
 
 ### Get presentation details
 GET {{baseUrl}}/app/presentations/{{presentationId}}

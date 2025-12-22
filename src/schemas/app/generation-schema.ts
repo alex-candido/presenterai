@@ -22,6 +22,7 @@ export const outlineSchema = z.object({
 export const outlinesSchema = z.array(outlineSchema);
 
 export const appCreateGenerationSchema = z.object({
+  userId: z.uuid(),
   prompt: z.string().min(10, 'Prompt must be at least 10 characters'),
   scope: z.enum(ScopeType).optional(),
   language: z.enum(LanguageType).optional(),

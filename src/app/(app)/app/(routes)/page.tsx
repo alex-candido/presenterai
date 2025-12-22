@@ -1,6 +1,6 @@
 import {
   AppFormSection,
-  AppHero,
+  AppHeroSection,
   AppRecentsSection,
   AppSuggestionsSection
 } from "@/components/pages/app/root";
@@ -8,7 +8,7 @@ import {
 export default function AppPage() {
   return (
     <div className="app-start-page">
-      <AppHero />
+      <AppHeroSection />
       <AppFormSection />
       <AppRecentsSection />
       <AppSuggestionsSection />

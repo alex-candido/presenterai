@@ -1,16 +1,13 @@
 @baseUrl = http://localhost:3000/api/v1
 @contentType = application/json
 
-# Generations API - User Flow
-# This file follows the user journey for creating a presentation.
-
 # Step 1: User starts on /app and submits a prompt.
-# This creates a new generation and redirects to /app/generate/[id].
 # @name createGeneration
 POST {{baseUrl}}/app/generations
 Content-Type: {{contentType}}
 
 {
+  "userId": "1d1b10b4-fa8e-415d-b551-1f0894c4231e",
   "prompt": "Create a 5-slide presentation about the benefits of remote work for small businesses.",
   "scope": "MULTI_PAGE",
   "language": "EN",
@@ -23,8 +20,6 @@ Content-Type: {{contentType}}
 
 
 # Step 2: User is on /app/generate/{{generationId}} and edits the outline.
-# They change titles, reorder slides, and set specific layouts.
-# This PATCH request saves the updated outline and settings.
 PATCH {{baseUrl}}/app/generations/{{generationId}}
 Content-Type: {{contentType}}
 
@@ -82,9 +77,6 @@ Content-Type: {{contentType}}
     }
   ]
 }
-
-
-# Other Endpoints (Less common in the primary user flow)
 
 ### Get generation details
 GET {{baseUrl}}/app/generations/{{generationId}}

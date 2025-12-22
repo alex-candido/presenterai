@@ -1,1 +1,3 @@
-export function AdminDashboardRepository() {}
+export function AdminDashboardRepository() {
+  return {};
+}

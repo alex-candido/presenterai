@@ -1,3 +1,4 @@
+import "./src/env.ts";
 import createMDX from "@next/mdx";
 
 /** @type {import('next').NextConfig} */

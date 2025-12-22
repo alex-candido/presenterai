@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "mastra:dev": "mastra dev --dir src/server/mastra",
-		"mastra:build": "mastra build --dir src/server/mastra",
+    "mastra:build": "mastra build --dir src/server/mastra",
     "prisma:init": "prisma init",
     "prisma:generate": "prisma generate",
     "prisma:push": "prisma prisma push",
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@ai-sdk/gateway": "^2.0.23",
+    "@ai-sdk/google": "^3.0.0",
     "@excalidraw/excalidraw": "^0.18.0",
     "@faker-js/faker": "^10.1.0",
     "@getbrevo/brevo": "^3.0.1",

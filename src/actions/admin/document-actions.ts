@@ -1,7 +1,7 @@
 
 
 import { API_ENDPOINTS } from "@/config/endpoints";
-import { api } from "@/lib/api";
+import { api } from "@/lib/axios/api";
 import { StartSchema } from "@/schemas/start-schema";
 
 export function adminDocumentActions() {

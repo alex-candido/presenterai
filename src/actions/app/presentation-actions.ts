@@ -1,8 +1,8 @@
 import { API_ENDPOINTS } from "@/config/endpoints";
-import { api } from "@/lib/api";
+import { api } from "@/lib/axios";
 import {
-  AppCreatePresentationInput,
-  AppUpdatePresentationInput,
+    AppCreatePresentationInput,
+    AppUpdatePresentationInput,
 } from "@/schemas/app/presentation-schema";
 import { Presentation } from "@prisma/client";
 

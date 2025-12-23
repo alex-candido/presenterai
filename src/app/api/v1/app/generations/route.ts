@@ -1,10 +1,9 @@
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 
+import { auth } from "@/lib/betterauth";
 import { appCreateGenerationSchema } from "@/schemas/app/generation-schema";
-import { auth } from "@/server/auth";
 import { appGenerationRepository } from "@/server/db/app/generation-repository";
-import { generateInitialOutlineWorkflow } from "@/server/mastra/workflows";
 
 export async function POST(request: Request) {
   try {
@@ -30,18 +29,14 @@ export async function POST(request: Request) {
 
     const { prompt, ...rest } = validatedFields.data;
 
-    // Call the real AI workflow
-    const { outlines: initialOutlines, aiMetadata } =
-      await generateInitialOutlineWorkflow(prompt);
+    // const generation = await createWithDocument(user.id, {
+    //   prompt,
+    //   outlines: initialOutlines,
+    //   ...rest,
+    //   aiMetadata: aiMetadata,
+    // });
 
-    const generation = await createWithDocument(user.id, {
-      prompt,
-      outlines: initialOutlines,
-      ...rest,
-      aiMetadata: aiMetadata,
-    });
-
-    return NextResponse.json(generation, { status: 201 });
+    return NextResponse.json({ status: 201 });
   } catch (error: any) {
     console.error("[GENERATION_POST]", error);
     // Return a more specific error message if available

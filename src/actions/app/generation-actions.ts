@@ -1,8 +1,8 @@
 import { API_ENDPOINTS } from "@/config/endpoints";
-import { api } from "@/lib/api";
+import { api } from "@/lib/axios";
 import {
-  AppCreateGenerationInput,
-  AppUpdateGenerationInput,
+    AppCreateGenerationInput,
+    AppUpdateGenerationInput,
 } from "@/schemas/app/generation-schema";
 import { Generation } from "@prisma/client";
 

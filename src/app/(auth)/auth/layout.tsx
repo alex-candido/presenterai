@@ -1,7 +1,7 @@
 "use client";
 
+import { AuthLayoutBackground } from "@/components/app/auth/layout/auth-layout-background";
 import { LayoutApp, LayoutMain } from "@/components/layouts";
-import { AuthLayoutBackground } from "@/components/pages/auth/layout/auth-layout-background";
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (

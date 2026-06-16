@@ -12,44 +12,36 @@ datasource db {
   provider = "postgresql"
 }
 
-enum Status {
+enum StatusType {
   ACTIVE
   INACTIVE
 }
 
-enum PresentationStyle {
-  PROFESSIONAL
-  CREATIVE
-  MINIMALIST
+enum ProcessStatusType {
+  UNPROCESSED
+  PROCESSING
+  PROCESSED
+  FAILED
 }
 
-enum GenerationScope {
-  MULTI_PAGE
-  SINGLE_PAGE
-}
-
-enum UserRole {
+enum RoleType {
   ADMIN
   MEMBER
 }
 
-enum Visibility {
-  PUBLIC
-  PRIVATE
-}
-
 model User {
-  id            String   @id @default(uuid())
-  order         Int      @default(autoincrement())
+  id String @id @default(uuid())
+
+  order         Int        @default(autoincrement())
   name          String?
-  username      String?  @unique
-  email         String   @unique
-  emailVerified Boolean  @default(false)
+  email         String     @unique
+  emailVerified Boolean    @default(false)
   image         String?
-  role          UserRole @default(MEMBER)
-  status        Status   @default(ACTIVE)
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+  role          RoleType   @default(MEMBER)
+  status        StatusType @default(ACTIVE)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   documents     Document[]
   generations   Generation[]
@@ -61,19 +53,21 @@ model User {
 }
 
 model Account {
-  id                   String    @id @default(uuid())
-  order                Int       @default(autoincrement())
-  provider             String    @default("credential")
-  providerAccountId    String?
-  userId               String
-  user                 User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id                String  @id @default(uuid())
+  order             Int     @default(autoincrement())
+  provider          String  @default("credential")
+  providerAccountId String?
+  userId            String
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
   accessToken          String?
   refreshToken         String?
   idToken              String?
   accessTokenExpiresAt DateTime?
   scope                String?
-  createdAt            DateTime  @default(now())
-  updatedAt            DateTime  @updatedAt
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   accountId             String
   providerId            String
@@ -81,8 +75,8 @@ model Account {
   password              String?
 
   @@unique([provider, providerAccountId])
-  @@map("accounts")
   @@index([userId])
+  @@map("accounts")
 }
 
 model VerificationToken {
@@ -95,8 +89,9 @@ model VerificationToken {
 }
 
 model Session {
-  id        String   @id @default(uuid())
-  userId    String
+  id     String @id @default(uuid())
+  userId String
+
   expiresAt DateTime
   token     String   @unique
   createdAt DateTime @default(now())
@@ -109,17 +104,36 @@ model Session {
   @@map("sessions")
 }
 
+model Verification {
+  id String @id @default(uuid())
+
+  identifier String
+  value      String
+  expiresAt  DateTime
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([identifier])
+  @@map("verifications")
+}
+
+enum VisibilityType {
+  PUBLIC
+  PRIVATE
+}
+
 model Document {
-  id                   String     @id @default(uuid())
-  order                Int        @default(autoincrement())
-  userId               String
-  title                String
-  visibility           Visibility @default(PRIVATE)
-  latestGenerationId   String?
-  latestPresentationId String?
-  status               Status     @default(ACTIVE)
-  createdAt            DateTime   @default(now())
-  updatedAt            DateTime   @updatedAt
+  id     String @id @default(uuid())
+  order  Int    @default(autoincrement())
+  userId String
+
+  name       String
+  visibility VisibilityType @default(PRIVATE)
+  status     StatusType     @default(ACTIVE)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
   generations Generation[]
@@ -128,18 +142,66 @@ model Document {
   @@map("documents")
 }
 
+enum ScopeType {
+  MULTI_PAGE
+  SINGLE_PAGE
+}
+
+enum LanguageType {
+  EN // English (default)
+  ES // Spanish
+  FR // French
+  DE // German
+  IT // Italian
+  PT // Portuguese
+  RU // Russian
+  ZH // Chinese
+  JA // Japanese
+  KO // Korean
+}
+
+enum AspectRatio {
+  RATIO_16_9 // Widescreen (default)
+  RATIO_4_3 // Standard
+  RATIO_9_16 // Vertical (Mobile/Stories)
+  RATIO_1_1 // Square
+}
+
+// outline {
+//   id  string;
+//   order: string;
+//   title: string;
+//   subtitle: string;
+//   description: string;
+//   representation: string;
+//   concepts: string[];
+// }
+
+// aiMetadata {
+//   ...
+// }
+
 model Generation {
-  id         String          @id @default(uuid())
-  order      Int             @default(autoincrement())
+  id         String @id @default(uuid())
+  order      Int    @default(autoincrement())
   documentId String
   userId     String
-  scope      GenerationScope @default(MULTI_PAGE)
-  prompt     String          @db.Text
-  outline    Json
+
+  scope          ScopeType         @default(MULTI_PAGE)
+  language       LanguageType      @default(EN)
+  status         StatusType        @default(ACTIVE)
+  process_status ProcessStatusType @default(UNPROCESSED)
+
+  quantity       Int               @default(1)
+  aspectRatio    String            @default("16_9")
+  keywords       String[]          @default([])
+
+  prompt     String @db.Text
+  outlines   Json
   aiMetadata Json?
-  status     Status          @default(ACTIVE)
-  createdAt  DateTime        @default(now())
-  updatedAt  DateTime        @updatedAt
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
   document      Document       @relation(fields: [documentId], references: [id], onDelete: Cascade)
@@ -150,18 +212,27 @@ model Generation {
   @@map("generations")
 }
 
+// slides {
+// ...
+// }
+
+// aiMetadata {
+//   ...
+// }
+
 model Presentation {
-  id           String             @id @default(uuid())
-  order        Int                @default(autoincrement())
+  id           String @id @default(uuid())
+  order        Int    @default(autoincrement())
   generationId String
   userId       String
-  title        String
-  content      Json
-  style        PresentationStyle?
-  language     String?
-  status       Status             @default(ACTIVE)
-  createdAt    DateTime           @default(now())
-  updatedAt    DateTime           @updatedAt
+
+  slug       String
+  slides     Json
+  aiMetadata Json?
+  status     StatusType @default(ACTIVE)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   generation Generation @relation(fields: [generationId], references: [id], onDelete: Cascade)
   user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -169,16 +240,4 @@ model Presentation {
   @@index([generationId])
   @@index([userId])
   @@map("presentations")
-}
-
-model Verification {
-  id         String   @id @default(uuid())
-  identifier String
-  value      String
-  expiresAt  DateTime
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
-
-  @@index([identifier])
-  @@map("verifications")
 }

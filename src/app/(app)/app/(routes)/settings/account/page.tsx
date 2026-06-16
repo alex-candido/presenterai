@@ -1,6 +1,6 @@
 "use client";
 
-import { AppSettingsAccountHeader } from "@/components/pages/app/settings/account";
+import { AppSettingsAccountHeader } from "@/components/app/app/settings/account";
 
 
 export default function AppSettingsAccountPage() {

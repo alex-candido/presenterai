@@ -1,4 +1,5 @@
 import createMDX from "@next/mdx";
+import "./src/config/env.ts";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -10,7 +11,12 @@ const nextConfig = {
     return [
       {
         source: '/',
-        destination: '/landing',
+        destination: '/landing/home',
+        permanent: true,
+      },
+      {
+        source: '/landing',
+        destination: '/landing/home',
         permanent: true,
       },
       {
@@ -32,7 +38,7 @@ const nextConfig = {
         source: '/admin',
         destination: '/admin/dashboard',
         permanent: true,
-      },
+      }
     ];
   },
 };

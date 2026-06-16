@@ -2,8 +2,8 @@ import { headers } from "next/headers";
 import { NextRequest } from "next/server";
 
 import { APP_ROUTES } from "@/config/routes";
+import { auth } from "@/lib/betterauth";
 import { AuthorizationStatus, globalAuthorization, redirect } from "@/lib/utils/proxy";
-import { auth } from "@/server/auth/index";
 
 export async function globalRouteProxy(request: NextRequest) {
   const session = await auth.api.getSession({ headers: await headers() });

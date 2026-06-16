@@ -1,10 +1,10 @@
 "use client";
 
 import {
-  AppDocumentsHeader,
-  AppDocumentsList,
-  AppDocumentsToolbar
-} from "@/components/pages/app/documents";
+    AppDocumentsHeader,
+    AppDocumentsList,
+    AppDocumentsToolbar
+} from "@/components/app/app/documents";
 
 export default function DocumentsPage() {
   return (

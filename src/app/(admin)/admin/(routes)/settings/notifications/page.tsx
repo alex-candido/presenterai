@@ -1,6 +1,6 @@
 "use client";
 
-import { AdminSettingsNotificationsHeader } from "@/components/pages/admin/settings/notifications";
+import { AdminSettingsNotificationsHeader } from "@/components/app/admin/settings/notifications";
 
 
 export default function AdminSettingsNotificationsPage() {

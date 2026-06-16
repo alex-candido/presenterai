@@ -1,0 +1,53 @@
+{
+  "mastra": {
+    "agentId": "mock-agent-gen-123",
+    "traceId": "trace-gen-456",
+    "version": "1.0.0",
+    "duration": 3250,
+    "steps": [
+      {
+        "name": "initial_generation",
+        "tool": "gemini_flash_api",
+        "duration": 450,
+        "status": "success",
+        "usage": {
+          "promptTokens": 180,
+          "completionTokens": 380,
+          "totalTokens": 560
+        },
+        "result": {
+          "success": true
+        }
+      },
+      {
+        "name": "outline_refinement",
+        "tool": "outline_tool",
+        "duration": 120,
+        "status": "success",
+        "usage": {
+          "promptTokens": 50,
+          "completionTokens": 80,
+          "totalTokens": 130
+        },
+        "result": {
+          "success": true
+        }
+      }
+    ]
+  },
+  "usage": {
+    "promptTokens": 230,
+    "completionTokens": 460,
+    "totalTokens": 690,
+    "cost": 0.05,
+    "currency": "USD"
+  },
+  "model": {
+    "name": "gemini-1.5-pro",
+    "provider": "google"
+  },
+  "context": {
+    "outlineSlidesCount": 4,
+    "documentId": "doc-uuid-gen-001"
+  }
+}

@@ -1,19 +1,19 @@
 "use client";
 
 import {
-  DashboardDocumentsSummarySection,
-  DashboardGenerationsSummarySection,
-  DashboardHeader,
-  DashboardPresentationsSummarySection,
-  DashboardRecentActivitySection,
-  DashboardStatsSection,
-  DashboardUserSummarySection
-} from "@/components/pages/admin/dashboard";
+    DashboardDocumentsSummarySection,
+    DashboardGenerationsSummarySection,
+    DashboardHeaderSection,
+    DashboardPresentationsSummarySection,
+    DashboardRecentActivitySection,
+    DashboardStatsSection,
+    DashboardUserSummarySection
+} from "@/components/app/admin/dashboard";
 
 export default function DashboardPage() {
   return (
     <div className="admin-dashboard-page">
-      <DashboardHeader />
+      <DashboardHeaderSection />
       <DashboardStatsSection />
       <DashboardRecentActivitySection />
       <DashboardUserSummarySection />

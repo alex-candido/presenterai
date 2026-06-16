@@ -1,0 +1,79 @@
+bun src/lib/mastra/test-outline.ts
+WARN [2026-03-16 18:07:15.050 -0300] (presenterai-ai-engine): If you are using a custom instrumentation file or want to disable this warning, set the globalThis.___MASTRA_TELEMETRY___ variable to true in your instrumentation file.
+Starting outline workflow test...
+Executing workflow with prompt: "A presentation about accelerating digital product creation with Micro-SaaS"
+WARN [2026-03-16 18:07:15.054 -0300] (presenterai-ai-engine): Mastra telemetry is deprecated and will be removed on the Nov 4th release. Instead use AI Tracing. More info can be found here: https://github.com/mastra-ai/mastra/issues/8577 and here: https://mastra.ai/en/docs/observability/ai-tracing/overview
+DEBUG [2026-03-16 18:07:15.056 -0300] (presenterai-ai-engine): Logger updated [component=AGENT] [name=Outline Agent]
+DEBUG [2026-03-16 18:07:15.056 -0300] (Outline Agent): [Agents:Outline Agent] initialized.
+    model: {
+      "id": "google/gemini-2.5-flash",
+      "apiKey": "AIzaSyCUOo37iB66R4-mY8ffvFHEQsRvMCQOIAc"
+    }
+DEBUG [2026-03-16 18:07:15.057 -0300] (presenterai-ai-engine): Logger updated [component=AGENT] [name=Slide Agent]
+DEBUG [2026-03-16 18:07:15.057 -0300] (Slide Agent): [Agents:Slide Agent] initialized.
+    model: {
+      "id": "google/gemini-3.1-flash-lite-preview",
+      "apiKey": "AIzaSyCUOo37iB66R4-mY8ffvFHEQsRvMCQOIAc"
+    }
+DEBUG [2026-03-16 18:07:15.057 -0300] (presenterai-ai-engine): Logger updated [component=WORKFLOW] [name=outline-workflow]
+DEBUG [2026-03-16 18:07:15.057 -0300] (presenterai-ai-engine): Logger updated [component=WORKFLOW] [name=slide-workflow]
+DEBUG [2026-03-16 18:07:15.058 -0300] (presenterai-ai-engine): Logger updated [component=AGENT] [name=Outline Agent]
+DEBUG [2026-03-16 18:07:15.058 -0300] (presenterai-ai-engine): Logger updated [component=AGENT] [name=Slide Agent]
+DEBUG [2026-03-16 18:07:15.061 -0300] (presenterai-ai-engine): Logger updated [component=STORAGE] [name=LibSQLStore]
+DEBUG [2026-03-16 18:07:15.072 -0300] (presenterai-ai-engine): [Agents:Outline Agent] - Starting generation
+    runId: "7a09a4ab-6218-4ce1-9b2d-9710c8614eee"
+DEBUG [2026-03-16 18:07:15.074 -0300] (presenterai-ai-engine): [Agent:Outline Agent] - Enhancing tools: 
+    runId: "7a09a4ab-6218-4ce1-9b2d-9710c8614eee"
+    hasMemory: false
+    hasResourceId: false
+DEBUG [2026-03-16 18:07:15.075 -0300] (presenterai-ai-engine): [Agents:Outline Agent] - Assembling assigned tools
+    runId: "7a09a4ab-6218-4ce1-9b2d-9710c8614eee"
+DEBUG [2026-03-16 18:07:15.083 -0300] (presenterai-ai-engine): Starting agent Outline Agent llm stream call
+    runId: "7a09a4ab-6218-4ce1-9b2d-9710c8614eee"
+DEBUG [2026-03-16 18:07:15.084 -0300] (presenterai-ai-engine): [LLM] - Streaming text
+    runId: "7a09a4ab-6218-4ce1-9b2d-9710c8614eee"
+    messages: [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "WORKFLOW CONTEXT:\n- Canvas: 800x600px, margin 40px\n- Available representation keys: \n  FLOW (budget: 14 elements, layout: full)\n  COMPARISON (budget: 12 elements, layout: split)\n  FUNNEL (budget: 12 elements, layout: full)\n  MATRIX (budget: 14 elements, layout: grid)\n  VENN-DIAGRAM (budget: 10 elements, layout: full)\n  CYCLE (budget: 14 elements, layout: full)\n  TIMELINE (budget: 14 elements, layout: full)\n  HIERARCHY (budget: 14 elements, layout: full)\n  CONVERGENCE (budget: 12 elements, layout: full)\n- Brand color purposes available:\n  Primary/Neutral: fill=#3b82f6, stroke=#1e3a5f\n  Secondary: fill=#60a5fa, stroke=#1e3a5f\n  Tertiary: fill=#93c5fd, stroke=#1e3a5f\n  Start/Trigger: fill=#fed7aa, stroke=#c2410c\n  End/Success: fill=#a7f3d0, stroke=#047857\n  Warning/Reset: fill=#fee2e2, stroke=#dc2626\n  Decision: fill=#fef3c7, stroke=#b45309\n  AI/LLM: fill=#ddd6fe, stroke=#6d28d9\n  Inactive/Disabled: fill=#dbeafe, stroke=#1e40af\n  Error: fill=#fecaca, stroke=#b91c1c\n\nINPUT:\n- Topic: \"A presentation about accelerating digital product creation with Micro-SaaS\"\n- Language: EN\n- Quantity: 2 slides\n- Scope: MULTI_PAGE\n\nInstruction: Generate ONLY 'CONTENT' slides. Respect the language and quantity strictly.\nUse only the representation keys listed above. Do NOT invent new keys."
+          }
+        ]
+      }
+    ]
+    tools: [
+      "outlineTool"
+    ]
+DEBUG [2026-03-16 18:07:20.290 -0300] (presenterai-ai-engine): [LLM] - Stream Step Change:
+    text: ""
+    toolCalls: []
+    toolResults: []
+    finishReason: "error"
+    usage: {
+      "inputTokens": 1564,
+      "totalTokens": 1564
+    }
+    runId: "7a09a4ab-6218-4ce1-9b2d-9710c8614eee"
+Error executing step generate-outline: Error: Agent did not call the tool or produce the expected structured output.
+    at <anonymous> (/home/alex_candido/Documentos/development/projects/presenterai/src/lib/mastra/workflows/outline-workflow.ts:83:17)
+    at processTicksAndRejections (native:7:39)
+Workflow execution failed! ❌
+Error: Agent did not call the tool or produce the expected structured output.
+    at <anonymous> (/home/alex_candido/Documentos/development/projects/presenterai/src/lib/mastra/workflows/outline-workflow.ts:83:17)
+    at processTicksAndRejections (native:7:39)
+Full run result saved to /home/alex_candido/Documentos/development/projects/presenterai/src/lib/mastra/outline-test-output.json
+ERROR [2026-03-16 18:07:20.296 -0300] (presenterai-ai-engine): Error in agent stream
+    runId: "7a09a4ab-6218-4ce1-9b2d-9710c8614eee"
+DEBUG [2026-03-16 18:07:20.297 -0300] (presenterai-ai-engine): [LLM] - Stream Finished:
+    text: ""
+    toolCalls: []
+    toolResults: []
+    finishReason: "error"
+    usage: {
+      "inputTokens": 1564,
+      "outputTokens": 0,
+      "totalTokens": 1564
+    }
+    runId: "7a09a4ab-6218-4ce1-9b2d-9710c8614eee"

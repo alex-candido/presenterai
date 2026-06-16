@@ -1,7 +1,6 @@
 "use client";
 
-import { AppSettingsPresentationsHeader } from "@/components/pages/app/settings/profile";
-
+import { AppSettingsPresentationsHeader } from "@/components/app/app/settings/profile";
 
 export default function AppSettingsProfilePage() {
   return (

@@ -1,9 +1,9 @@
 "use client";
 
 import {
-  UsersDetails,
-  UsersHeader,
-} from "@/components/pages/admin/users";
+    UsersDetails,
+    UsersHeader,
+} from "@/components/app/admin/users";
 
 export default function AdminUserDetailsPage() {
   return (

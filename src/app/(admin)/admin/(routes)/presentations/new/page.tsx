@@ -1,9 +1,9 @@
 "use client";
 
 import {
-  PresentationsForm,
-  PresentationsHeader,
-} from "@/components/pages/admin/presentations";
+    PresentationsForm,
+    PresentationsHeader,
+} from "@/components/app/admin/presentations";
 
 export default function AdminPresentationNewPage() {
   return (

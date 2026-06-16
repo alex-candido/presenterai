@@ -1,6 +1,6 @@
 "use client";
 
-import { AdminSettingsProfileHeader } from "@/components/pages/admin/settings/profile";
+import { AdminSettingsProfileHeader } from "@/components/app/admin/settings/profile";
 
 export default function AdminSettingsProfilePage() {
   return (

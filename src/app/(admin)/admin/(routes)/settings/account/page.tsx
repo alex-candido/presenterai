@@ -1,6 +1,6 @@
 "use client";
 
-import { AdminSettingsAccountHeader } from "@/components/pages/admin/settings/account";
+import { AdminSettingsAccountHeader } from "@/components/app/admin/settings/account";
 
 
 export default function AdminSettingsAccountPage() {

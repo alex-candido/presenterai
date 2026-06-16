@@ -1,10 +1,10 @@
 "use client";
 
 import {
-  PresentationsHeader,
-  PresentationsListSection,
-  PresentationsStatsSection,
-} from "@/components/pages/admin/presentations";
+    PresentationsHeader,
+    PresentationsListSection,
+    PresentationsStatsSection,
+} from "@/components/app/admin/presentations";
 
 export default function AdminPresentationsPage() {
   return (

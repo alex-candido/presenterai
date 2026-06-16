@@ -1,0 +1,10 @@
+input {
+    userId: randomUUID(),
+    prompt: 'A presentation about accelerating digital product creation with Micro-SaaS',
+    quantity: 2,
+    language: 'EN',
+    scope: 'MULTI_PAGE',
+    aspectRatio: 'RATIO_16_9',
+    visualComplexity: 'HIGH',
+    keywords: ['Micro-SaaS', 'Mastra', 'Event-Driven', 'Fast-Validation', 'Multi-Tenant'],
+}

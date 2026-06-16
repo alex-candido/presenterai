@@ -6,8 +6,8 @@ export function LayoutApp({
   ...props
 }: React.HTMLAttributes<HTMLElement>) {
   return (
-    <main className={cn("layout-app", className)} {...props}>
+    <div aria-description="presentarai-app" className={cn("layout-app", className)} {...props}>
       {children}
-    </main>
+    </div>
   );
 }

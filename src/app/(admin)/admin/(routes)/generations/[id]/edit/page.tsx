@@ -1,9 +1,9 @@
 "use client";
 
 import {
-  GenerateForm,
-  GenerateHeader,
-} from "@/components/pages/admin/generate";
+    GenerateForm,
+    GenerateHeader,
+} from "@/components/app/admin/generate";
 
 export default function AdminGenerationEditPage() {
   return (

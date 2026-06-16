@@ -8,6 +8,11 @@ export async function proxy(request: NextRequest) {
 try {
     let response: NextResponse | undefined;
 
+    // response = await apiRouteProxy(request);
+    // if (response) {
+    //   return response;
+    // }
+
     response = await globalRouteProxy(request);
     if (response) {
       return response;

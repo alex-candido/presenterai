@@ -1,11 +1,11 @@
 "use client";
 
 import {
-  AppPresentationsHeader,
-  AppPresentationsSidebar,
-  AppPresentationsTools,
-  AppPresentationsWorkspace,
-} from "@/components/pages/app/presentations";
+    AppPresentationsHeader,
+    AppPresentationsSidebar,
+    AppPresentationsTools,
+    AppPresentationsWorkspace,
+} from "@/components/app/app/presentations";
 
 export default function PresentationPage() {
   return (

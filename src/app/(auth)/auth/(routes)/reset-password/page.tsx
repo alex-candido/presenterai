@@ -1,7 +1,7 @@
 "use client";
 
-import { ResetPasswordSection } from "@/components/pages/auth/reset-password";
-import { AuthHero } from "@/components/pages/auth/root/auth-hero";
+import { AuthHero } from "@/components/app/auth/auth-hero";
+import { ResetPasswordSection } from "@/components/app/auth/reset-password";
 
 export default function ResetPasswordPage() {
   return (

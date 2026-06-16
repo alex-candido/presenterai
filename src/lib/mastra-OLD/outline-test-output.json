@@ -1,0 +1,657 @@
+{
+  "status": "success",
+  "steps": {
+    "input": {
+      "userId": "355b03f9-d7f4-43ae-ba25-dc0135545e68",
+      "prompt": "A presentation about accelerating digital product creation with Micro-SaaS",
+      "quantity": 2,
+      "language": "EN",
+      "scope": "MULTI_PAGE"
+    },
+    "generate-outline": {
+      "payload": {
+        "userId": "355b03f9-d7f4-43ae-ba25-dc0135545e68",
+        "prompt": "A presentation about accelerating digital product creation with Micro-SaaS",
+        "quantity": 2,
+        "language": "EN",
+        "scope": "MULTI_PAGE"
+      },
+      "startedAt": 1773695547693,
+      "status": "success",
+      "output": {
+        "outlines": [
+          {
+            "id": "f2ac590a-51a4-4d34-a4f8-5a666f5ec1cf",
+            "order": "0",
+            "type": "COVER",
+            "layout": "Free canvas. Large centered title in the middle of the slide. Smaller subtitle just below. Large decorative geometric shape in the background (rectangle or ellipse, soft color). No fixed header/footer zones.",
+            "title": "A presentation about accelerating digital product creation with Micro-SaaS",
+            "subtitle": "2 slides",
+            "description": "",
+            "representation": "",
+            "concepts": [],
+            "config": {
+              "representationKey": "FREE",
+              "zones": {
+                "full": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 800,
+                  "height": 600
+                }
+              },
+              "contentLayout": {
+                "type": "free"
+              },
+              "suggestedColors": {
+                "primary": {
+                  "purpose": "Primary/Neutral",
+                  "fill": "#3b82f6",
+                  "stroke": "#1e3a5f"
+                }
+              },
+              "elementBudget": 6
+            }
+          },
+          {
+            "id": "5c09e4cc-4f26-44ef-a6c8-9a3742610ce3",
+            "order": "0.5",
+            "type": "SUMMARY",
+            "layout": "Title 'Agenda' at the top left with a decorative line below. Content: vertical list of numbered cards, each card with a highlighted number on the left and slide title on the right. No concepts footer.",
+            "title": "Agenda",
+            "subtitle": "",
+            "description": "1. Accelerating Product Creation\n2. The Micro-SaaS Growth Loop",
+            "representation": "",
+            "concepts": [],
+            "config": {
+              "representationKey": "LIST",
+              "zones": {
+                "header": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 800,
+                  "height": 80
+                },
+                "content": {
+                  "x": 40,
+                  "y": 80,
+                  "width": 720,
+                  "height": 460
+                },
+                "footer": {
+                  "x": 0,
+                  "y": 540,
+                  "width": 800,
+                  "height": 60
+                }
+              },
+              "contentLayout": {
+                "type": "list"
+              },
+              "suggestedColors": {
+                "primary": {
+                  "purpose": "Primary/Neutral",
+                  "fill": "#3b82f6",
+                  "stroke": "#1e3a5f"
+                }
+              },
+              "elementBudget": 10
+            }
+          },
+          {
+            "order": "1",
+            "type": "CONTENT",
+            "layout": "Header: title + subtitle. Content: 4-stage funnel showing the acceleration process. Footer: concepts bar.",
+            "title": "Accelerating Product Creation",
+            "subtitle": "From monolithic complexity to focused agility",
+            "description": "The shift from monolithic software development to focused, high-velocity Micro-SaaS delivery models.",
+            "representation": "FUNNEL (Problem-Identification → Niche-Validation → MVP-Development → Rapid-Deployment)",
+            "concepts": [
+              "Micro-SaaS-Strategy",
+              "Rapid-Prototyping",
+              "Lean-Product-Development",
+              "Time-To-Market-Reduction"
+            ],
+            "id": "99a78011-4fa1-4488-a371-02371bb8d1b7",
+            "config": {
+              "representationKey": "FUNNEL",
+              "zones": {
+                "header": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 800,
+                  "height": 80
+                },
+                "content": {
+                  "x": 40,
+                  "y": 80,
+                  "width": 720,
+                  "height": 460
+                },
+                "footer": {
+                  "x": 0,
+                  "y": 540,
+                  "width": 800,
+                  "height": 60
+                }
+              },
+              "contentLayout": {
+                "type": "full",
+                "sequence": [
+                  {
+                    "label": "Problem-Identification",
+                    "x": 160,
+                    "y": 120,
+                    "width": 480,
+                    "height": 60
+                  },
+                  {
+                    "label": "Niche-Validation",
+                    "x": 206.5,
+                    "y": 200,
+                    "width": 387,
+                    "height": 60
+                  },
+                  {
+                    "label": "MVP-Development",
+                    "x": 253.5,
+                    "y": 280,
+                    "width": 293,
+                    "height": 60
+                  },
+                  {
+                    "label": "Rapid-Deployment",
+                    "x": 300,
+                    "y": 360,
+                    "width": 200,
+                    "height": 60
+                  }
+                ]
+              },
+              "suggestedColors": {
+                "primary": {
+                  "purpose": "Primary/Neutral",
+                  "fill": "#3b82f6",
+                  "stroke": "#1e3a5f"
+                },
+                "secondary": {
+                  "purpose": "Tertiary",
+                  "fill": "#93c5fd",
+                  "stroke": "#1e3a5f"
+                }
+              },
+              "elementBudget": 12
+            }
+          },
+          {
+            "order": "2",
+            "type": "CONTENT",
+            "layout": "Header: title + subtitle. Content: circular cycle diagram with 4 nodes. Footer: concepts bar.",
+            "title": "The Micro-SaaS Growth Loop",
+            "subtitle": "The engine of continuous improvement",
+            "description": "The iterative cycle of building, measuring, and learning to ensure product-market fit in a Micro-SaaS environment.",
+            "representation": "CYCLE (Build-MVP → Measure-Engagement → Learn-Insights → Iterate-Product)",
+            "concepts": [
+              "Product-Market-Fit",
+              "Iterative-Feedback-Loops",
+              "Scalable-Architecture",
+              "Continuous-Deployment"
+            ],
+            "id": "90fe80b6-ee1e-4ca5-a71e-255c3b299433",
+            "config": {
+              "representationKey": "CYCLE",
+              "zones": {
+                "header": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 800,
+                  "height": 80
+                },
+                "content": {
+                  "x": 40,
+                  "y": 80,
+                  "width": 720,
+                  "height": 460
+                },
+                "footer": {
+                  "x": 0,
+                  "y": 540,
+                  "width": 800,
+                  "height": 60
+                }
+              },
+              "contentLayout": {
+                "type": "full"
+              },
+              "suggestedColors": {
+                "primary": {
+                  "purpose": "Primary/Neutral",
+                  "fill": "#3b82f6",
+                  "stroke": "#1e3a5f"
+                },
+                "secondary": {
+                  "purpose": "Secondary",
+                  "fill": "#60a5fa",
+                  "stroke": "#1e3a5f"
+                }
+              },
+              "elementBudget": 14
+            }
+          },
+          {
+            "id": "643d60a5-e1f6-4aa1-84a8-73ffc63e2530",
+            "order": "3",
+            "type": "CLOSING",
+            "layout": "Free canvas. Large centered call-to-action or thank-you message. Decorative geometric element as visual accent. Optional: contact/link text below the main message. No concepts footer.",
+            "title": "Thank You",
+            "subtitle": "",
+            "description": "",
+            "representation": "",
+            "concepts": [],
+            "config": {
+              "representationKey": "FREE",
+              "zones": {
+                "full": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 800,
+                  "height": 600
+                }
+              },
+              "contentLayout": {
+                "type": "free"
+              },
+              "suggestedColors": {
+                "primary": {
+                  "purpose": "End/Success",
+                  "fill": "#a7f3d0",
+                  "stroke": "#047857"
+                }
+              },
+              "elementBudget": 6
+            }
+          }
+        ],
+        "aiMetadata": {
+          "mastra": {
+            "agentId": "Outline Agent",
+            "traceId": "676aa0ba-a604-4280-9a7f-675d60180abe",
+            "version": "1.0.0",
+            "duration": 3962,
+            "steps": [
+              {
+                "name": "context-retrieval",
+                "tool": "none",
+                "status": "success",
+                "duration": 2,
+                "usage": {
+                  "promptTokens": 0,
+                  "completionTokens": 0,
+                  "totalTokens": 0
+                }
+              },
+              {
+                "name": "structuring-agent",
+                "tool": "create_outlines",
+                "status": "success",
+                "duration": 3952,
+                "usage": {
+                  "promptTokens": 3745,
+                  "completionTokens": 379,
+                  "totalTokens": 4124
+                }
+              },
+              {
+                "name": "semantic-mapping",
+                "tool": "none",
+                "status": "success",
+                "duration": 8,
+                "usage": {
+                  "promptTokens": 0,
+                  "completionTokens": 0,
+                  "totalTokens": 0
+                }
+              }
+            ]
+          },
+          "usage": {
+            "promptTokens": 3745,
+            "completionTokens": 379,
+            "totalTokens": 4124,
+            "cost": 0,
+            "currency": "USD"
+          },
+          "model": {
+            "name": "gemini-2.5-flash",
+            "provider": "google"
+          },
+          "context": {
+            "outlineSlidesCount": 5,
+            "documentId": "355b03f9-d7f4-43ae-ba25-dc0135545e68"
+          }
+        }
+      },
+      "endedAt": 1773695551657
+    }
+  },
+  "input": {
+    "userId": "355b03f9-d7f4-43ae-ba25-dc0135545e68",
+    "prompt": "A presentation about accelerating digital product creation with Micro-SaaS",
+    "quantity": 2,
+    "language": "EN",
+    "scope": "MULTI_PAGE"
+  },
+  "result": {
+    "outlines": [
+      {
+        "id": "f2ac590a-51a4-4d34-a4f8-5a666f5ec1cf",
+        "order": "0",
+        "type": "COVER",
+        "layout": "Free canvas. Large centered title in the middle of the slide. Smaller subtitle just below. Large decorative geometric shape in the background (rectangle or ellipse, soft color). No fixed header/footer zones.",
+        "title": "A presentation about accelerating digital product creation with Micro-SaaS",
+        "subtitle": "2 slides",
+        "description": "",
+        "representation": "",
+        "concepts": [],
+        "config": {
+          "representationKey": "FREE",
+          "zones": {
+            "full": {
+              "x": 0,
+              "y": 0,
+              "width": 800,
+              "height": 600
+            }
+          },
+          "contentLayout": {
+            "type": "free"
+          },
+          "suggestedColors": {
+            "primary": {
+              "purpose": "Primary/Neutral",
+              "fill": "#3b82f6",
+              "stroke": "#1e3a5f"
+            }
+          },
+          "elementBudget": 6
+        }
+      },
+      {
+        "id": "5c09e4cc-4f26-44ef-a6c8-9a3742610ce3",
+        "order": "0.5",
+        "type": "SUMMARY",
+        "layout": "Title 'Agenda' at the top left with a decorative line below. Content: vertical list of numbered cards, each card with a highlighted number on the left and slide title on the right. No concepts footer.",
+        "title": "Agenda",
+        "subtitle": "",
+        "description": "1. Accelerating Product Creation\n2. The Micro-SaaS Growth Loop",
+        "representation": "",
+        "concepts": [],
+        "config": {
+          "representationKey": "LIST",
+          "zones": {
+            "header": {
+              "x": 0,
+              "y": 0,
+              "width": 800,
+              "height": 80
+            },
+            "content": {
+              "x": 40,
+              "y": 80,
+              "width": 720,
+              "height": 460
+            },
+            "footer": {
+              "x": 0,
+              "y": 540,
+              "width": 800,
+              "height": 60
+            }
+          },
+          "contentLayout": {
+            "type": "list"
+          },
+          "suggestedColors": {
+            "primary": {
+              "purpose": "Primary/Neutral",
+              "fill": "#3b82f6",
+              "stroke": "#1e3a5f"
+            }
+          },
+          "elementBudget": 10
+        }
+      },
+      {
+        "order": "1",
+        "type": "CONTENT",
+        "layout": "Header: title + subtitle. Content: 4-stage funnel showing the acceleration process. Footer: concepts bar.",
+        "title": "Accelerating Product Creation",
+        "subtitle": "From monolithic complexity to focused agility",
+        "description": "The shift from monolithic software development to focused, high-velocity Micro-SaaS delivery models.",
+        "representation": "FUNNEL (Problem-Identification → Niche-Validation → MVP-Development → Rapid-Deployment)",
+        "concepts": [
+          "Micro-SaaS-Strategy",
+          "Rapid-Prototyping",
+          "Lean-Product-Development",
+          "Time-To-Market-Reduction"
+        ],
+        "id": "99a78011-4fa1-4488-a371-02371bb8d1b7",
+        "config": {
+          "representationKey": "FUNNEL",
+          "zones": {
+            "header": {
+              "x": 0,
+              "y": 0,
+              "width": 800,
+              "height": 80
+            },
+            "content": {
+              "x": 40,
+              "y": 80,
+              "width": 720,
+              "height": 460
+            },
+            "footer": {
+              "x": 0,
+              "y": 540,
+              "width": 800,
+              "height": 60
+            }
+          },
+          "contentLayout": {
+            "type": "full",
+            "sequence": [
+              {
+                "label": "Problem-Identification",
+                "x": 160,
+                "y": 120,
+                "width": 480,
+                "height": 60
+              },
+              {
+                "label": "Niche-Validation",
+                "x": 206.5,
+                "y": 200,
+                "width": 387,
+                "height": 60
+              },
+              {
+                "label": "MVP-Development",
+                "x": 253.5,
+                "y": 280,
+                "width": 293,
+                "height": 60
+              },
+              {
+                "label": "Rapid-Deployment",
+                "x": 300,
+                "y": 360,
+                "width": 200,
+                "height": 60
+              }
+            ]
+          },
+          "suggestedColors": {
+            "primary": {
+              "purpose": "Primary/Neutral",
+              "fill": "#3b82f6",
+              "stroke": "#1e3a5f"
+            },
+            "secondary": {
+              "purpose": "Tertiary",
+              "fill": "#93c5fd",
+              "stroke": "#1e3a5f"
+            }
+          },
+          "elementBudget": 12
+        }
+      },
+      {
+        "order": "2",
+        "type": "CONTENT",
+        "layout": "Header: title + subtitle. Content: circular cycle diagram with 4 nodes. Footer: concepts bar.",
+        "title": "The Micro-SaaS Growth Loop",
+        "subtitle": "The engine of continuous improvement",
+        "description": "The iterative cycle of building, measuring, and learning to ensure product-market fit in a Micro-SaaS environment.",
+        "representation": "CYCLE (Build-MVP → Measure-Engagement → Learn-Insights → Iterate-Product)",
+        "concepts": [
+          "Product-Market-Fit",
+          "Iterative-Feedback-Loops",
+          "Scalable-Architecture",
+          "Continuous-Deployment"
+        ],
+        "id": "90fe80b6-ee1e-4ca5-a71e-255c3b299433",
+        "config": {
+          "representationKey": "CYCLE",
+          "zones": {
+            "header": {
+              "x": 0,
+              "y": 0,
+              "width": 800,
+              "height": 80
+            },
+            "content": {
+              "x": 40,
+              "y": 80,
+              "width": 720,
+              "height": 460
+            },
+            "footer": {
+              "x": 0,
+              "y": 540,
+              "width": 800,
+              "height": 60
+            }
+          },
+          "contentLayout": {
+            "type": "full"
+          },
+          "suggestedColors": {
+            "primary": {
+              "purpose": "Primary/Neutral",
+              "fill": "#3b82f6",
+              "stroke": "#1e3a5f"
+            },
+            "secondary": {
+              "purpose": "Secondary",
+              "fill": "#60a5fa",
+              "stroke": "#1e3a5f"
+            }
+          },
+          "elementBudget": 14
+        }
+      },
+      {
+        "id": "643d60a5-e1f6-4aa1-84a8-73ffc63e2530",
+        "order": "3",
+        "type": "CLOSING",
+        "layout": "Free canvas. Large centered call-to-action or thank-you message. Decorative geometric element as visual accent. Optional: contact/link text below the main message. No concepts footer.",
+        "title": "Thank You",
+        "subtitle": "",
+        "description": "",
+        "representation": "",
+        "concepts": [],
+        "config": {
+          "representationKey": "FREE",
+          "zones": {
+            "full": {
+              "x": 0,
+              "y": 0,
+              "width": 800,
+              "height": 600
+            }
+          },
+          "contentLayout": {
+            "type": "free"
+          },
+          "suggestedColors": {
+            "primary": {
+              "purpose": "End/Success",
+              "fill": "#a7f3d0",
+              "stroke": "#047857"
+            }
+          },
+          "elementBudget": 6
+        }
+      }
+    ],
+    "aiMetadata": {
+      "mastra": {
+        "agentId": "Outline Agent",
+        "traceId": "676aa0ba-a604-4280-9a7f-675d60180abe",
+        "version": "1.0.0",
+        "duration": 3962,
+        "steps": [
+          {
+            "name": "context-retrieval",
+            "tool": "none",
+            "status": "success",
+            "duration": 2,
+            "usage": {
+              "promptTokens": 0,
+              "completionTokens": 0,
+              "totalTokens": 0
+            }
+          },
+          {
+            "name": "structuring-agent",
+            "tool": "create_outlines",
+            "status": "success",
+            "duration": 3952,
+            "usage": {
+              "promptTokens": 3745,
+              "completionTokens": 379,
+              "totalTokens": 4124
+            }
+          },
+          {
+            "name": "semantic-mapping",
+            "tool": "none",
+            "status": "success",
+            "duration": 8,
+            "usage": {
+              "promptTokens": 0,
+              "completionTokens": 0,
+              "totalTokens": 0
+            }
+          }
+        ]
+      },
+      "usage": {
+        "promptTokens": 3745,
+        "completionTokens": 379,
+        "totalTokens": 4124,
+        "cost": 0,
+        "currency": "USD"
+      },
+      "model": {
+        "name": "gemini-2.5-flash",
+        "provider": "google"
+      },
+      "context": {
+        "outlineSlidesCount": 5,
+        "documentId": "355b03f9-d7f4-43ae-ba25-dc0135545e68"
+      }
+    }
+  }
+}

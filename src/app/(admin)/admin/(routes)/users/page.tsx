@@ -1,10 +1,10 @@
 "use client";
 
 import {
-  UsersHeader,
-  UsersListSection,
-  UsersStatsSection,
-} from "@/components/pages/admin/users";
+    UsersHeader,
+    UsersListSection,
+    UsersStatsSection,
+} from "@/components/app/admin/users";
 
 export default function AdminUsersPage() {
   return (

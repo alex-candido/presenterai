@@ -1,7 +1,7 @@
 "use client";
 
-import { AuthHero } from "@/components/pages/auth/root/auth-hero";
-import { SignInSection } from "@/components/pages/auth/sign-in";
+import { AuthHero } from "@/components/app/auth/auth-hero";
+import { SignInSection } from "@/components/app/auth/sign-in";
 
 export default function SignInPage() {
   return (

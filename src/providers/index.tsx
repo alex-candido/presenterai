@@ -8,12 +8,7 @@ import {
   AdminPresentationsProvider,
   AdminUsersProvider,
 } from "@/providers/admin";
-import {
-  AppDocumentsProvider,
-  AppGenerateProvider,
-  AppPresentationsProvider,
-  AppProvider,
-} from "@/providers/app";
+import { AppDocumentsProvider, AppGenerateProvider, AppPresentationsProvider, AppProvider } from "@/providers/app";
 
 import { ReactQueryProvider, ThemeProvider } from "@/providers/next";
 
@@ -47,12 +42,7 @@ const AppProviders = ({ children }: { children: ReactNode }) => (
 
 const NextProviders = ({ children }: { children: ReactNode }) => (
   <ReactQueryProvider>
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
       {children}
     </ThemeProvider>
   </ReactQueryProvider>
@@ -64,15 +54,9 @@ export function Providers({
   children: ReactNode;
 }>) {
   return (
-    <>
-      <NextProviders>
-        <AppProviders>
-          <AdminProviders>
-            {children}
-            <Toaster />
-          </AdminProviders>
-        </AppProviders>
-      </NextProviders>
-    </>
+    <NextProviders>
+      {children}
+      <Toaster />
+    </NextProviders>
   );
 }

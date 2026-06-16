@@ -1,10 +1,10 @@
 "use client";
 
 import {
-  GenerateHeader,
-  GenerateListSection,
-  GenerateStatsSection,
-} from "@/components/pages/admin/generate";
+    GenerateHeader,
+    GenerateListSection,
+    GenerateStatsSection,
+} from "@/components/app/admin/generate";
 
 export default function AdminGenerationsPage() {
   return (

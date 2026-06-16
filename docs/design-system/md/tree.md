@@ -1,11 +1,14 @@
-tree src/
-src/
+tree src
+src
 ├── actions
-│   ├── auth-actions.ts
-│   ├── document-actions.ts
-│   ├── generation-actions.ts
-│   ├── presentation-actions.ts
-│   └── user-actions.ts
+│   ├── admin
+│   │   ├── document-actions.ts
+│   │   ├── generation-actions.ts
+│   │   ├── presentation-actions.ts
+│   │   └── user-actions.ts
+│   └── app
+│       ├── generation-actions.ts
+│       └── presentation-actions.ts
 ├── app
 │   ├── (admin)
 │   │   └── admin
@@ -18,15 +21,11 @@ src/
 │   │           │   │   ├── edit
 │   │           │   │   │   └── page.tsx
 │   │           │   │   └── page.tsx
-│   │           │   ├── new
-│   │           │   │   └── page.tsx
 │   │           │   └── page.tsx
 │   │           ├── generations
 │   │           │   ├── [id]
 │   │           │   │   ├── edit
 │   │           │   │   │   └── page.tsx
-│   │           │   │   └── page.tsx
-│   │           │   ├── new
 │   │           │   │   └── page.tsx
 │   │           │   └── page.tsx
 │   │           ├── presentations
@@ -59,32 +58,42 @@ src/
 │   │   │   └── [...all]
 │   │   │       └── route.ts
 │   │   └── v1
-│   │       ├── dashboard
-│   │       │   └── route.ts
-│   │       ├── documents
-│   │       │   ├── [id]
+│   │       ├── admin
+│   │       │   ├── dashboard
 │   │       │   │   └── route.ts
-│   │       │   ├── metrics
+│   │       │   ├── documents
+│   │       │   │   ├── [id]
+│   │       │   │   │   └── route.ts
+│   │       │   │   ├── metrics
+│   │       │   │   │   └── route.ts
 │   │       │   │   └── route.ts
-│   │       │   └── route.ts
-│   │       ├── generations
-│   │       │   ├── [id]
+│   │       │   ├── generations
+│   │       │   │   ├── [id]
+│   │       │   │   │   └── route.ts
+│   │       │   │   ├── metrics
+│   │       │   │   │   └── route.ts
 │   │       │   │   └── route.ts
-│   │       │   ├── metrics
+│   │       │   ├── presentations
+│   │       │   │   ├── [id]
+│   │       │   │   │   └── route.ts
+│   │       │   │   ├── metrics
+│   │       │   │   │   └── route.ts
 │   │       │   │   └── route.ts
-│   │       │   └── route.ts
-│   │       ├── presentations
-│   │       │   ├── [id]
-│   │       │   │   └── route.ts
-│   │       │   ├── metrics
-│   │       │   │   └── route.ts
-│   │       │   └── route.ts
-│   │       └── users
-│   │           ├── [id]
+│   │       │   └── users
+│   │       │       ├── [id]
+│   │       │       │   └── route.ts
+│   │       │       ├── metrics
+│   │       │       │   └── route.ts
+│   │       │       └── route.ts
+│   │       └── app
+│   │           ├── generations
+│   │           │   ├── [id]
+│   │           │   │   └── route.ts
 │   │           │   └── route.ts
-│   │           ├── metrics
-│   │           │   └── route.ts
-│   │           └── route.ts
+│   │           └── presentations
+│   │               ├── [id]
+│   │               │   └── route.ts
+│   │               └── route.ts
 │   ├── (app)
 │   │   └── app
 │   │       ├── layout.tsx
@@ -96,8 +105,11 @@ src/
 │   │           │       └── page.tsx
 │   │           ├── page.tsx
 │   │           ├── presentations
-│   │           │   └── [id]
-│   │           │       └── page.tsx
+│   │           │   ├── [id]
+│   │           │   │   └── page.tsx
+│   │           │   └── stream
+│   │           │       └── [id]
+│   │           │           └── page.tsx
 │   │           └── settings
 │   │               ├── account
 │   │               │   └── page.tsx
@@ -115,6 +127,11 @@ src/
 │   │           │   └── page.tsx
 │   │           └── sign-up
 │   │               └── page.tsx
+│   ├── (docs)
+│   │   └── docs
+│   │       ├── layout.tsx
+│   │       └── [slug]
+│   │           └── page.tsx
 │   ├── favicon.ico
 │   ├── global-error.tsx
 │   ├── global-not-found.tsx
@@ -122,24 +139,29 @@ src/
 │   │   └── landing
 │   │       ├── layout.tsx
 │   │       └── (routes)
-│   │           ├── docs
-│   │           │   ├── layout.tsx
-│   │           │   └── [slug]
-│   │           │       └── page.tsx
-│   │           ├── legal
-│   │           │   ├── layout.tsx
-│   │           │   └── [slug]
-│   │           │       └── page.tsx
-│   │           └── page.tsx
+│   │           └── home
+│   │               └── page.tsx
 │   ├── layout.tsx
+│   ├── (legal)
+│   │   └── legal
+│   │       ├── layout.tsx
+│   │       └── [slug]
+│   │           └── page.tsx
 │   ├── loading.tsx
 │   ├── robots.ts
 │   └── sitemap.ts
 ├── components
 │   ├── base
+│   │   ├── base-dropdown-user-menu.tsx
 │   │   ├── base-hero.tsx
 │   │   ├── base-logo.tsx
 │   │   └── index.ts
+│   ├── content
+│   │   ├── docs
+│   │   │   └── getting-started.mdx
+│   │   └── legal
+│   │       ├── privacy-policy.mdx
+│   │       └── terms-of-service.mdx
 │   ├── custom
 │   │   └── index.ts
 │   ├── emails
@@ -150,12 +172,15 @@ src/
 │   │   ├── index.ts
 │   │   ├── layout-app.tsx
 │   │   ├── layout-aside.tsx
+│   │   ├── layout-bottom-banner.tsx
 │   │   ├── layout-container.tsx
 │   │   ├── layout-footer.tsx
 │   │   ├── layout-header.tsx
 │   │   ├── layout-main.tsx
 │   │   ├── layout-nav-end.tsx
-│   │   └── layout-nav-start.tsx
+│   │   ├── layout-nav-start.tsx
+│   │   ├── layout-section.tsx
+│   │   └── layout-top-banner.tsx
 │   ├── pages
 │   │   ├── admin
 │   │   │   ├── dashboard
@@ -193,6 +218,9 @@ src/
 │   │   │   │   ├── presentations-header.tsx
 │   │   │   │   ├── presentations-list-section.tsx
 │   │   │   │   └── presentations-stats-section.tsx
+│   │   │   ├── root
+│   │   │   │   ├── admin-actions-menu.tsx
+│   │   │   │   └── index.ts
 │   │   │   ├── settings
 │   │   │   │   ├── account
 │   │   │   │   │   ├── admin-settings-account-header.tsx
@@ -237,14 +265,13 @@ src/
 │   │   │   │   ├── app-presentations-workspace.tsx
 │   │   │   │   └── index.ts
 │   │   │   ├── root
+│   │   │   │   ├── app-actions-menu.tsx
 │   │   │   │   ├── app-form-controls.tsx
-│   │   │   │   ├── app-form-header.tsx
-│   │   │   │   ├── app-form-input.tsx
-│   │   │   │   ├── app-form-mode.tsx
+│   │   │   │   ├── app-form-section.tsx
 │   │   │   │   ├── app-form.tsx
-│   │   │   │   ├── app-header.tsx
-│   │   │   │   ├── app-recents.tsx
-│   │   │   │   ├── app-suggestions.tsx
+│   │   │   │   ├── app-hero-section.tsx
+│   │   │   │   ├── app-recents-section.tsx
+│   │   │   │   ├── app-suggestions-section.tsx
 │   │   │   │   └── index.ts
 │   │   │   └── settings
 │   │   │       ├── account
@@ -283,19 +310,19 @@ src/
 │   │   │       ├── sign-up-form.tsx
 │   │   │       ├── sign-up-section.tsx
 │   │   │       └── sign-up-success.tsx
+│   │   ├── docs
+│   │   │   ├── layout
+│   │   │   │   ├── docs-layout-header.tsx
+│   │   │   │   ├── docs-layout-sidebar.tsx
+│   │   │   │   └── index.ts
+│   │   │   └── root
+│   │   │       ├── docs-content.tsx
+│   │   │       └── index.ts
 │   │   ├── error
 │   │   │   └── root
 │   │   │       ├── index.ts
 │   │   │       └── status-page.tsx
 │   │   ├── landing
-│   │   │   ├── docs
-│   │   │   │   ├── layout
-│   │   │   │   │   ├── index.ts
-│   │   │   │   │   ├── landing-docs-layout-header.tsx
-│   │   │   │   │   └── landing-docs-layout-sidebar.tsx
-│   │   │   │   └── root
-│   │   │   │       ├── index.ts
-│   │   │   │       └── landing-docs-content.tsx
 │   │   │   ├── home
 │   │   │   │   ├── index.ts
 │   │   │   │   ├── landing-home-faq.tsx
@@ -305,24 +332,26 @@ src/
 │   │   │   │   └── landing-home-testimonials.tsx
 │   │   │   ├── layout
 │   │   │   │   ├── index.ts
-│   │   │   │   ├── landing-actions-menu.tsx
-│   │   │   │   ├── landing-cta-menu.tsx
+│   │   │   │   ├── landing-layout-app-entry-banner.tsx
 │   │   │   │   ├── landing-layout-footer.tsx
-│   │   │   │   ├── landing-layout-header.tsx
-│   │   │   │   ├── landing-mobile-menu.tsx
-│   │   │   │   ├── landing-nav-menu.tsx
-│   │   │   │   └── landing-user-menu.tsx
-│   │   │   └── terms
-│   │   │       └── root
-│   │   │           ├── index.ts
-│   │   │           ├── landing-terms-content.tsx
-│   │   │           └── landing-terms-header.tsx
+│   │   │   │   └── landing-layout-header.tsx
+│   │   │   └── root
+│   │   │       ├── index.ts
+│   │   │       ├── landing-actions-menu.tsx
+│   │   │       ├── landing-cta-menu.tsx
+│   │   │       ├── landing-mobile-menu.tsx
+│   │   │       └── landing-nav-menu.tsx
 │   │   ├── loading
 │   │   │   └── root
 │   │   │       └── index.ts
-│   │   └── not-found
+│   │   ├── not-found
+│   │   │   └── root
+│   │   │       └── index.ts
+│   │   └── terms
 │   │       └── root
-│   │           └── index.ts
+│   │           ├── index.ts
+│   │           ├── terms-content.tsx
+│   │           └── terms-header.tsx
 │   └── ui
 │       ├── accordion.tsx
 │       ├── alert-dialog.tsx
@@ -371,28 +400,47 @@ src/
 │       ├── toggle.tsx
 │       └── tooltip.tsx
 ├── config
-│   ├── client-envs.ts
 │   ├── endpoints.ts
+│   ├── env.ts
 │   ├── icons.ts
 │   ├── messages.ts
-│   ├── routes.ts
-│   └── server-envs.ts
-├── content
-│   ├── docs
-│   │   └── getting-started.mdx
-│   └── legal
-│       ├── privacy-policy.mdx
-│       └── terms-of-service.mdx
+│   └── routes.ts
+├── data
+│   └── excalidraw
+│       ├── slide-example-01.json
+│       ├── slide-example-02.json
+│       └── slide-example-03.json
 ├── hooks
 │   ├── index.ts
-│   ├── use-documents.ts
+│   ├── use-admin-dashboard.ts
+│   ├── use-admin-documents.ts
+│   ├── use-admin-generation.ts
+│   ├── use-admin-presentations.ts
+│   ├── use-admin-users.ts
+│   ├── use-app-generations.ts
+│   ├── use-app-presentations.ts
+│   ├── use-auth.ts
 │   ├── use-form.ts
-│   ├── use-generation.ts
-│   ├── use-mobile.ts
-│   ├── use-presentations.ts
-│   └── use-users.ts
+│   └── use-mobile.ts
 ├── lib
-│   ├── api
+│   ├── axios
+│   │   └── api.ts
+│   ├── betterauth
+│   │   ├── client.ts
+│   │   └── index.ts
+│   ├── brevo
+│   │   ├── index.ts
+│   │   └── transactions.ts
+│   ├── mastra
+│   │   ├── agents
+│   │   │   └── outline-agent.ts
+│   │   ├── index.ts
+│   │   ├── tools
+│   │   │   └── outline-tool.ts
+│   │   └── workflows
+│   ├── prisma
+│   │   └── index.ts
+│   ├── resend
 │   │   └── index.ts
 │   └── utils
 │       ├── cn.ts
@@ -420,49 +468,57 @@ src/
 │       ├── react-query-provider.tsx
 │       └── theme-provider.tsx
 ├── proxys
-│   ├── admin.ts
+│   ├── api.ts
 │   ├── auth.ts
-│   ├── docs.ts
 │   ├── global.ts
-│   ├── index.ts
-│   └── legal.ts
+│   └── index.ts
 ├── proxy.ts
 ├── schemas
-│   ├── auth-schema.ts
-│   ├── document-schema.ts
-│   ├── generation-schema.ts
-│   ├── index.ts
-│   ├── presentation-schema.ts
-│   └── user-schema.ts
+│   ├── admin
+│   │   ├── document-schema.ts
+│   │   ├── generation-schema.ts
+│   │   ├── presentation-schema.ts
+│   │   └── user-schema.ts
+│   ├── app
+│   │   ├── ai-schema.ts
+│   │   ├── excalidraw-schema.ts
+│   │   ├── generation-schema.ts
+│   │   └── presentation-schema.ts
+│   └── auth-schema.ts
 ├── server
-│   ├── auth
-│   │   ├── client.ts
-│   │   └── index.ts
-│   ├── brevo
-│   │   ├── index.ts
-│   │   └── transactions.ts
 │   ├── db
-│   │   ├── document.ts
-│   │   ├── generation.ts
-│   │   ├── presentation.ts
-│   │   └── user.ts
-│   ├── mastra
-│   │   ├── agents.ts
-│   │   ├── client.ts
-│   │   ├── prompts.ts
-│   │   ├── tools.ts
-│   │   └── workflows.ts
-│   ├── prisma
-│   │   └── index.ts
-│   └── resend
-│       └── index.ts
+│   │   ├── admin
+│   │   │   ├── dashboard-repository.ts
+│   │   │   ├── document-repository.ts
+│   │   │   ├── generation-repository.ts
+│   │   │   ├── presentation-repository.ts
+│   │   │   └── user-repository.ts
+│   │   ├── app
+│   │   │   ├── generation-repository.ts
+│   │   │   └── presentation-repository.ts
+│   │   └── root
+│   │       ├── document-repository.ts
+│   │       ├── generation-repository.ts
+│   │       ├── index.ts
+│   │       ├── presentation-repository.ts
+│   │       └── user-repository.ts
+│   └── services
+│       ├── admin
+│       └── app
 ├── styles
 │   └── globals.css
 └── types
-    ├── auth.d.ts
-    ├── document.d.ts
-    ├── generation.d.ts
-    ├── presentation.d.ts
-    └── user.d.ts
+    ├── admin
+    │   ├── dashboard.d.ts
+    │   ├── document.d.ts
+    │   ├── generation.d.ts
+    │   ├── presentation.d.ts
+    │   └── user.d.ts
+    ├── app
+    │   ├── ai.d.ts
+    │   ├── excalidraw.d.ts
+    │   ├── generation.d.ts
+    │   └── presentation.d.ts
+    └── auth.d.ts
 
-143 directories, 322 files
+171 directories, 350 files

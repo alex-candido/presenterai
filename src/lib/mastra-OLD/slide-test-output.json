@@ -1,0 +1,1914 @@
+{
+  "status": "success",
+  "steps": {
+    "input": {
+      "outlines": [
+        {
+          "id": "f2ac590a-51a4-4d34-a4f8-5a666f5ec1cf",
+          "order": "0",
+          "type": "COVER",
+          "layout": "Free canvas. Large centered title in the middle of the slide. Smaller subtitle just below. Large decorative geometric shape in the background (rectangle or ellipse, soft color). No fixed header/footer zones.",
+          "title": "A presentation about accelerating digital product creation with Micro-SaaS",
+          "subtitle": "2 slides",
+          "description": "",
+          "representation": "",
+          "concepts": [],
+          "config": {
+            "representationKey": "FREE",
+            "zones": {
+              "full": {
+                "x": 0,
+                "y": 0,
+                "width": 800,
+                "height": 600
+              }
+            },
+            "contentLayout": {
+              "type": "free"
+            },
+            "suggestedColors": {
+              "primary": {
+                "purpose": "Primary/Neutral",
+                "fill": "#3b82f6",
+                "stroke": "#1e3a5f"
+              }
+            },
+            "elementBudget": 6
+          }
+        },
+        {
+          "id": "5c09e4cc-4f26-44ef-a6c8-9a3742610ce3",
+          "order": "0.5",
+          "type": "SUMMARY",
+          "layout": "Title 'Agenda' at the top left with a decorative line below. Content: vertical list of numbered cards, each card with a highlighted number on the left and slide title on the right. No concepts footer.",
+          "title": "Agenda",
+          "subtitle": "",
+          "description": "1. Accelerating Product Creation\n2. The Micro-SaaS Growth Loop",
+          "representation": "",
+          "concepts": [],
+          "config": {
+            "representationKey": "LIST",
+            "zones": {
+              "header": {
+                "x": 0,
+                "y": 0,
+                "width": 800,
+                "height": 80
+              },
+              "content": {
+                "x": 40,
+                "y": 80,
+                "width": 720,
+                "height": 460
+              },
+              "footer": {
+                "x": 0,
+                "y": 540,
+                "width": 800,
+                "height": 60
+              }
+            },
+            "contentLayout": {
+              "type": "list"
+            },
+            "suggestedColors": {
+              "primary": {
+                "purpose": "Primary/Neutral",
+                "fill": "#3b82f6",
+                "stroke": "#1e3a5f"
+              }
+            },
+            "elementBudget": 10
+          }
+        },
+        {
+          "order": "1",
+          "type": "CONTENT",
+          "layout": "Header: title + subtitle. Content: 4-stage funnel showing the acceleration process. Footer: concepts bar.",
+          "title": "Accelerating Product Creation",
+          "subtitle": "From monolithic complexity to focused agility",
+          "description": "The shift from monolithic software development to focused, high-velocity Micro-SaaS delivery models.",
+          "representation": "FUNNEL (Problem-Identification → Niche-Validation → MVP-Development → Rapid-Deployment)",
+          "concepts": [
+            "Micro-SaaS-Strategy",
+            "Rapid-Prototyping",
+            "Lean-Product-Development",
+            "Time-To-Market-Reduction"
+          ],
+          "id": "99a78011-4fa1-4488-a371-02371bb8d1b7",
+          "config": {
+            "representationKey": "FUNNEL",
+            "zones": {
+              "header": {
+                "x": 0,
+                "y": 0,
+                "width": 800,
+                "height": 80
+              },
+              "content": {
+                "x": 40,
+                "y": 80,
+                "width": 720,
+                "height": 460
+              },
+              "footer": {
+                "x": 0,
+                "y": 540,
+                "width": 800,
+                "height": 60
+              }
+            },
+            "contentLayout": {
+              "type": "full",
+              "sequence": [
+                {
+                  "label": "Problem-Identification",
+                  "x": 160,
+                  "y": 120,
+                  "width": 480,
+                  "height": 60
+                },
+                {
+                  "label": "Niche-Validation",
+                  "x": 206.5,
+                  "y": 200,
+                  "width": 387,
+                  "height": 60
+                },
+                {
+                  "label": "MVP-Development",
+                  "x": 253.5,
+                  "y": 280,
+                  "width": 293,
+                  "height": 60
+                },
+                {
+                  "label": "Rapid-Deployment",
+                  "x": 300,
+                  "y": 360,
+                  "width": 200,
+                  "height": 60
+                }
+              ]
+            },
+            "suggestedColors": {
+              "primary": {
+                "purpose": "Primary/Neutral",
+                "fill": "#3b82f6",
+                "stroke": "#1e3a5f"
+              },
+              "secondary": {
+                "purpose": "Tertiary",
+                "fill": "#93c5fd",
+                "stroke": "#1e3a5f"
+              }
+            },
+            "elementBudget": 12
+          }
+        },
+        {
+          "order": "2",
+          "type": "CONTENT",
+          "layout": "Header: title + subtitle. Content: circular cycle diagram with 4 nodes. Footer: concepts bar.",
+          "title": "The Micro-SaaS Growth Loop",
+          "subtitle": "The engine of continuous improvement",
+          "description": "The iterative cycle of building, measuring, and learning to ensure product-market fit in a Micro-SaaS environment.",
+          "representation": "CYCLE (Build-MVP → Measure-Engagement → Learn-Insights → Iterate-Product)",
+          "concepts": [
+            "Product-Market-Fit",
+            "Iterative-Feedback-Loops",
+            "Scalable-Architecture",
+            "Continuous-Deployment"
+          ],
+          "id": "90fe80b6-ee1e-4ca5-a71e-255c3b299433",
+          "config": {
+            "representationKey": "CYCLE",
+            "zones": {
+              "header": {
+                "x": 0,
+                "y": 0,
+                "width": 800,
+                "height": 80
+              },
+              "content": {
+                "x": 40,
+                "y": 80,
+                "width": 720,
+                "height": 460
+              },
+              "footer": {
+                "x": 0,
+                "y": 540,
+                "width": 800,
+                "height": 60
+              }
+            },
+            "contentLayout": {
+              "type": "full"
+            },
+            "suggestedColors": {
+              "primary": {
+                "purpose": "Primary/Neutral",
+                "fill": "#3b82f6",
+                "stroke": "#1e3a5f"
+              },
+              "secondary": {
+                "purpose": "Secondary",
+                "fill": "#60a5fa",
+                "stroke": "#1e3a5f"
+              }
+            },
+            "elementBudget": 14
+          }
+        },
+        {
+          "id": "643d60a5-e1f6-4aa1-84a8-73ffc63e2530",
+          "order": "3",
+          "type": "CLOSING",
+          "layout": "Free canvas. Large centered call-to-action or thank-you message. Decorative geometric element as visual accent. Optional: contact/link text below the main message. No concepts footer.",
+          "title": "Thank You",
+          "subtitle": "",
+          "description": "",
+          "representation": "",
+          "concepts": [],
+          "config": {
+            "representationKey": "FREE",
+            "zones": {
+              "full": {
+                "x": 0,
+                "y": 0,
+                "width": 800,
+                "height": 600
+              }
+            },
+            "contentLayout": {
+              "type": "free"
+            },
+            "suggestedColors": {
+              "primary": {
+                "purpose": "End/Success",
+                "fill": "#a7f3d0",
+                "stroke": "#047857"
+              }
+            },
+            "elementBudget": 6
+          }
+        }
+      ],
+      "aspectRatio": "16:9"
+    },
+    "generate-slides": {
+      "payload": {
+        "outlines": [
+          {
+            "id": "f2ac590a-51a4-4d34-a4f8-5a666f5ec1cf",
+            "order": "0",
+            "type": "COVER",
+            "layout": "Free canvas. Large centered title in the middle of the slide. Smaller subtitle just below. Large decorative geometric shape in the background (rectangle or ellipse, soft color). No fixed header/footer zones.",
+            "title": "A presentation about accelerating digital product creation with Micro-SaaS",
+            "subtitle": "2 slides",
+            "description": "",
+            "representation": "",
+            "concepts": [],
+            "config": {
+              "representationKey": "FREE",
+              "zones": {
+                "full": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 800,
+                  "height": 600
+                }
+              },
+              "contentLayout": {
+                "type": "free"
+              },
+              "suggestedColors": {
+                "primary": {
+                  "purpose": "Primary/Neutral",
+                  "fill": "#3b82f6",
+                  "stroke": "#1e3a5f"
+                }
+              },
+              "elementBudget": 6
+            }
+          },
+          {
+            "id": "5c09e4cc-4f26-44ef-a6c8-9a3742610ce3",
+            "order": "0.5",
+            "type": "SUMMARY",
+            "layout": "Title 'Agenda' at the top left with a decorative line below. Content: vertical list of numbered cards, each card with a highlighted number on the left and slide title on the right. No concepts footer.",
+            "title": "Agenda",
+            "subtitle": "",
+            "description": "1. Accelerating Product Creation\n2. The Micro-SaaS Growth Loop",
+            "representation": "",
+            "concepts": [],
+            "config": {
+              "representationKey": "LIST",
+              "zones": {
+                "header": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 800,
+                  "height": 80
+                },
+                "content": {
+                  "x": 40,
+                  "y": 80,
+                  "width": 720,
+                  "height": 460
+                },
+                "footer": {
+                  "x": 0,
+                  "y": 540,
+                  "width": 800,
+                  "height": 60
+                }
+              },
+              "contentLayout": {
+                "type": "list"
+              },
+              "suggestedColors": {
+                "primary": {
+                  "purpose": "Primary/Neutral",
+                  "fill": "#3b82f6",
+                  "stroke": "#1e3a5f"
+                }
+              },
+              "elementBudget": 10
+            }
+          },
+          {
+            "order": "1",
+            "type": "CONTENT",
+            "layout": "Header: title + subtitle. Content: 4-stage funnel showing the acceleration process. Footer: concepts bar.",
+            "title": "Accelerating Product Creation",
+            "subtitle": "From monolithic complexity to focused agility",
+            "description": "The shift from monolithic software development to focused, high-velocity Micro-SaaS delivery models.",
+            "representation": "FUNNEL (Problem-Identification → Niche-Validation → MVP-Development → Rapid-Deployment)",
+            "concepts": [
+              "Micro-SaaS-Strategy",
+              "Rapid-Prototyping",
+              "Lean-Product-Development",
+              "Time-To-Market-Reduction"
+            ],
+            "id": "99a78011-4fa1-4488-a371-02371bb8d1b7",
+            "config": {
+              "representationKey": "FUNNEL",
+              "zones": {
+                "header": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 800,
+                  "height": 80
+                },
+                "content": {
+                  "x": 40,
+                  "y": 80,
+                  "width": 720,
+                  "height": 460
+                },
+                "footer": {
+                  "x": 0,
+                  "y": 540,
+                  "width": 800,
+                  "height": 60
+                }
+              },
+              "contentLayout": {
+                "type": "full",
+                "sequence": [
+                  {
+                    "label": "Problem-Identification",
+                    "x": 160,
+                    "y": 120,
+                    "width": 480,
+                    "height": 60
+                  },
+                  {
+                    "label": "Niche-Validation",
+                    "x": 206.5,
+                    "y": 200,
+                    "width": 387,
+                    "height": 60
+                  },
+                  {
+                    "label": "MVP-Development",
+                    "x": 253.5,
+                    "y": 280,
+                    "width": 293,
+                    "height": 60
+                  },
+                  {
+                    "label": "Rapid-Deployment",
+                    "x": 300,
+                    "y": 360,
+                    "width": 200,
+                    "height": 60
+                  }
+                ]
+              },
+              "suggestedColors": {
+                "primary": {
+                  "purpose": "Primary/Neutral",
+                  "fill": "#3b82f6",
+                  "stroke": "#1e3a5f"
+                },
+                "secondary": {
+                  "purpose": "Tertiary",
+                  "fill": "#93c5fd",
+                  "stroke": "#1e3a5f"
+                }
+              },
+              "elementBudget": 12
+            }
+          },
+          {
+            "order": "2",
+            "type": "CONTENT",
+            "layout": "Header: title + subtitle. Content: circular cycle diagram with 4 nodes. Footer: concepts bar.",
+            "title": "The Micro-SaaS Growth Loop",
+            "subtitle": "The engine of continuous improvement",
+            "description": "The iterative cycle of building, measuring, and learning to ensure product-market fit in a Micro-SaaS environment.",
+            "representation": "CYCLE (Build-MVP → Measure-Engagement → Learn-Insights → Iterate-Product)",
+            "concepts": [
+              "Product-Market-Fit",
+              "Iterative-Feedback-Loops",
+              "Scalable-Architecture",
+              "Continuous-Deployment"
+            ],
+            "id": "90fe80b6-ee1e-4ca5-a71e-255c3b299433",
+            "config": {
+              "representationKey": "CYCLE",
+              "zones": {
+                "header": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 800,
+                  "height": 80
+                },
+                "content": {
+                  "x": 40,
+                  "y": 80,
+                  "width": 720,
+                  "height": 460
+                },
+                "footer": {
+                  "x": 0,
+                  "y": 540,
+                  "width": 800,
+                  "height": 60
+                }
+              },
+              "contentLayout": {
+                "type": "full"
+              },
+              "suggestedColors": {
+                "primary": {
+                  "purpose": "Primary/Neutral",
+                  "fill": "#3b82f6",
+                  "stroke": "#1e3a5f"
+                },
+                "secondary": {
+                  "purpose": "Secondary",
+                  "fill": "#60a5fa",
+                  "stroke": "#1e3a5f"
+                }
+              },
+              "elementBudget": 14
+            }
+          },
+          {
+            "id": "643d60a5-e1f6-4aa1-84a8-73ffc63e2530",
+            "order": "3",
+            "type": "CLOSING",
+            "layout": "Free canvas. Large centered call-to-action or thank-you message. Decorative geometric element as visual accent. Optional: contact/link text below the main message. No concepts footer.",
+            "title": "Thank You",
+            "subtitle": "",
+            "description": "",
+            "representation": "",
+            "concepts": [],
+            "config": {
+              "representationKey": "FREE",
+              "zones": {
+                "full": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 800,
+                  "height": 600
+                }
+              },
+              "contentLayout": {
+                "type": "free"
+              },
+              "suggestedColors": {
+                "primary": {
+                  "purpose": "End/Success",
+                  "fill": "#a7f3d0",
+                  "stroke": "#047857"
+                }
+              },
+              "elementBudget": 6
+            }
+          }
+        ],
+        "aspectRatio": "16:9"
+      },
+      "startedAt": 1773696559688,
+      "status": "success",
+      "output": {
+        "slides": [
+          {
+            "order": "0",
+            "scene": {
+              "files": {},
+              "type": "excalidraw/clipboard",
+              "elements": [
+                {
+                  "strokeStyle": "solid",
+                  "frameId": null,
+                  "width": 600,
+                  "fillStyle": "solid",
+                  "link": null,
+                  "opacity": 100,
+                  "index": "a0",
+                  "groupIds": [],
+                  "strokeColor": "#1e3a5f",
+                  "seed": 123456789,
+                  "locked": false,
+                  "height": 400,
+                  "boundElements": [],
+                  "versionNonce": 987654321,
+                  "backgroundColor": "#3b82f6",
+                  "updated": 1759103493092,
+                  "x": 100,
+                  "strokeWidth": 2,
+                  "id": "rect-1234567890ab",
+                  "angle": 0,
+                  "roughness": 0,
+                  "type": "rectangle",
+                  "roundness": {
+                    "type": 3
+                  },
+                  "version": 1,
+                  "isDeleted": false,
+                  "y": 100
+                },
+                {
+                  "verticalAlign": "middle",
+                  "autoResize": true,
+                  "updated": 1759103493092,
+                  "x": 100,
+                  "rawText": "A presentation about accelerating digital product creation with Micro-SaaS",
+                  "versionNonce": 987654321,
+                  "backgroundColor": "transparent",
+                  "height": 150,
+                  "isDeleted": false,
+                  "version": 1,
+                  "fontSize": 28,
+                  "y": 200,
+                  "type": "text",
+                  "originalText": "A presentation about accelerating digital product creation with Micro-SaaS",
+                  "id": "text-1234567890cd",
+                  "text": "A presentation about accelerating digital product creation with Micro-SaaS",
+                  "roughness": 0,
+                  "angle": 0,
+                  "strokeWidth": 1,
+                  "textAlign": "center",
+                  "width": 600,
+                  "strokeStyle": "solid",
+                  "seed": 123456789,
+                  "locked": false,
+                  "lineHeight": 1.25,
+                  "strokeColor": "#64748b",
+                  "fontFamily": 1,
+                  "link": null,
+                  "opacity": 100,
+                  "index": "a1",
+                  "containerId": null
+                },
+                {
+                  "fontSize": 18,
+                  "version": 1,
+                  "isDeleted": false,
+                  "y": 350,
+                  "type": "text",
+                  "text": "2 slides",
+                  "originalText": "2 slides",
+                  "id": "text-1234567890ef",
+                  "angle": 0,
+                  "roughness": 0,
+                  "strokeWidth": 1,
+                  "autoResize": true,
+                  "verticalAlign": "middle",
+                  "updated": 1759103493092,
+                  "x": 200,
+                  "rawText": "2 slides",
+                  "versionNonce": 987654321,
+                  "backgroundColor": "transparent",
+                  "height": 50,
+                  "strokeColor": "#64748b",
+                  "seed": 123456789,
+                  "lineHeight": 1.25,
+                  "locked": false,
+                  "fontFamily": 5,
+                  "link": null,
+                  "opacity": 100,
+                  "index": "a2",
+                  "containerId": null,
+                  "textAlign": "center",
+                  "width": 400,
+                  "strokeStyle": "solid"
+                }
+              ]
+            },
+            "id": "85b7f31e-1658-4c9f-a5b7-41c76153e5f3"
+          },
+          {
+            "order": "0.5",
+            "scene": {
+              "elements": [
+                {
+                  "backgroundColor": "#3b82f6",
+                  "y": 100,
+                  "strokeStyle": "solid",
+                  "height": 80,
+                  "isDeleted": false,
+                  "fillStyle": "solid",
+                  "type": "rectangle",
+                  "seed": 123456789,
+                  "width": 720,
+                  "x": 40,
+                  "strokeColor": "#1e3a5f",
+                  "groupIds": [],
+                  "frameId": null,
+                  "locked": false,
+                  "updated": 1759103493092,
+                  "version": 1,
+                  "boundElements": [
+                    {
+                      "id": "text-node1-001",
+                      "type": "text"
+                    }
+                  ],
+                  "link": null,
+                  "angle": 0,
+                  "roundness": {
+                    "type": 3
+                  },
+                  "opacity": 100,
+                  "id": "rect-node1-001",
+                  "index": "a0",
+                  "versionNonce": 987654321,
+                  "roughness": 0,
+                  "strokeWidth": 2
+                },
+                {
+                  "type": "rectangle",
+                  "height": 80,
+                  "isDeleted": false,
+                  "fillStyle": "solid",
+                  "backgroundColor": "#3b82f6",
+                  "y": 200,
+                  "strokeStyle": "solid",
+                  "frameId": null,
+                  "locked": false,
+                  "groupIds": [],
+                  "strokeColor": "#1e3a5f",
+                  "seed": 123456789,
+                  "width": 720,
+                  "x": 40,
+                  "link": null,
+                  "angle": 0,
+                  "version": 1,
+                  "boundElements": [
+                    {
+                      "type": "text",
+                      "id": "text-node2-001"
+                    }
+                  ],
+                  "updated": 1759103493092,
+                  "roughness": 0,
+                  "strokeWidth": 2,
+                  "id": "rect-node2-001",
+                  "index": "a1",
+                  "versionNonce": 987654321,
+                  "roundness": {
+                    "type": 3
+                  },
+                  "opacity": 100
+                },
+                {
+                  "boundElements": [],
+                  "version": 1,
+                  "angle": 0,
+                  "link": null,
+                  "updated": 1759103493092,
+                  "fontFamily": 5,
+                  "lineHeight": 1.25,
+                  "versionNonce": 987654321,
+                  "containerId": "rect-node1-001",
+                  "id": "text-node1-001",
+                  "index": "a2",
+                  "strokeWidth": 1,
+                  "roughness": 0,
+                  "fontSize": 14,
+                  "textAlign": "center",
+                  "opacity": 100,
+                  "autoResize": true,
+                  "roundness": null,
+                  "fillStyle": "solid",
+                  "isDeleted": false,
+                  "height": 40,
+                  "type": "text",
+                  "originalText": "1. Accelerating Product Creation",
+                  "strokeStyle": "solid",
+                  "y": 120,
+                  "verticalAlign": "middle",
+                  "backgroundColor": "transparent",
+                  "groupIds": [],
+                  "locked": false,
+                  "frameId": null,
+                  "x": 60,
+                  "rawText": "1. Accelerating Product Creation",
+                  "width": 600,
+                  "seed": 123456789,
+                  "text": "1. Accelerating Product Creation",
+                  "strokeColor": "#64748b"
+                },
+                {
+                  "versionNonce": 987654321,
+                  "containerId": "rect-node2-001",
+                  "index": "a3",
+                  "id": "text-node2-001",
+                  "strokeWidth": 1,
+                  "fontSize": 14,
+                  "roughness": 0,
+                  "textAlign": "center",
+                  "autoResize": true,
+                  "opacity": 100,
+                  "roundness": null,
+                  "boundElements": [],
+                  "version": 1,
+                  "angle": 0,
+                  "link": null,
+                  "updated": 1759103493092,
+                  "fontFamily": 5,
+                  "lineHeight": 1.25,
+                  "groupIds": [],
+                  "locked": false,
+                  "frameId": null,
+                  "x": 60,
+                  "width": 600,
+                  "rawText": "2. The Micro-SaaS Growth Loop",
+                  "seed": 123456789,
+                  "text": "2. The Micro-SaaS Growth Loop",
+                  "strokeColor": "#64748b",
+                  "fillStyle": "solid",
+                  "isDeleted": false,
+                  "height": 40,
+                  "type": "text",
+                  "originalText": "2. The Micro-SaaS Growth Loop",
+                  "strokeStyle": "solid",
+                  "y": 220,
+                  "verticalAlign": "middle",
+                  "backgroundColor": "transparent"
+                },
+                {
+                  "index": "a4",
+                  "id": "text-header-001",
+                  "versionNonce": 987654321,
+                  "containerId": null,
+                  "roughness": 0,
+                  "fontSize": 28,
+                  "strokeWidth": 1,
+                  "textAlign": "left",
+                  "autoResize": true,
+                  "opacity": 100,
+                  "roundness": null,
+                  "version": 1,
+                  "boundElements": [],
+                  "link": null,
+                  "angle": 0,
+                  "updated": 1759103493092,
+                  "fontFamily": 1,
+                  "lineHeight": 1.25,
+                  "groupIds": [],
+                  "frameId": null,
+                  "locked": false,
+                  "width": 200,
+                  "rawText": "Agenda",
+                  "seed": 123456789,
+                  "x": 40,
+                  "text": "Agenda",
+                  "strokeColor": "#64748b",
+                  "height": 50,
+                  "fillStyle": "solid",
+                  "isDeleted": false,
+                  "type": "text",
+                  "originalText": "Agenda",
+                  "verticalAlign": "middle",
+                  "backgroundColor": "transparent",
+                  "strokeStyle": "solid",
+                  "y": 20
+                },
+                {
+                  "versionNonce": 987654321,
+                  "id": "line-divider-001",
+                  "index": "a5",
+                  "strokeWidth": 2,
+                  "roughness": 0,
+                  "roundness": null,
+                  "opacity": 100,
+                  "boundElements": [],
+                  "version": 1,
+                  "angle": 0,
+                  "link": null,
+                  "updated": 1759103493092,
+                  "points": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      720,
+                      0
+                    ]
+                  ],
+                  "groupIds": [],
+                  "locked": false,
+                  "frameId": null,
+                  "x": 40,
+                  "seed": 123456789,
+                  "width": 720,
+                  "strokeColor": "#1e3a5f",
+                  "isDeleted": false,
+                  "fillStyle": "solid",
+                  "height": 2,
+                  "type": "line",
+                  "y": 70,
+                  "strokeStyle": "solid",
+                  "backgroundColor": "transparent"
+                }
+              ],
+              "files": {}
+            },
+            "id": "152a5628-70ff-48f4-9837-71e1c5c3bc3b"
+          },
+          {
+            "order": "1",
+            "scene": {
+              "type": "excalidraw/clipboard",
+              "elements": []
+            },
+            "id": "25bcde63-be91-4a36-a126-e192b5671f43"
+          },
+          {
+            "order": "2",
+            "scene": {
+              "type": "excalidraw/clipboard",
+              "elements": [],
+              "files": []
+            },
+            "id": "2dce6764-259d-4599-af91-50a21442dc97"
+          },
+          {
+            "order": "3",
+            "scene": {
+              "elements": [
+                {
+                  "height": 150,
+                  "angle": 0,
+                  "type": "rectangle",
+                  "width": 500,
+                  "isDeleted": false,
+                  "y": 225,
+                  "locked": false,
+                  "versionNonce": 987654321,
+                  "link": null,
+                  "strokeWidth": 2,
+                  "id": "rect-1234567890ab",
+                  "groupIds": [],
+                  "boundElements": [
+                    {
+                      "type": "text",
+                      "id": "text-1234567890cd"
+                    }
+                  ],
+                  "frameId": null,
+                  "opacity": 100,
+                  "roughness": 0,
+                  "version": 1,
+                  "strokeColor": "#047857",
+                  "index": "a0",
+                  "roundness": {
+                    "type": 3
+                  },
+                  "fillStyle": "solid",
+                  "strokeStyle": "solid",
+                  "updated": 1759103493092,
+                  "backgroundColor": "#a7f3d0",
+                  "seed": 123456789,
+                  "x": 150
+                },
+                {
+                  "strokeWidth": 2,
+                  "isDeleted": false,
+                  "y": 100,
+                  "locked": false,
+                  "versionNonce": 654321098,
+                  "link": null,
+                  "width": 100,
+                  "height": 100,
+                  "angle": 0,
+                  "type": "ellipse",
+                  "fillStyle": "solid",
+                  "updated": 1759103493092,
+                  "strokeStyle": "solid",
+                  "backgroundColor": "#60a5fa",
+                  "seed": 456789012,
+                  "x": 650,
+                  "strokeColor": "#1e3a5f",
+                  "index": "a1",
+                  "roundness": null,
+                  "boundElements": [],
+                  "frameId": null,
+                  "opacity": 100,
+                  "version": 1,
+                  "roughness": 0,
+                  "id": "ellipse-1234567890gh",
+                  "groupIds": []
+                },
+                {
+                  "fontSize": 28,
+                  "groupIds": [],
+                  "id": "text-1234567890cd",
+                  "frameId": null,
+                  "boundElements": [],
+                  "opacity": 100,
+                  "roughness": 0,
+                  "version": 1,
+                  "strokeColor": "#000000",
+                  "originalText": "Thank You!",
+                  "fontFamily": 1,
+                  "index": "a2",
+                  "roundness": null,
+                  "autoResize": true,
+                  "fillStyle": "solid",
+                  "strokeStyle": "solid",
+                  "updated": 1759103493092,
+                  "backgroundColor": "transparent",
+                  "x": 200,
+                  "seed": 234567890,
+                  "height": 80,
+                  "containerId": "rect-1234567890ab",
+                  "type": "text",
+                  "textAlign": "center",
+                  "angle": 0,
+                  "verticalAlign": "middle",
+                  "width": 400,
+                  "y": 260,
+                  "lineHeight": 1.25,
+                  "isDeleted": false,
+                  "locked": false,
+                  "link": null,
+                  "versionNonce": 876543210,
+                  "text": "Thank You!",
+                  "rawText": "Thank You!",
+                  "strokeWidth": 1
+                },
+                {
+                  "strokeWidth": 1,
+                  "rawText": "Questions? Contact us at hello@example.com",
+                  "link": null,
+                  "versionNonce": 765432109,
+                  "text": "Questions? Contact us at hello@example.com",
+                  "y": 400,
+                  "lineHeight": 1.25,
+                  "isDeleted": false,
+                  "locked": false,
+                  "width": 400,
+                  "verticalAlign": "middle",
+                  "height": 20,
+                  "containerId": null,
+                  "type": "text",
+                  "angle": 0,
+                  "textAlign": "center",
+                  "x": 200,
+                  "seed": 345678901,
+                  "fillStyle": "solid",
+                  "autoResize": true,
+                  "backgroundColor": "transparent",
+                  "strokeStyle": "solid",
+                  "updated": 1759103493092,
+                  "index": "a3",
+                  "roundness": null,
+                  "strokeColor": "#1e3a5f",
+                  "originalText": "Questions? Contact us at hello@example.com",
+                  "fontFamily": 5,
+                  "opacity": 100,
+                  "roughness": 0,
+                  "version": 1,
+                  "frameId": null,
+                  "boundElements": [],
+                  "groupIds": [],
+                  "id": "text-1234567890ef",
+                  "fontSize": 14
+                }
+              ],
+              "files": {}
+            },
+            "id": "342da3fe-ebda-4a71-b71c-f86c192e23aa"
+          }
+        ],
+        "aiMetadata": {
+          "mastra": {
+            "agentId": "Scene Workflow",
+            "traceId": "52668bc8-0113-42e0-99be-4830fc9a0194",
+            "version": "2.0.0",
+            "duration": 121286,
+            "steps": [
+              {
+                "name": "spatial-planning",
+                "tool": "create_spatial_plan",
+                "status": "success",
+                "duration": 0,
+                "usage": {
+                  "promptTokens": 0,
+                  "completionTokens": 0,
+                  "totalTokens": 24081
+                }
+              },
+              {
+                "name": "element-synthesis",
+                "tool": "create_slides",
+                "status": "success",
+                "duration": 0,
+                "usage": {
+                  "promptTokens": 0,
+                  "completionTokens": 0,
+                  "totalTokens": 52996
+                }
+              },
+              {
+                "name": "validation-fix",
+                "tool": "none",
+                "status": "success",
+                "duration": 0,
+                "usage": {
+                  "promptTokens": 0,
+                  "completionTokens": 0,
+                  "totalTokens": 0
+                },
+                "result": {
+                  "issuesFixed": 2
+                }
+              }
+            ]
+          },
+          "usage": {
+            "promptTokens": 66009,
+            "completionTokens": 11068,
+            "totalTokens": 77077,
+            "cost": 0,
+            "currency": "USD"
+          },
+          "model": {
+            "name": "gemini-3.1-flash-lite-preview",
+            "provider": "google"
+          },
+          "context": {
+            "outlineSlidesCount": 5,
+            "documentId": "unknown"
+          }
+        }
+      },
+      "endedAt": 1773696680978
+    }
+  },
+  "input": {
+    "outlines": [
+      {
+        "id": "f2ac590a-51a4-4d34-a4f8-5a666f5ec1cf",
+        "order": "0",
+        "type": "COVER",
+        "layout": "Free canvas. Large centered title in the middle of the slide. Smaller subtitle just below. Large decorative geometric shape in the background (rectangle or ellipse, soft color). No fixed header/footer zones.",
+        "title": "A presentation about accelerating digital product creation with Micro-SaaS",
+        "subtitle": "2 slides",
+        "description": "",
+        "representation": "",
+        "concepts": [],
+        "config": {
+          "representationKey": "FREE",
+          "zones": {
+            "full": {
+              "x": 0,
+              "y": 0,
+              "width": 800,
+              "height": 600
+            }
+          },
+          "contentLayout": {
+            "type": "free"
+          },
+          "suggestedColors": {
+            "primary": {
+              "purpose": "Primary/Neutral",
+              "fill": "#3b82f6",
+              "stroke": "#1e3a5f"
+            }
+          },
+          "elementBudget": 6
+        }
+      },
+      {
+        "id": "5c09e4cc-4f26-44ef-a6c8-9a3742610ce3",
+        "order": "0.5",
+        "type": "SUMMARY",
+        "layout": "Title 'Agenda' at the top left with a decorative line below. Content: vertical list of numbered cards, each card with a highlighted number on the left and slide title on the right. No concepts footer.",
+        "title": "Agenda",
+        "subtitle": "",
+        "description": "1. Accelerating Product Creation\n2. The Micro-SaaS Growth Loop",
+        "representation": "",
+        "concepts": [],
+        "config": {
+          "representationKey": "LIST",
+          "zones": {
+            "header": {
+              "x": 0,
+              "y": 0,
+              "width": 800,
+              "height": 80
+            },
+            "content": {
+              "x": 40,
+              "y": 80,
+              "width": 720,
+              "height": 460
+            },
+            "footer": {
+              "x": 0,
+              "y": 540,
+              "width": 800,
+              "height": 60
+            }
+          },
+          "contentLayout": {
+            "type": "list"
+          },
+          "suggestedColors": {
+            "primary": {
+              "purpose": "Primary/Neutral",
+              "fill": "#3b82f6",
+              "stroke": "#1e3a5f"
+            }
+          },
+          "elementBudget": 10
+        }
+      },
+      {
+        "order": "1",
+        "type": "CONTENT",
+        "layout": "Header: title + subtitle. Content: 4-stage funnel showing the acceleration process. Footer: concepts bar.",
+        "title": "Accelerating Product Creation",
+        "subtitle": "From monolithic complexity to focused agility",
+        "description": "The shift from monolithic software development to focused, high-velocity Micro-SaaS delivery models.",
+        "representation": "FUNNEL (Problem-Identification → Niche-Validation → MVP-Development → Rapid-Deployment)",
+        "concepts": [
+          "Micro-SaaS-Strategy",
+          "Rapid-Prototyping",
+          "Lean-Product-Development",
+          "Time-To-Market-Reduction"
+        ],
+        "id": "99a78011-4fa1-4488-a371-02371bb8d1b7",
+        "config": {
+          "representationKey": "FUNNEL",
+          "zones": {
+            "header": {
+              "x": 0,
+              "y": 0,
+              "width": 800,
+              "height": 80
+            },
+            "content": {
+              "x": 40,
+              "y": 80,
+              "width": 720,
+              "height": 460
+            },
+            "footer": {
+              "x": 0,
+              "y": 540,
+              "width": 800,
+              "height": 60
+            }
+          },
+          "contentLayout": {
+            "type": "full",
+            "sequence": [
+              {
+                "label": "Problem-Identification",
+                "x": 160,
+                "y": 120,
+                "width": 480,
+                "height": 60
+              },
+              {
+                "label": "Niche-Validation",
+                "x": 206.5,
+                "y": 200,
+                "width": 387,
+                "height": 60
+              },
+              {
+                "label": "MVP-Development",
+                "x": 253.5,
+                "y": 280,
+                "width": 293,
+                "height": 60
+              },
+              {
+                "label": "Rapid-Deployment",
+                "x": 300,
+                "y": 360,
+                "width": 200,
+                "height": 60
+              }
+            ]
+          },
+          "suggestedColors": {
+            "primary": {
+              "purpose": "Primary/Neutral",
+              "fill": "#3b82f6",
+              "stroke": "#1e3a5f"
+            },
+            "secondary": {
+              "purpose": "Tertiary",
+              "fill": "#93c5fd",
+              "stroke": "#1e3a5f"
+            }
+          },
+          "elementBudget": 12
+        }
+      },
+      {
+        "order": "2",
+        "type": "CONTENT",
+        "layout": "Header: title + subtitle. Content: circular cycle diagram with 4 nodes. Footer: concepts bar.",
+        "title": "The Micro-SaaS Growth Loop",
+        "subtitle": "The engine of continuous improvement",
+        "description": "The iterative cycle of building, measuring, and learning to ensure product-market fit in a Micro-SaaS environment.",
+        "representation": "CYCLE (Build-MVP → Measure-Engagement → Learn-Insights → Iterate-Product)",
+        "concepts": [
+          "Product-Market-Fit",
+          "Iterative-Feedback-Loops",
+          "Scalable-Architecture",
+          "Continuous-Deployment"
+        ],
+        "id": "90fe80b6-ee1e-4ca5-a71e-255c3b299433",
+        "config": {
+          "representationKey": "CYCLE",
+          "zones": {
+            "header": {
+              "x": 0,
+              "y": 0,
+              "width": 800,
+              "height": 80
+            },
+            "content": {
+              "x": 40,
+              "y": 80,
+              "width": 720,
+              "height": 460
+            },
+            "footer": {
+              "x": 0,
+              "y": 540,
+              "width": 800,
+              "height": 60
+            }
+          },
+          "contentLayout": {
+            "type": "full"
+          },
+          "suggestedColors": {
+            "primary": {
+              "purpose": "Primary/Neutral",
+              "fill": "#3b82f6",
+              "stroke": "#1e3a5f"
+            },
+            "secondary": {
+              "purpose": "Secondary",
+              "fill": "#60a5fa",
+              "stroke": "#1e3a5f"
+            }
+          },
+          "elementBudget": 14
+        }
+      },
+      {
+        "id": "643d60a5-e1f6-4aa1-84a8-73ffc63e2530",
+        "order": "3",
+        "type": "CLOSING",
+        "layout": "Free canvas. Large centered call-to-action or thank-you message. Decorative geometric element as visual accent. Optional: contact/link text below the main message. No concepts footer.",
+        "title": "Thank You",
+        "subtitle": "",
+        "description": "",
+        "representation": "",
+        "concepts": [],
+        "config": {
+          "representationKey": "FREE",
+          "zones": {
+            "full": {
+              "x": 0,
+              "y": 0,
+              "width": 800,
+              "height": 600
+            }
+          },
+          "contentLayout": {
+            "type": "free"
+          },
+          "suggestedColors": {
+            "primary": {
+              "purpose": "End/Success",
+              "fill": "#a7f3d0",
+              "stroke": "#047857"
+            }
+          },
+          "elementBudget": 6
+        }
+      }
+    ],
+    "aspectRatio": "16:9"
+  },
+  "result": {
+    "slides": [
+      {
+        "order": "0",
+        "scene": {
+          "files": {},
+          "type": "excalidraw/clipboard",
+          "elements": [
+            {
+              "strokeStyle": "solid",
+              "frameId": null,
+              "width": 600,
+              "fillStyle": "solid",
+              "link": null,
+              "opacity": 100,
+              "index": "a0",
+              "groupIds": [],
+              "strokeColor": "#1e3a5f",
+              "seed": 123456789,
+              "locked": false,
+              "height": 400,
+              "boundElements": [],
+              "versionNonce": 987654321,
+              "backgroundColor": "#3b82f6",
+              "updated": 1759103493092,
+              "x": 100,
+              "strokeWidth": 2,
+              "id": "rect-1234567890ab",
+              "angle": 0,
+              "roughness": 0,
+              "type": "rectangle",
+              "roundness": {
+                "type": 3
+              },
+              "version": 1,
+              "isDeleted": false,
+              "y": 100
+            },
+            {
+              "verticalAlign": "middle",
+              "autoResize": true,
+              "updated": 1759103493092,
+              "x": 100,
+              "rawText": "A presentation about accelerating digital product creation with Micro-SaaS",
+              "versionNonce": 987654321,
+              "backgroundColor": "transparent",
+              "height": 150,
+              "isDeleted": false,
+              "version": 1,
+              "fontSize": 28,
+              "y": 200,
+              "type": "text",
+              "originalText": "A presentation about accelerating digital product creation with Micro-SaaS",
+              "id": "text-1234567890cd",
+              "text": "A presentation about accelerating digital product creation with Micro-SaaS",
+              "roughness": 0,
+              "angle": 0,
+              "strokeWidth": 1,
+              "textAlign": "center",
+              "width": 600,
+              "strokeStyle": "solid",
+              "seed": 123456789,
+              "locked": false,
+              "lineHeight": 1.25,
+              "strokeColor": "#64748b",
+              "fontFamily": 1,
+              "link": null,
+              "opacity": 100,
+              "index": "a1",
+              "containerId": null
+            },
+            {
+              "fontSize": 18,
+              "version": 1,
+              "isDeleted": false,
+              "y": 350,
+              "type": "text",
+              "text": "2 slides",
+              "originalText": "2 slides",
+              "id": "text-1234567890ef",
+              "angle": 0,
+              "roughness": 0,
+              "strokeWidth": 1,
+              "autoResize": true,
+              "verticalAlign": "middle",
+              "updated": 1759103493092,
+              "x": 200,
+              "rawText": "2 slides",
+              "versionNonce": 987654321,
+              "backgroundColor": "transparent",
+              "height": 50,
+              "strokeColor": "#64748b",
+              "seed": 123456789,
+              "lineHeight": 1.25,
+              "locked": false,
+              "fontFamily": 5,
+              "link": null,
+              "opacity": 100,
+              "index": "a2",
+              "containerId": null,
+              "textAlign": "center",
+              "width": 400,
+              "strokeStyle": "solid"
+            }
+          ]
+        },
+        "id": "85b7f31e-1658-4c9f-a5b7-41c76153e5f3"
+      },
+      {
+        "order": "0.5",
+        "scene": {
+          "type": "excalidraw/clipboard",
+          "elements": [
+            {
+              "backgroundColor": "#3b82f6",
+              "y": 100,
+              "strokeStyle": "solid",
+              "height": 80,
+              "isDeleted": false,
+              "fillStyle": "solid",
+              "type": "rectangle",
+              "seed": 123456789,
+              "width": 720,
+              "x": 40,
+              "strokeColor": "#1e3a5f",
+              "groupIds": [],
+              "frameId": null,
+              "locked": false,
+              "updated": 1759103493092,
+              "version": 1,
+              "boundElements": [
+                {
+                  "id": "text-node1-001",
+                  "type": "text"
+                }
+              ],
+              "link": null,
+              "angle": 0,
+              "roundness": {
+                "type": 3
+              },
+              "opacity": 100,
+              "id": "rect-node1-001",
+              "index": "a0",
+              "versionNonce": 987654321,
+              "roughness": 0,
+              "strokeWidth": 2
+            },
+            {
+              "type": "rectangle",
+              "height": 80,
+              "isDeleted": false,
+              "fillStyle": "solid",
+              "backgroundColor": "#3b82f6",
+              "y": 200,
+              "strokeStyle": "solid",
+              "frameId": null,
+              "locked": false,
+              "groupIds": [],
+              "strokeColor": "#1e3a5f",
+              "seed": 123456789,
+              "width": 720,
+              "x": 40,
+              "link": null,
+              "angle": 0,
+              "version": 1,
+              "boundElements": [
+                {
+                  "type": "text",
+                  "id": "text-node2-001"
+                }
+              ],
+              "updated": 1759103493092,
+              "roughness": 0,
+              "strokeWidth": 2,
+              "id": "rect-node2-001",
+              "index": "a1",
+              "versionNonce": 987654321,
+              "roundness": {
+                "type": 3
+              },
+              "opacity": 100
+            },
+            {
+              "boundElements": [],
+              "version": 1,
+              "angle": 0,
+              "link": null,
+              "updated": 1759103493092,
+              "fontFamily": 5,
+              "lineHeight": 1.25,
+              "versionNonce": 987654321,
+              "containerId": "rect-node1-001",
+              "id": "text-node1-001",
+              "index": "a2",
+              "strokeWidth": 1,
+              "roughness": 0,
+              "fontSize": 14,
+              "textAlign": "center",
+              "opacity": 100,
+              "autoResize": true,
+              "roundness": null,
+              "fillStyle": "solid",
+              "isDeleted": false,
+              "height": 40,
+              "type": "text",
+              "originalText": "1. Accelerating Product Creation",
+              "strokeStyle": "solid",
+              "y": 120,
+              "verticalAlign": "middle",
+              "backgroundColor": "transparent",
+              "groupIds": [],
+              "locked": false,
+              "frameId": null,
+              "x": 60,
+              "rawText": "1. Accelerating Product Creation",
+              "width": 600,
+              "seed": 123456789,
+              "text": "1. Accelerating Product Creation",
+              "strokeColor": "#64748b"
+            },
+            {
+              "versionNonce": 987654321,
+              "containerId": "rect-node2-001",
+              "index": "a3",
+              "id": "text-node2-001",
+              "strokeWidth": 1,
+              "fontSize": 14,
+              "roughness": 0,
+              "textAlign": "center",
+              "autoResize": true,
+              "opacity": 100,
+              "roundness": null,
+              "boundElements": [],
+              "version": 1,
+              "angle": 0,
+              "link": null,
+              "updated": 1759103493092,
+              "fontFamily": 5,
+              "lineHeight": 1.25,
+              "groupIds": [],
+              "locked": false,
+              "frameId": null,
+              "x": 60,
+              "width": 600,
+              "rawText": "2. The Micro-SaaS Growth Loop",
+              "seed": 123456789,
+              "text": "2. The Micro-SaaS Growth Loop",
+              "strokeColor": "#64748b",
+              "fillStyle": "solid",
+              "isDeleted": false,
+              "height": 40,
+              "type": "text",
+              "originalText": "2. The Micro-SaaS Growth Loop",
+              "strokeStyle": "solid",
+              "y": 220,
+              "verticalAlign": "middle",
+              "backgroundColor": "transparent"
+            },
+            {
+              "index": "a4",
+              "id": "text-header-001",
+              "versionNonce": 987654321,
+              "containerId": null,
+              "roughness": 0,
+              "fontSize": 28,
+              "strokeWidth": 1,
+              "textAlign": "left",
+              "autoResize": true,
+              "opacity": 100,
+              "roundness": null,
+              "version": 1,
+              "boundElements": [],
+              "link": null,
+              "angle": 0,
+              "updated": 1759103493092,
+              "fontFamily": 1,
+              "lineHeight": 1.25,
+              "groupIds": [],
+              "frameId": null,
+              "locked": false,
+              "width": 200,
+              "rawText": "Agenda",
+              "seed": 123456789,
+              "x": 40,
+              "text": "Agenda",
+              "strokeColor": "#64748b",
+              "height": 50,
+              "fillStyle": "solid",
+              "isDeleted": false,
+              "type": "text",
+              "originalText": "Agenda",
+              "verticalAlign": "middle",
+              "backgroundColor": "transparent",
+              "strokeStyle": "solid",
+              "y": 20
+            },
+            {
+              "versionNonce": 987654321,
+              "id": "line-divider-001",
+              "index": "a5",
+              "strokeWidth": 2,
+              "roughness": 0,
+              "roundness": null,
+              "opacity": 100,
+              "boundElements": [],
+              "version": 1,
+              "angle": 0,
+              "link": null,
+              "updated": 1759103493092,
+              "points": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  720,
+                  0
+                ]
+              ],
+              "groupIds": [],
+              "locked": false,
+              "frameId": null,
+              "x": 40,
+              "seed": 123456789,
+              "width": 720,
+              "strokeColor": "#1e3a5f",
+              "isDeleted": false,
+              "fillStyle": "solid",
+              "height": 2,
+              "type": "line",
+              "y": 70,
+              "strokeStyle": "solid",
+              "backgroundColor": "transparent"
+            }
+          ],
+          "files": {}
+        },
+        "id": "152a5628-70ff-48f4-9837-71e1c5c3bc3b"
+      },
+      {
+        "order": "1",
+        "scene": {
+          "type": "excalidraw/clipboard",
+          "elements": []
+        },
+        "id": "25bcde63-be91-4a36-a126-e192b5671f43"
+      },
+      {
+        "order": "2",
+        "scene": {
+          "type": "excalidraw/clipboard",
+          "elements": [],
+          "files": []
+        },
+        "id": "2dce6764-259d-4599-af91-50a21442dc97"
+      },
+      {
+        "order": "3",
+        "scene": {
+          "type": "excalidraw/clipboard",
+          "elements": [
+            {
+              "height": 150,
+              "angle": 0,
+              "type": "rectangle",
+              "width": 500,
+              "isDeleted": false,
+              "y": 225,
+              "locked": false,
+              "versionNonce": 987654321,
+              "link": null,
+              "strokeWidth": 2,
+              "id": "rect-1234567890ab",
+              "groupIds": [],
+              "boundElements": [
+                {
+                  "type": "text",
+                  "id": "text-1234567890cd"
+                }
+              ],
+              "frameId": null,
+              "opacity": 100,
+              "roughness": 0,
+              "version": 1,
+              "strokeColor": "#047857",
+              "index": "a0",
+              "roundness": {
+                "type": 3
+              },
+              "fillStyle": "solid",
+              "strokeStyle": "solid",
+              "updated": 1759103493092,
+              "backgroundColor": "#a7f3d0",
+              "seed": 123456789,
+              "x": 150
+            },
+            {
+              "strokeWidth": 2,
+              "isDeleted": false,
+              "y": 100,
+              "locked": false,
+              "versionNonce": 654321098,
+              "link": null,
+              "width": 100,
+              "height": 100,
+              "angle": 0,
+              "type": "ellipse",
+              "fillStyle": "solid",
+              "updated": 1759103493092,
+              "strokeStyle": "solid",
+              "backgroundColor": "#60a5fa",
+              "seed": 456789012,
+              "x": 650,
+              "strokeColor": "#1e3a5f",
+              "index": "a1",
+              "roundness": null,
+              "boundElements": [],
+              "frameId": null,
+              "opacity": 100,
+              "version": 1,
+              "roughness": 0,
+              "id": "ellipse-1234567890gh",
+              "groupIds": []
+            },
+            {
+              "fontSize": 28,
+              "groupIds": [],
+              "id": "text-1234567890cd",
+              "frameId": null,
+              "boundElements": [],
+              "opacity": 100,
+              "roughness": 0,
+              "version": 1,
+              "strokeColor": "#000000",
+              "originalText": "Thank You!",
+              "fontFamily": 1,
+              "index": "a2",
+              "roundness": null,
+              "autoResize": true,
+              "fillStyle": "solid",
+              "strokeStyle": "solid",
+              "updated": 1759103493092,
+              "backgroundColor": "transparent",
+              "x": 200,
+              "seed": 234567890,
+              "height": 80,
+              "containerId": "rect-1234567890ab",
+              "type": "text",
+              "textAlign": "center",
+              "angle": 0,
+              "verticalAlign": "middle",
+              "width": 400,
+              "y": 260,
+              "lineHeight": 1.25,
+              "isDeleted": false,
+              "locked": false,
+              "link": null,
+              "versionNonce": 876543210,
+              "text": "Thank You!",
+              "rawText": "Thank You!",
+              "strokeWidth": 1
+            },
+            {
+              "strokeWidth": 1,
+              "rawText": "Questions? Contact us at hello@example.com",
+              "link": null,
+              "versionNonce": 765432109,
+              "text": "Questions? Contact us at hello@example.com",
+              "y": 400,
+              "lineHeight": 1.25,
+              "isDeleted": false,
+              "locked": false,
+              "width": 400,
+              "verticalAlign": "middle",
+              "height": 20,
+              "containerId": null,
+              "type": "text",
+              "angle": 0,
+              "textAlign": "center",
+              "x": 200,
+              "seed": 345678901,
+              "fillStyle": "solid",
+              "autoResize": true,
+              "backgroundColor": "transparent",
+              "strokeStyle": "solid",
+              "updated": 1759103493092,
+              "index": "a3",
+              "roundness": null,
+              "strokeColor": "#1e3a5f",
+              "originalText": "Questions? Contact us at hello@example.com",
+              "fontFamily": 5,
+              "opacity": 100,
+              "roughness": 0,
+              "version": 1,
+              "frameId": null,
+              "boundElements": [],
+              "groupIds": [],
+              "id": "text-1234567890ef",
+              "fontSize": 14
+            }
+          ],
+          "files": {}
+        },
+        "id": "342da3fe-ebda-4a71-b71c-f86c192e23aa"
+      }
+    ],
+    "aiMetadata": {
+      "mastra": {
+        "agentId": "Scene Workflow",
+        "traceId": "52668bc8-0113-42e0-99be-4830fc9a0194",
+        "version": "2.0.0",
+        "duration": 121286,
+        "steps": [
+          {
+            "name": "spatial-planning",
+            "tool": "create_spatial_plan",
+            "status": "success",
+            "duration": 0,
+            "usage": {
+              "promptTokens": 0,
+              "completionTokens": 0,
+              "totalTokens": 24081
+            }
+          },
+          {
+            "name": "element-synthesis",
+            "tool": "create_slides",
+            "status": "success",
+            "duration": 0,
+            "usage": {
+              "promptTokens": 0,
+              "completionTokens": 0,
+              "totalTokens": 52996
+            }
+          },
+          {
+            "name": "validation-fix",
+            "tool": "none",
+            "status": "success",
+            "duration": 0,
+            "usage": {
+              "promptTokens": 0,
+              "completionTokens": 0,
+              "totalTokens": 0
+            },
+            "result": {
+              "issuesFixed": 2
+            }
+          }
+        ]
+      },
+      "usage": {
+        "promptTokens": 66009,
+        "completionTokens": 11068,
+        "totalTokens": 77077,
+        "cost": 0,
+        "currency": "USD"
+      },
+      "model": {
+        "name": "gemini-3.1-flash-lite-preview",
+        "provider": "google"
+      },
+      "context": {
+        "outlineSlidesCount": 5,
+        "documentId": "unknown"
+      }
+    }
+  }
+}

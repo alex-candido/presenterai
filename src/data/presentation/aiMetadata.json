@@ -1,0 +1,54 @@
+{
+  "mastra": {
+    "agentId": "mock-agent-pres-789",
+    "traceId": "trace-pres-101",
+    "version": "1.0.0",
+    "duration": 7890,
+    "steps": [
+      {
+        "name": "slide_rendering",
+        "tool": "excalidraw_api",
+        "duration": 1500,
+        "status": "success",
+        "usage": {
+          "promptTokens": 500,
+          "completionTokens": 1200,
+          "totalTokens": 1700
+        },
+        "result": {
+          "success": true
+        }
+      },
+      {
+        "name": "layout_optimization",
+        "tool": "layout_tool",
+        "duration": 800,
+        "status": "success",
+        "usage": {
+          "promptTokens": 100,
+          "completionTokens": 200,
+          "totalTokens": 300
+        },
+        "result": {
+          "success": true
+        }
+      }
+    ]
+  },
+  "usage": {
+    "promptTokens": 600,
+    "completionTokens": 1400,
+    "totalTokens": 2000,
+    "cost": 0.15,
+    "currency": "USD"
+  },
+  "model": {
+    "name": "gemini-1.5-flash",
+    "provider": "google"
+  },
+  "context": {
+    "presentationId": "pres-uuid-001",
+    "generationId": "gen-uuid-001",
+    "slideCount": 2
+  }
+}

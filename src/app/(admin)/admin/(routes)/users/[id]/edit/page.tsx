@@ -1,9 +1,9 @@
 "use client";
 
 import {
-  UsersForm,
-  UsersHeader,
-} from "@/components/pages/admin/users";
+    UsersForm,
+    UsersHeader,
+} from "@/components/app/admin/users";
 
 export default function AdminUserEditPage() {
   return (

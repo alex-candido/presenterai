@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: <%= ENV.fetch("DB_HOST") { "localhost" } %>
+  port: <%= ENV.fetch("DB_PORT") { 5432 } %>
+  username: <%= ENV.fetch("DB_USER") { "fabi" } %>
+  password: <%= ENV.fetch("DB_PASSWORD") { "fabi_password" } %>
+
+development:
+  <<: *default
+  database: fabi_development
+
+test:
+  <<: *default
+  database: fabi_test
+
+production:
+  <<: *default
+  database: <%= ENV.fetch("DB_NAME") { "fabi_production" } %>
+  username: <%= ENV.fetch("DB_USER") { "fabi" } %>
+  password: <%= ENV.fetch("DB_PASSWORD") { "fabi_password" } %>
+  host: <%= ENV.fetch("DB_HOST") { "localhost" } %>

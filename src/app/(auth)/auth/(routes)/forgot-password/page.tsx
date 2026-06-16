@@ -1,7 +1,7 @@
 "use client";
 
-import { ForgotPasswordSection } from "@/components/pages/auth/forgot-password";
-import { AuthHero } from "@/components/pages/auth/root/auth-hero";
+import { AuthHero } from "@/components/app/auth/auth-hero";
+import { ForgotPasswordSection } from "@/components/app/auth/forgot-password";
 
 export default function ForgotPasswordPage() {
   return (

@@ -1,7 +1,7 @@
 "use client";
 
+import { AppLayoutAside, AppLayoutFooter, AppLayoutHeader } from "@/components/app/app/layout";
 import { LayoutApp, LayoutMain } from "@/components/layouts";
-import { AppLayoutAside, AppLayoutFooter, AppLayoutHeader } from "@/components/pages/app/layout";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (

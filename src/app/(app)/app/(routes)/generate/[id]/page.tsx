@@ -1,10 +1,10 @@
 "use client";
 
 import {
-  AppGenerateHeader,
-  AppGenerateOutlinePanel,
-  AppGenerateSettingsPanel,
-} from "@/components/pages/app/generate";
+    AppGenerateHeader,
+    AppGenerateOutlinePanel,
+    AppGenerateSettingsPanel,
+} from "@/components/app/app/generate";
 
 export default function GeneratePage() {
   return (

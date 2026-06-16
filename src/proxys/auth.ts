@@ -2,8 +2,8 @@ import { headers } from "next/headers";
 import { NextRequest } from "next/server";
 
 import { APP_ROUTES } from "@/config/routes";
+import { auth } from "@/lib/betterauth";
 import { redirect } from "@/lib/utils";
-import { auth } from "@/server/auth/index";
 
 
 export async function authRouteProxy(request: NextRequest) {

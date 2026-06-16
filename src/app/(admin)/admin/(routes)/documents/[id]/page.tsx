@@ -1,9 +1,9 @@
 "use client";
 
 import {
-  DocumentsDetails,
-  DocumentsHeader,
-} from "@/components/pages/admin/documents";
+    DocumentsDetails,
+    DocumentsHeader,
+} from "@/components/app/admin/documents";
 
 export default function AdminDocumentDetailsPage() {
   return (

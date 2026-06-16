@@ -1,0 +1,72 @@
+[
+  {
+    "id": "slide-a1b2c3d4",
+    "order": "1",
+    "outline": {
+      "id": "c7a8b9d0-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
+      "order": "1",
+      "title": "Introdução: O Momento Perfeito para Micro-SaaS",
+      "subtitle": "Fatores tecnológicos, econômicos e sociais que favorecem o crescimento de startups de software",
+      "description": "Por que 2025 oferece condições ideais e como identificar o modelo certo.",
+      "representation": "CONVERGÊNCIA (Fatores tecnológicos + econômicos + sociais)",
+      "concepts": ["API-Economy", "No-Code-Infrastructure", "AI-Augmented-Development", "Cauda-Longa-Digital", "Building-in-Public"]
+    },
+    "scene": {}
+  },
+  {
+    "id": "slide-b2c3d4e5",
+    "order": "2",
+    "outline": {
+      "id": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "order": "2",
+      "title": "Parte 1: Fundamentos e Diferenciação Estratégica",
+      "subtitle": "DNA único do Micro-SaaS vs modelos tradicionais e identificação da bolha",
+      "description": "Uma análise comparativa para destacar as vantagens competitivas do Micro-SaaS e como identificar sinais de saturação no mercado.",
+      "representation": "COMPARAÇÃO + ANÁLISE-CRÍTICA (SaaS vs Micro-SaaS + Sinais de Bolha)",
+      "concepts": ["Unit-Economics", "Product-Led-Growth", "Nicho-Específico", "Validação-de-Problema", "Competitive-Moats", "Churn-Analysis"]
+    },
+    "scene": {}
+  },
+  {
+    "id": "slide-c3d4e5f6",
+    "order": "3",
+    "outline": {
+      "id": "f5e4d3c2-b1a0-9e8d-7c6b-5a4b3c2d1e0f",
+      "order": "3",
+      "title": "Parte 2: Validação Sistemática e Desenvolvimento Estratégico",
+      "subtitle": "Metodologias ágeis para validação de ideias e desenvolvimento focado no cliente",
+      "description": "Um passo a passo sobre como aplicar métodos de validação, desde a monetização de dores até testes com MVPs, para garantir o alinhamento com o mercado.",
+      "representation": "FLUXOGRAMA (Ideia -> Validação -> MVP -> Feedback)",
+      "concepts": ["Pain-Point-Monetization", "Bottom-Up-Analysis", "MVP-Lean", "Concierge-MVP", "No-Code-Testing", "Smoke-Tests"]
+    },
+    "scene": {}
+  },
+  {
+    "id": "slide-d4e5f6a7",
+    "order": "4",
+    "outline": {
+      "id": "b3c2d1a0-e9f8-d7c6-b5a4-f3e2d1c0b9a8",
+      "order": "4",
+      "title": "Parte 3: Roadmap Completo do Projeto Micro-SaaS",
+      "subtitle": "Estratégia de desenvolvimento e implementação do projeto",
+      "description": "Visão geral da estruturação técnica completa, cobrindo desde a experiência do usuário (UX) até a estratégia de deployment contínuo.",
+      "representation": "HIERÁRQUICA RESUMIDA (UX/UI → Frontend → Backend → Deploy)",
+      "concepts": ["User-Experience-Design", "Clean-Architecture", "API-Design", "Testing-Strategy", "Deployment-Pipeline"]
+    },
+    "scene": {}
+  },
+  {
+    "id": "slide-e5f6a7b8",
+    "order": "5",
+    "outline": {
+      "id": "d1c0b9a8-f7e6-d5c4-b3a2-e1d0c9b8a7b6",
+      "order": "5",
+      "title": "Parte 4: Growth Engineering e Oportunidades Emergentes",
+      "subtitle": "Estratégias de crescimento baseadas em IA e nichos promissores",
+      "description": "Análise de estratégias de crescimento, como SEO programático e ecossistemas de parceria, e como identificar novas oportunidades de mercado.",
+      "representation": "MATRIZ DE OPORTUNIDADES (Vertical x Tecnologia x Growth Strategy)",
+      "concepts": ["Community-Led-Growth", "SEO-Programático", "AI-Native-Workflows", "Partnership-Ecosystems", "Vertical-Specialization"]
+    },
+    "scene": {}
+  }
+]

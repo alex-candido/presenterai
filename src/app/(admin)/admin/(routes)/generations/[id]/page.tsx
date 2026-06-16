@@ -1,9 +1,9 @@
 "use client";
 
 import {
-  GenerateDetails,
-  GenerateHeader,
-} from "@/components/pages/admin/generate";
+    GenerateDetails,
+    GenerateHeader,
+} from "@/components/app/admin/generate";
 
 export default function AdminGenerationDetailsPage() {
   return (

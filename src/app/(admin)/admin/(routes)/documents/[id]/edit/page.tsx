@@ -1,9 +1,9 @@
 "use client";
 
 import {
-  DocumentsForm,
-  DocumentsHeader,
-} from "@/components/pages/admin/documents";
+    DocumentsForm,
+    DocumentsHeader,
+} from "@/components/app/admin/documents";
 
 export default function AdminDocumentEditPage() {
   return (
